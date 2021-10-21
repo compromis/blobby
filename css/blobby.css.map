@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "blobby.css",
+	"sources": [
+		"../blobby.scss",
+		"../scss/_variables.scss",
+		"../scss/_mixins.scss",
+		"../scss/_fonts.scss",
+		"../scss/_base.scss",
+		"../scss/_cards.scss",
+		"../scss/_buttons.scss",
+		"../scss/_utils.scss"
+	],
+	"names": [],
+	"mappings": "AACA,OAAO,CAAP,uDAAO"
+}

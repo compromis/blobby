@@ -2,14 +2,24 @@
   "name": "@compromis/blobby",
   "version": "1.0.0",
   "description": "Sass framework for Compromís sites",
-  "devDependencies": {},
-  "dependencies": {
-    "modern-normalize": "^1.1.0",
+  "devDependencies": {
     "node-sass": "^6.0.1"
   },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
   "main": "blobby.scss",
+  "engines": {
+		"node": ">=6"
+	},
+  "unpkg": "css/blobby.css",
+  "style": "css/blobby.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compromis/blobby.git"
+  },
   "scripts": {
-    "build": "node-sass --output-style expanded --source-map true ./scss/blobby.scss css/blobby.css",
+    "build": "node-sass --output-style expanded --source-map true ./blobby.scss css/blobby.css",
     "dev": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +27,5 @@
     "compromis"
   ],
   "author": "Compromís",
-  "license": "ISC"
+  "license": "MIT"
 }
