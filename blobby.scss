@@ -1,0 +1,17 @@
+// Modern normalize
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+// Blobby variables and functions
+@import 'scss/variables';
+@import 'scss/mixins';
+
+// Blobby base styles
+@import 'scss/fonts';
+@import 'scss/base';
+
+// Blobby components
+@import 'scss/cards';
+@import 'scss/buttons';
+
+// Utility classes
+@import 'scss/utils';

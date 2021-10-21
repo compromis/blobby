@@ -1,0 +1,21 @@
+{
+  "name": "@compromis/blobby",
+  "version": "1.0.0",
+  "description": "Sass framework for Compromís sites",
+  "devDependencies": {},
+  "dependencies": {
+    "modern-normalize": "^1.1.0",
+    "node-sass": "^6.0.1"
+  },
+  "main": "blobby.scss",
+  "scripts": {
+    "build": "node-sass --output-style expanded --source-map true ./scss/blobby.scss css/blobby.css",
+    "dev": "npm run build -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "compromis"
+  ],
+  "author": "Compromís",
+  "license": "ISC"
+}

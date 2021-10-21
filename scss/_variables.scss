@@ -1,0 +1,80 @@
+// Brand colors
+$primary: #FF6720 !default;
+$gray-darkest: #353949 !default;
+$gray-lightest: #f8faff !default;
+$black: $gray-darkest !default;
+$white: #fff !default;
+$gradient-start: #d23517 !default;
+$gradient-end: #f39128 !default;
+
+// Secondary colors
+$yellow: #FFD10F !default;
+$orange: #F79226 !default;
+$red: #EF404D !default;
+$purple: #A14A9C !default;
+$blue: #55A4DB !default;
+$green: #7FC347 !default;
+
+// Party colors
+$mes: #f95a32;
+$iniciativa: #ad283f;
+$verds: #5ab552;
+
+// Ideology colors
+$feminism-gradient-start: #7d3a81;
+$feminism-gradient-end: #c54687;
+
+// Grays
+$gray-100: mix($gray-darkest, $gray-lightest, 5%);
+$gray-200: mix($gray-darkest, $gray-lightest, 10%);
+$gray-300: mix($gray-darkest, $gray-lightest, 20%);
+$gray-400: mix($gray-darkest, $gray-lightest, 30%);
+$gray-500: mix($gray-darkest, $gray-lightest, 40%);
+$gray-600: mix($gray-darkest, $gray-lightest, 50%);
+$gray-700: mix($gray-darkest, $gray-lightest, 70%);
+$gray-800: mix($gray-darkest, $gray-lightest, 90%);
+$gray-900: $gray-darkest;
+
+// UI colors
+$body-bg: $gray-lightest !default;
+$text-color: $gray-darkest !default;
+$text-muted: $gray-700 !default;
+
+// Typography
+$font-sans: 'Manrope', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif !default;
+
+// Gradients
+$gradient: linear-gradient(var(--gradient-orientation, 45deg), $gradient-start, $gradient-end) !default;
+$gradient-feminista: linear-gradient(var(--gradient-orientation, 45deg), #7D3A81, #C54687) !default;
+$gradient-lgtb: linear-gradient(180deg, $red 0%, $red 16.6%, $orange 16.6%, $orange 33.2%, $yellow 33.2%, $yellow 49.8%, $green 49.8%, $green 66.4%, $blue 66.4%, $blue 83%, $purple 83%, $purple 100%) !default;
+
+// Shadows
+$default-shadow: 0 .8rem 1.7rem -.3rem rgba($gray-900, .15),
+    0 .5rem 1rem -.5rem rgba($gray-900, .2),
+    0 -.4rem 1rem -.4rem rgba($gray-900, .015) !default;
+$raised-shadow: 0 1.25rem 2.1rem -.3rem rgba($gray-900, .15),
+    0 .9rem 1.4rem -.5rem rgba($gray-900, .2),
+    0 -.75rem 1.4rem -.4rem rgba($gray-900, .015) !default;
+$inset-shadow: inset -2rem 0 3.1rem -1rem rgba($gray-600, .05),
+    inset -1.25rem 0 2rem -.5rem rgba($gray-600, .2),
+    inset -.75rem 0 1.5rem -.4rem rgba($gray-600, .015) !default;
+$inset-shadow-xs: inset -2rem 0 1rem -1rem rgba($gray-400, .05),
+    inset -1.25rem 0 .75rem -.5rem rgba($gray-400, .2),
+    inset -.75rem 0 .25rem -.4rem rgba($gray-400, .015) !default;
+
+// Border radii
+$border-radius-sm: .5rem !default;
+$border-radius: .75rem !default;
+$card-radius: 1rem !default;
+$border-radius-lg: 1.5rem !default;
+$border-radius-xl: 5rem !default;
+$blob-radius: 10rem !default;
+
+// Nav
+
+
+// Container
+
+
+// Breakpoints
+
