@@ -1,0 +1,21 @@
+// Backgrounds
+@each $name, $colors in $backgrounds {
+  .bg-#{$name} {
+    background-color: map-get($colors, 'bg');
+    color: map-get($colors, 'text');
+  }
+}
+
+// Text sizes
+@each $name, $size in $text-sizes {
+  .text-#{$name} {
+    font-size: $size;
+  }
+}
+
+// Text colors
+@each $name, $color in $text-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+}
