@@ -22,6 +22,8 @@
       "require": "./dist/blobby.umd.js"
     }
   },
+  "style": "dist/blobby.css",
+  "sass": "scss/blobby.scss",
   "engines": {
     "node": ">=12"
   },
@@ -33,7 +35,7 @@
     "dev": "vite",
     "build": "vite build --emptyOutDir",
     "serve": "vite preview",
-    "build-style": "node-sass --output-style compressed --source-map true ./scss/blobby.scss ./dist/css/blobby.css",
+    "build-style": "node-sass --output-style compressed --source-map true ./scss/blobby.scss ./dist/blobby.css",
     "dev-style": "yarn build -- --watch"
   },
   "keywords": [

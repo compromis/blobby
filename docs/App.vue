@@ -40,5 +40,5 @@ import BCardList from '../components/BCardList.vue'
 </template>
 
 <style lang="scss">
-// @import '../scss/blobby';
+@import '../scss/blobby';
 </style>
