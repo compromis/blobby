@@ -1,6 +1,11 @@
 <template>
-  <div class="p-3">
+  <div class="card-padded">
     <slot />
   </div>
 </template>
 
+<script>
+export default {
+  name: 'BCardSection'
+}
+</script>

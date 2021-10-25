@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'BCardList',
+
   props: {
     as: {
       type: String,

@@ -1,14 +1,15 @@
-const path = require('path')
-const { defineConfig } = require('vite')
-const vue = require('@vitejs/plugin-vue')
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
-module.exports = defineConfig({
-  root: path.resolve(__dirname, 'docs'),
+// https://vitejs.dev/config/
+export default defineConfig({
+  root: resolve(__dirname, 'docs'),
   plugins: [vue()],
   build: {
-    outDir: path.resolve(__dirname, 'dist'),
+    outDir: resolve(__dirname, 'dist'),
     lib: {
-      entry: path.resolve(__dirname, './index.js'),
+      entry: resolve(__dirname, './index.js'),
       name: 'Blobby',
       fileName: (format) => `blobby.${format}.js`
     },
@@ -20,9 +21,9 @@ module.exports = defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
-      }
-    }
-  }
+          vue: 'Vue',
+        },
+      },
+    },
+  },
 })

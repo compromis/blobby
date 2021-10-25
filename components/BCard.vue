@@ -11,17 +11,19 @@
     <div :class="['card-content', { 'overlay-content': !!image }]">
       <slot />
     </div>
-    <div class="overlay-background" v-if="image">
+    <div v-if="image" class="overlay-background">
       <img :src="image" alt="">
     </div>
-    <div class="glowy-ghost" v-if="type === 'gradient' && glowy">
-      <img :src="image" alt="" v-if="image" class="glowy-image">
+    <div v-if="type === 'gradient' && glowy" class="glowy-ghost">
+      <img v-if="image" :src="image" alt="" class="glowy-image">
     </div>
   </component>
 </template>
 
 <script>
 export default {
+  name: 'BCard',
+
   props: {
     type: {
       type: String,
