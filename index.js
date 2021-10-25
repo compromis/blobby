@@ -1,1 +1,5 @@
-export { BCard } from './components/BCard.vue'
+import BCard from './components/BCard.vue'
+
+export {
+  BCard
+}

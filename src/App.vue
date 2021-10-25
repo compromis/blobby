@@ -1,9 +1,9 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import BCard from '../../components/BCard.vue'
-import BCardSection from '../../components/BCardSection.vue'
-import BCardList from '../../components/BCardList.vue'
+import BCard from '../components/BCard.vue'
+import BCardSection from '../components/BCardSection.vue'
+import BCardList from '../components/BCardList.vue'
 </script>
 
 <template>
@@ -40,5 +40,5 @@ import BCardList from '../../components/BCardList.vue'
 </template>
 
 <style lang="scss">
-@import '../../scss/blobby';
+// @import '../scss/blobby';
 </style>
