@@ -28,6 +28,17 @@ $mes: #f95a32 !default;
 $iniciativa: #ad283f !default;
 $verds: #5ab552 !default;
 
+// Social networks
+$social-networks: (
+  facebook: #3b5998,
+  twitter: #00acee,
+  instagram: #e1306c,
+  youtube: #ff0800,
+  telegram: #08c,
+  tiktok: #000,
+  twitch: #772ce8
+);
+
 // Grays
 $gray-100: mix($gray-darkest, $gray-lightest, 5%);
 $gray-200: mix($gray-darkest, $gray-lightest, 10%);
@@ -76,13 +87,14 @@ $shadow-default: 0 .8rem 1.7rem -.3rem rgba($gray-darkest, .15),
 $shadow-raised: 0 1.25rem 2.1rem -.3rem rgba($gray-darkest, .15),
     0 .9rem 1.4rem -.5rem rgba($gray-darkest, .2),
     0 -.75rem 1.4rem -.4rem rgba($gray-darkest, .015) !default;
+$box-shadow: $shadow-default;
 
 // Border radii
-$border-radius-xs: .5rem !default;
-$border-radius-sm: .75rem !default;
-$border-radius-md: 1rem !default;
-$border-radius-lg: 1.5rem !default;
-$border-radius-xl: 5rem !default;
+$border-radius: .75rem !default;
+$border-radius-sm: .5rem !default;
+$border-radius-lg: 1.53rem !default;
+$border-radius-xl: 5rem !default
+$border-radius-pill: 50rem !default;
 $blob-radius: 10rem !default;
 
 // Utility variables
@@ -147,4 +159,19 @@ $text-colors: (
   'muted': var(--text-muted),
   'white': var(--white),
   'primary': var(--primary)
+);
+
+$gradients: (
+  'primary': (
+    'start': $gradient-primary-start,
+    'end': $gradient-primary-end,
+  ),
+  'secondary': (
+    'start': $gradient-secondary-start,
+    'end': $gradient-secondary-end
+  ),
+  'feminism': (
+    'start': $gradient-feminism-start,
+    'end': $gradient-feminism-end
+  )
 );

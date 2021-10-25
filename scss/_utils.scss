@@ -1,7 +1,7 @@
 // Backgrounds
 @each $name, $colors in $backgrounds {
   .bg-#{$name} {
-    background-color: map-get($colors, 'bg');
+    background: map-get($colors, 'bg');
     color: map-get($colors, 'text');
   }
 }
@@ -9,7 +9,17 @@
 // Text sizes
 @each $name, $size in $text-sizes {
   .text-#{$name} {
-    font-size: $size;
+    font-size: var(--#{$size}, #{$size});
+  }
+}
+
+@include media-breakpoint-down (sm) {
+  :root {
+    --text-2xl: #{$text-2xl - ($text-2xl * 0.175)};
+    --text-3xl: #{$text-3xl - ($text-3xl * 0.2)};
+    --text-4xl: #{$text-4xl - ($text-4xl * 0.25)};
+    --text-5xl: #{$text-5xl - ($text-5xl * 0.25)};
+    --text-6xl: #{$text-6xl - ($text-6xl * 0.25)};
   }
 }
 
@@ -17,5 +27,124 @@
 @each $name, $color in $text-colors {
   .text-#{$name} {
     color: $color;
+  }
+}
+
+// Gradients
+@each $name, $colors in $gradients {
+  .gradient-#{$name} {
+    --gradient-start: #{map-get($colors, 'start')};
+    --gradient-end: #{map-get($colors, 'end')};
+  }
+}
+
+// Overlay gradients
+.overlay-gradient {
+  position: relative;
+
+  .overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    img {
+      user-select: none;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  @each $name, $colors in $gradients {
+    &.gradient-#{$name} {
+      background-color: map-get($colors, 'end');
+
+      .overlay-background::before {
+        background-image: linear-gradient(
+          var(--gradient-orientation, 120deg),
+          rgba(map-get($colors, 'start'), .95),
+          rgba(map-get($colors, 'end'), .8) 50%,
+          rgba(map-get($colors, 'end'), .4)
+        );
+      }
+    }
+  }
+}
+
+// Shadows
+.shadow {
+  box-shadow: $shadow-default;
+
+  &-rises {
+    transition: .25s ease;
+
+    &:hover {
+      box-shadow: $shadow-raised;
+      translate: translateY(-.5rem);
+    }
+
+    &:active {
+      translate: translateY(-.5rem);
+    }
+  }
+}
+
+// Links
+.link-muted-to-black {
+  color: var(--text-muted);
+
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+.link-muted-to-primary {
+  color: var(--text-muted);
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.link-underlined {
+  text-decoration: underline;
+}
+
+.link-to-underlined {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Lists
+.list-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-social-icons {
+  justify-content: space-evenly;
+
+  a {
+    display: block;
+    transition: color .15s ease-in-out;
+  }
+
+  @each $name, $color in $social-networks {
+    .#{$name} a:hover {
+      color: $color;
+    }
   }
 }
