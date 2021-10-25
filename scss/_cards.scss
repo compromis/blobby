@@ -1,0 +1,115 @@
+// Padding
+.card-padded {
+  padding: var(--card-padding, .75rem);
+}
+
+// Overlay gradients
+.overlay-gradient {
+  position: relative;
+
+  .overlay-content {
+    position: relative;
+    z-index: 10;
+  }
+
+  .overlay-background {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: var(--border-radius, .75rem);
+    overflow: hidden;
+
+    img {
+      user-select: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  @each $name, $colors in $gradients {
+    &.gradient-#{$name} {
+      background-color: map-get($colors, 'end');
+
+      .overlay-background::before {
+        background-image: linear-gradient(
+          var(--gradient-orientation, 120deg),
+          rgba(map-get($colors, 'start'), .95),
+          rgba(map-get($colors, 'end'), .8) 50%,
+          rgba(map-get($colors, 'end'), .4)
+        );
+      }
+    }
+  }
+}
+
+// Glowy cards
+.glowy-card {
+  position: relative;
+  z-index: 2;
+
+  .glowy-ghost {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    z-index: 1;
+    filter: blur(14px) brightness(.85);
+    opacity: .75;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-image: map-deep-get($backgrounds, "gradient", "bg");
+    }
+  }
+
+  .glowy-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: .5;
+  }
+}
+
+// Imagres
+.card-content > img {
+  width: 100%;
+}
+
+// Lists
+.card-list {
+  & > *:not(:last-child) {
+    border-bottom: 1px var(--border-color, var(--gray-400, #{$gray-400})) solid;
+  }
+
+  &-padded > * {
+    padding: var(--card-padding, .75rem);
+  }
+}

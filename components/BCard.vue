@@ -1,9 +1,22 @@
 <template>
-  <component :style="{ backgroundImage }" :is="tag" :class="['p-3', ...typeClasses, roundedClass]">
-    <div :class="{ 'text-overlay': !!image }">
+  <component :is="tag" :class="[
+    'card',
+    ...typeClasses,
+    roundedClass,
+    {
+      'overlay-gradient': !!image,
+      'card-padded': padding
+    }
+  ]">
+    <div :class="['card-content', { 'overlay-content': !!image }]">
       <slot />
     </div>
-    <div class="glowy-ghost" v-if="type === 'gradient'" />
+    <div class="overlay-background" v-if="image">
+      <img :src="image" alt="">
+    </div>
+    <div class="glowy-ghost" v-if="type === 'gradient' && glowy">
+      <img :src="image" alt="" v-if="image" class="glowy-image">
+    </div>
   </component>
 </template>
 
@@ -18,12 +31,16 @@ export default {
     variant: {
       type: String,
       default: 'default',
-      validator: (value) => ['default', 'inverted', 'orange', 'green'].indexOf(value) !== -1
+      validator: (value) => ['default', 'inverted', 'primary', 'secondary'].indexOf(value) !== -1
     },
     size: {
       type: String,
       default: 'md',
       validator: (value) => ['sm', 'md', 'lg'].indexOf(value) !== -1
+    },
+    glowy: {
+      type: Boolean,
+      default: true
     },
     image: {
       type: String,
@@ -40,6 +57,10 @@ export default {
     as: {
       type: String,
       default: ''
+    },
+    padding: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -47,14 +68,14 @@ export default {
     typeClasses () {
       const types = {
         solid: {
-          base: 'shadow',
+          base: 'shadow overflow-hidden',
           variants: {
             default: 'bg-white',
             inverted: 'bg-dark'
           }
         },
         outline: {
-          base: 'border',
+          base: 'border overflow-hidden',
           variants: {
             default: 'text-muted border-gray',
             inverted: 'text-white border-white'
@@ -63,8 +84,8 @@ export default {
         gradient: {
           base: 'bg-gradient glowy-card text-white',
           variants: {
-            orange: 'gradient-orange',
-            green: 'gradient-green'
+            primary: 'gradient-primary',
+            secondary: 'gradient-secondary'
           }
         }
       }
@@ -93,10 +114,6 @@ export default {
         return this.as
       }
       return 'div'
-    },
-
-    backgroundImage () {
-      return `url(${this.image})`
     }
   }
 }

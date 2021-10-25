@@ -38,49 +38,6 @@
   }
 }
 
-// Overlay gradients
-.overlay-gradient {
-  position: relative;
-
-  .overlay-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    pointer-events: none;
-
-    img {
-      user-select: none;
-    }
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-    }
-  }
-
-  @each $name, $colors in $gradients {
-    &.gradient-#{$name} {
-      background-color: map-get($colors, 'end');
-
-      .overlay-background::before {
-        background-image: linear-gradient(
-          var(--gradient-orientation, 120deg),
-          rgba(map-get($colors, 'start'), .95),
-          rgba(map-get($colors, 'end'), .8) 50%,
-          rgba(map-get($colors, 'end'), .4)
-        );
-      }
-    }
-  }
-}
-
 // Shadows
 .shadow {
   box-shadow: $shadow-default;
@@ -129,6 +86,12 @@
 }
 
 // Lists
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .list-horizontal {
   display: flex;
   flex-wrap: wrap;
