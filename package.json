@@ -31,7 +31,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --emptyOutDir",
     "serve": "vite preview",
     "build-style": "node-sass --output-style compressed --source-map true ./scss/blobby.scss ./dist/css/blobby.css",
     "dev-style": "yarn build -- --watch"
