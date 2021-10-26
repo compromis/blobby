@@ -8,12 +8,6 @@
   ],
   "main": "./dist/blobby.umd.js",
   "module": "./dist/blobby.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/blobby.es.js",
-      "require": "./dist/blobby.umd.js"
-    }
-  },
   "style": "./dist/blobby.css",
   "sass": "./scss/blobby.scss",
   "unpkg": "./dist/blobby.umd.js",
