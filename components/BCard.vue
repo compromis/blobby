@@ -70,14 +70,14 @@ export default {
     typeClasses () {
       const types = {
         solid: {
-          base: 'shadow overflow-hidden',
+          base: 'shadow',
           variants: {
             default: 'bg-white',
             inverted: 'bg-dark'
           }
         },
         outline: {
-          base: 'border overflow-hidden',
+          base: 'border',
           variants: {
             default: 'text-muted border-gray',
             inverted: 'text-white border-white'

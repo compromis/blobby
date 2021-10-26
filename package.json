@@ -14,8 +14,8 @@
       "require": "./dist/blobby.umd.js"
     }
   },
-  "style": "dist/blobby.css",
-  "sass": "scss/blobby.scss",
+  "style": "./dist/blobby.css",
+  "sass": "./scss/blobby.scss",
   "unpkg": "./dist/blobby.umd.js",
   "jsdelivr": "./dist/blobby.umd.js",
   "engines": {

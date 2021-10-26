@@ -51,6 +51,7 @@ $gray-800: mix($gray-darkest, $gray-lightest, 90%);
 $gray-900: $gray-darkest;
 
 // Gradients
+$gradient: linear-gradient(var(--gradient-orientation, 45deg), var(--gradient-start, #{$gradient-primary-start}), var(--gradient-end, #{$gradient-primary-end}));
 $gradient-primary: linear-gradient(var(--gradient-orientation, 45deg), $gradient-primary-start, $gradient-primary-end) !default;
 $gradient-secondary: linear-gradient(var(--gradient-orientation, 45deg), $gradient-secondary-start, $gradient-secondary-end) !default;
 $gradient-feminista: linear-gradient(var(--gradient-orientation, 45deg), $gradient-feminism-start, $gradient-feminism-end) !default;
@@ -136,7 +137,7 @@ $backgrounds: (
     'text': var(--white)
   ),
   'gradient': (
-    'bg': linear-gradient(var(--gradient-orientation, 45deg), var(--gradient-start, #{$gradient-primary-start}), var(--gradient-end, #{$gradient-primary-end})),
+    'bg': $gradient,
     'text': $white
   )
 );

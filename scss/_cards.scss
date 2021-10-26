@@ -1,6 +1,6 @@
 // Padding
 .card-padded {
-  padding: var(--card-padding, .75rem);
+  padding: var(--card-padding, 1.5rem);
 }
 
 // Overlay gradients
@@ -81,7 +81,7 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-      background-image: map-deep-get($backgrounds, "gradient", "bg");
+      background-image: $gradient;
     }
   }
 
@@ -106,7 +106,7 @@
 // Lists
 .card-list {
   & > *:not(:last-child) {
-    border-bottom: 1px var(--border-color, var(--gray-400, #{$gray-400})) solid;
+    border-bottom: 1px $gray-400 solid;
   }
 
   &-padded > * {

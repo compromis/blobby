@@ -1,0 +1,27 @@
+.compromis-logo {
+  .letter {
+    fill: #353949;
+  }
+  .background {
+    fill: #FFFFFF;
+  }
+  .careta {
+    fill: url(#compromisGradient);
+  }
+  .mono {
+    .letter {
+      fill: currentColor;
+    }
+    .careta {
+      fill: currentColor;
+    }
+    .background {
+      display: none;
+    }
+  }
+  .inverted {
+    .letter {
+      fill: white;
+    }
+  }
+}
