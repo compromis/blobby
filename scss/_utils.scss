@@ -59,6 +59,7 @@
 // Links
 .link-muted-to-black {
   color: var(--text-muted);
+  transition: .2s ease;
 
   &:hover {
     color: var(--text-color);
@@ -67,6 +68,7 @@
 
 .link-muted-to-primary {
   color: var(--text-muted);
+  transition: .2s ease;
 
   &:hover {
     color: var(--primary);
