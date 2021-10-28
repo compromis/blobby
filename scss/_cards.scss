@@ -1,115 +1,163 @@
-// Padding
-.card-padded {
-  padding: var(--card-padding, 1.5rem);
-}
+.card {
+  // Padding
+  &-padded {
+    padding: var(--card-padding, 1.5rem);
 
-// Overlay gradients
-.overlay-gradient {
-  position: relative;
-
-  .overlay-content {
-    position: relative;
-    z-index: 10;
-  }
-
-  .overlay-background {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: var(--border-radius, .75rem);
-    overflow: hidden;
-
-    img {
-      user-select: none;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &-sm {
+      --card-padding: 1rem;
     }
 
-    &::before {
-      content: '';
+    &-md {
+      --card-padding: 1.5rem;
+    }
+
+    &-lg {
+      --card-padding: 2rem;
+    }
+
+    &-xl {
+      --card-padding: 3rem;
+    }
+  }
+
+  // Mobile sizes here
+
+  // Card shadow
+  &-shadow {
+    box-shadow: $shadow-default;
+  }
+
+  // Overlay gradients
+  &-overlay-gradient {
+    position: relative;
+
+    .overlay-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .overlay-background {
+      display: flex;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 2;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: var(--border-radius, .75rem);
+      overflow: hidden;
+
+      img {
+        user-select: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+      }
     }
-  }
 
-  @each $name, $colors in $gradients {
-    &.gradient-#{$name} {
-      background-color: map-get($colors, 'end');
+    @each $name, $colors in $gradients {
+      &.gradient-#{$name} {
+        background-color: map-get($colors, 'end');
 
-      .overlay-background::before {
-        background-image: linear-gradient(
-          var(--gradient-orientation, 120deg),
-          rgba(map-get($colors, 'start'), .95),
-          rgba(map-get($colors, 'end'), .8) 50%,
-          rgba(map-get($colors, 'end'), .4)
-        );
+        .overlay-background::before,
+        .glowy-ghost::before {
+          background-image: linear-gradient(
+            var(--gradient-orientation, 120deg),
+            rgba(map-get($colors, 'start'), .95),
+            rgba(map-get($colors, 'end'), .8) 50%,
+            rgba(map-get($colors, 'end'), .4)
+          );
+        }
       }
     }
   }
-}
 
-// Glowy cards
-.glowy-card {
-  position: relative;
-  z-index: 2;
+  // Glowy cards
+  &-glowy {
+    position: relative;
+    z-index: 2;
 
-  .glowy-ghost {
-    position: absolute;
-    top: 4px;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    z-index: 1;
-    filter: blur(14px) brightness(.85);
-    opacity: .75;
+    .glowy-ghost {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      z-index: 0;
+      filter: blur(14px) brightness(.85);
+      opacity: .75;
 
-    &::before {
-      content: '';
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+
+    .glowy-image {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: -1;
-      background-image: $gradient;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: .5;
     }
   }
 
-  .glowy-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  // Imagres
+  &-content > img {
     width: 100%;
-    height: 100%;
-    z-index: -2;
-    opacity: .5;
+  }
+
+  // Lists
+  &-list {
+    & > *:not(:last-child) {
+      border-bottom: 1px var(--gray-300) solid;
+    }
+
+    &-padded > * {
+      padding: var(--card-padding, 1.5rem);
+    }
   }
 }
 
-// Imagres
-.card-content > img {
-  width: 100%;
-}
+// Card links
+a.card {
+  display: block;
+  transition: .25s ease;
 
-// Lists
-.card-list {
-  & > *:not(:last-child) {
-    border-bottom: 1px $gray-400 solid;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
   }
 
-  &-padded > * {
-    padding: var(--card-padding, .75rem);
+  &.card-rises {
+    &:hover {
+      transform: translateY(-2%);
+      box-shadow: $shadow-raised;
+    }
+
+    &:active {
+      transform: translateY(1%);
+      box-shadow: $shadow-default;
+    }
   }
 }

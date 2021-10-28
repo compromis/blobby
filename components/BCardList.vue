@@ -1,5 +1,5 @@
 <template>
-  <component :is="as" :class="['card-list', 'list-reset', { 'card-list-padded': padding }]">
+  <component :is="as" :class="['card-list', 'list-reset', { 'card-list-padded': padded }]">
     <slot />
   </component>
 </template>
@@ -11,11 +11,11 @@ export default {
   props: {
     as: {
       type: String,
-      default: 'div'
+      default: 'ul'
     },
-    padding: {
+    padded: {
       type: Boolean,
-      default: false
+      default: true
     }
   }
 }

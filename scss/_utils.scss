@@ -56,6 +56,14 @@
   }
 }
 
+// Rounded
+@each $name, $size in $border-radii {
+  .rounded-#{$name} {
+    --border-radius: #{$size};
+    border-radius: var(--border-radius);
+  }
+}
+
 // Links
 .link-muted-to-black {
   color: var(--text-muted);

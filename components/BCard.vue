@@ -1,17 +1,23 @@
 <template>
-  <component :is="tag" :class="[
-    'card',
-    ...typeClasses,
-    roundedClass,
-    {
-      'overlay-gradient': !!image,
-      'card-padded': padding
-    }
-  ]">
+  <component
+    :is="tag"
+    :class="[
+      'card',
+      ...typeClasses,
+      roundedClass,
+      paddingClass,
+      {
+        'card-overlay-gradient': !!image,
+        'overflow-hidden': overflowHidden,
+        'card-rises': rises
+      }
+    ]"
+    :to="to"
+    :href="href">
     <div :class="['card-content', { 'overlay-content': !!image }]">
       <slot />
     </div>
-    <div v-if="image" class="overlay-background">
+    <div v-if="image && ['gradient', 'solid'].includes(type)" class="overlay-background">
       <img :src="image" alt="">
     </div>
     <div v-if="type === 'gradient' && glowy" class="glowy-ghost">
@@ -27,8 +33,8 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'solid',
-      validator: (value) => ['solid', 'gradient', 'outline'].indexOf(value) !== -1
+      default: 'shadow',
+      validator: (value) => ['shadow', 'solid', 'gradient', 'outline'].indexOf(value) !== -1
     },
     variant: {
       type: String,
@@ -60,7 +66,15 @@ export default {
       type: String,
       default: ''
     },
-    padding: {
+    padded: {
+      type: Boolean,
+      default: false
+    },
+    overflowHidden: {
+      type: Boolean,
+      default: false
+    },
+    rises: {
       type: Boolean,
       default: false
     }
@@ -69,8 +83,15 @@ export default {
   computed: {
     typeClasses () {
       const types = {
+        shadow: {
+          base: 'card-shadow',
+          variants: {
+            default: 'bg-white',
+            inverted: 'bg-dark'
+          }
+        },
         solid: {
-          base: 'shadow',
+          base: 'bg-black',
           variants: {
             default: 'bg-white',
             inverted: 'bg-dark'
@@ -84,7 +105,7 @@ export default {
           }
         },
         gradient: {
-          base: 'bg-gradient glowy-card text-white',
+          base: 'bg-gradient card-glowy text-white',
           variants: {
             primary: 'gradient-primary',
             secondary: 'gradient-secondary'
@@ -96,13 +117,11 @@ export default {
     },
 
     roundedClass () {
-      const sizes = {
-        sm: '-sm',
-        md: '',
-        lg: '-lg'
-      }
+      return 'rounded-' + this.size
+    },
 
-      return 'rounded' + sizes[this.size]
+    paddingClass () {
+      return this.padded ? `card-padded card-padded-${this.size}` : `card-padded-${this.size}`
     },
 
     tag () {
