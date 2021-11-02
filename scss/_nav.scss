@@ -1,0 +1,222 @@
+$nav-separation: 24px;
+$nav-x-padding: 1rem;
+$nav-y-padding: .85rem;
+
+.nav {
+  position: absolute;
+  top: $nav-separation;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+
+  &-scrolled {
+    position: fixed;
+    top: 0;
+
+    .nav-card {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &-card {
+    padding: $nav-y-padding $nav-x-padding;
+    transition: border-radius .25s ease;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    width: fit-content;
+    margin-right: auto;
+
+    &-compromis {
+      border-radius: .25rem;
+      padding: $nav-y-padding $nav-x-padding;
+      margin: #{-$nav-y-padding} #{-$nav-x-padding};
+      line-height: 1;
+
+      &:focus {
+        @include focus-shadow($primary);
+      }
+
+      svg {
+        width: auto;
+        height: 1.75em;
+      }
+    }
+
+    &-append {
+      font-size: 1.25em;
+      color: var(--text-muted);
+
+      a {
+        display: block;
+        border-radius: .25rem;
+        padding: $nav-y-padding .5rem;
+        margin: #{-$nav-y-padding} -.5rem;
+        margin-left: .25rem;
+        color: var(--text-muted);
+        line-height: 1;
+
+        &:hover {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+
+        &:focus {
+          @include focus-shadow($primary);
+        }
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      a {
+        display: flex;
+        font-size: 1.25em;
+        color: var(--text-muted);
+        padding: $nav-y-padding .75rem;
+        margin: #{-$nav-y-padding} 0;
+        line-height: 1;
+        border-radius: .25rem;
+        white-space: nowrap;
+        align-items: center;
+
+        &:hover {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+
+        &:focus {
+          color: var(--text-color);
+          @include focus-shadow($primary);
+        }
+      }
+
+      &-icon {
+        height: 1em;
+        width: 1em;
+        margin-right: .5rem;
+      }
+    }
+
+    & > li:hover .nav-submenu {
+      visibility: visible;
+      opacity: 1;
+      backdrop-filter: blur(10px) saturate(180%);
+      transform: translateY(0) rotateX(0);
+      transition-delay: 0s;
+    }
+  }
+
+  &-submenu {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: rgba($white, .85);
+    top: 4rem;
+    min-width: 18rem;
+    padding: 1rem;
+    backdrop-filter: blur(0) saturate(0);
+    z-index: 11000;
+    box-shadow: $shadow-default;
+    border-radius: .5rem;
+    flex-direction: column;
+    opacity: 0;
+    transition: visibility 0s linear .2s, opacity .2s ease, transform .2s ease;
+    transform: translateY(15px) rotateX(-20deg);
+    transform-origin: 0 -15px;
+    will-change: visibility, opacity, transform, backdrop-filter;
+
+    li {
+      flex-grow: 1;
+    }
+
+    a {
+      display: block;
+      font-weight: bold;
+      color: var(--text-color);
+      margin: 0;
+      padding: .5rem;
+
+      &:hover {
+        background: $gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      left: 2.25rem;
+      border: .5rem solid transparent;
+      border-bottom: .5rem solid rgba($white, .85);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -2rem;
+      height: 2rem;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &-toggle {
+    display: flex;
+    margin: #{-$nav-y-padding} #{-$nav-x-padding};
+    margin-left: 1rem;
+    border-left: 1px var(--gray-200) solid;
+
+    button {
+      background: $white;
+      border: 0;
+      display: flex;
+      align-items: center;
+      appearance: none;
+      padding: $nav-y-padding $nav-x-padding;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      color: var(--text-muted);
+
+      &:hover {
+        background: var(--gray-100);
+        color: var(--text-color);
+      }
+
+      &:focus {
+        @include focus-shadow($primary);
+      }
+    }
+
+    svg {
+      height: 1.25em;
+      width: 1.25em;
+    }
+  }
+
+  &-padding {
+    height: $navbar-safe-area;
+  }
+}

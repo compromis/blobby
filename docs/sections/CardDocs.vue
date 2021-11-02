@@ -1,8 +1,8 @@
 <script setup>
 import { reactive } from 'vue'
-import BCard from '../../components/BCard.vue'
-import BCardSection from '../../components/BCardSection.vue'
-import BCardList from '../../components/BCardList.vue'
+import BCard from '../../components/card/BCard.vue'
+import BCardSection from '../../components/card/BCardSection.vue'
+import BCardList from '../../components/card/BCardList.vue'
 
 const card = reactive({
   type: 'shadow',
