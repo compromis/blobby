@@ -122,6 +122,29 @@ $nav-y-padding: .85rem;
       transform: translateY(0) rotateX(0);
       transition-delay: 0s;
     }
+
+    &-abridged li:nth-child(n+6) {
+      display: none;
+    }
+
+    &-mobile {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin: ($nav-y-padding * 3) $nav-x-padding;
+      padding: 0;
+
+      a {
+        font-weight: 900;
+        font-size: $text-2xl;
+        color: var(--text-color);
+        padding: .75rem;
+
+        &:hover {
+          @include gradient-text($gradient);
+        }
+      }
+    }
   }
 
   &-submenu {
@@ -158,10 +181,7 @@ $nav-y-padding: .85rem;
       padding: .5rem;
 
       &:hover {
-        background: $gradient;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include gradient-text($gradient);
       }
     }
 
@@ -208,6 +228,14 @@ $nav-y-padding: .85rem;
       &:focus {
         @include focus-shadow($primary);
       }
+
+      &[aria-expanded='true'] {
+        border-bottom-right-radius: 0;
+      }
+
+      @at-root .nav-scrolled & {
+        border-top-right-radius: 0;
+      }
     }
 
     svg {
@@ -216,7 +244,71 @@ $nav-y-padding: .85rem;
     }
   }
 
+  &-bar {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &-drawer {
+    margin: #{$nav-y-padding} #{-$nav-x-padding} #{-$nav-y-padding} #{-$nav-x-padding};
+    border-top: 1px var(--gray-200) solid;
+    transition: 1s ease;
+    max-height: calc(92vh - #{$navbar-safe-area});
+    overflow-y: auto;
+  }
+
+  &-network {
+    background: var(--gray-100);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: $nav-y-padding $nav-x-padding;
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: var(--gray-700);
+      font-size: 1rem;
+      text-decoration: none;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    ul + h3 {
+      margin-top: 1rem;
+    }
+
+    &-list a {
+      font-size: .9em;
+    }
+
+    .logos svg {
+      height: 1.75em;
+      width: auto;
+    }
+  }
+
+  &-open {
+    overflow: hidden;
+
+    .nav-card {
+      overflow: hidden;
+    }
+  }
+
   &-padding {
     height: $navbar-safe-area;
+  }
+
+  &-backdrop {
+    position: fixed;
+    z-index: 9900;
+    background: rgba($black, .25);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }

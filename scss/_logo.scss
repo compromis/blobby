@@ -25,3 +25,29 @@
     }
   }
 }
+
+.mes-logo,
+.iniciativa-logo,
+.verds-logo {
+  &.mono .path {
+    fill: currentColor;
+  }
+}
+
+.mes-logo .path {
+  fill: $mes;
+}
+
+.iniciativa-logo {
+  .logo {
+    fill: $mes;
+  }
+
+  .letters {
+    fill: $gray-900;
+  }
+}
+
+.verds .path {
+  fill: $verds;
+}

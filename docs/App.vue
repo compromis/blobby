@@ -18,8 +18,18 @@ import CloseIcon from '../components/nav/CloseIcon.vue'
         </b-nav-item>
       </template>
     </b-nav-item>
-    <b-nav-item href="/hello">Item 2</b-nav-item>
-    <b-nav-item href="/hello">Item 3</b-nav-item>
+    <b-nav-item href="/hello">
+      Item 2
+    </b-nav-item>
+    <b-nav-item href="/hello">
+      Item 3
+    </b-nav-item>
+    <b-nav-item href="/hello">
+      Item 3
+    </b-nav-item>
+    <b-nav-item href="/hello">
+      Item 3
+    </b-nav-item>
 
     <template #logo-append>
       <a href="/">Logo alt</a>
@@ -39,6 +49,7 @@ import CloseIcon from '../components/nav/CloseIcon.vue'
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Mono&display=swap');
 @import '../scss/blobby';
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/tables';

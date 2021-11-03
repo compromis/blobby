@@ -1,4 +1,7 @@
 export { default as CompromisLogo } from './components/logo/CompromisLogo.vue'
+export { default as MesLogo } from './components/logo/MesLogo.vue'
+export { default as IniciativaLogo } from './components/logo/IniciativaLogo.vue'
+export { default as VerdsLogo } from './components/logo/VerdsLogo.vue'
 export { default as BCard } from './components/card/BCard.vue'
 export { default as BCardList } from './components/card/BCardList.vue'
 export { default as BCardSection } from './components/card/BCardSection.vue'

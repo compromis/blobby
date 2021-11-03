@@ -1,0 +1,33 @@
+.pill {
+  background-color: $white;
+  padding: .5em 1em;
+  border-radius: 10rem;
+  white-space: nowrap;
+
+  &:hover {
+    background: $gradient;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: var(--gray-900);
+  }
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  li {
+    margin: 0 .5em .5em 0;
+  }
+
+  a {
+    display: block;
+  }
+}
