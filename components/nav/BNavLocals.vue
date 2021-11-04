@@ -1,15 +1,27 @@
 <template>
   <div>
     <form class="search-form" @submit.prevent="filter">
-      <label for="municipality" class="visually-hidden">Municipi</label>
-      <input ref="municipality" type="search" name="municipality" class="form-control search-field" autocomplete="off" placeholder="Escriu el teu municipi" :value="territorialText ? territorialText : filterValue" @input="(e) => { territorialText = ''; filterValue = e.target.value; }" />
-      <input type="submit" name="municipality_filter" class="search-button visually-hidden visually-hidden-focusable" value="Filtra" />
-      <div v-if="!territorialText && !filterValue" class="search-icon" style="pointer-events: none;" aria-hidden="true">
-        <search-icon />
-      </div>
-      <button v-else class="search-icon search-reset" @click="territorialText = ''; filterValue = ''; $refs.municipality.focus();">
-        <back-icon /> <span class="visually-hidden">Neteja filtre</span>
-      </button>
+      <b-input
+        ref="municipality"
+        name="municipi"
+        label="Municipi"
+        no-label
+        type="search"
+        class="search-field"
+        autocomplete="off"
+        placeholder="Escriu el teu municipi"
+        :model-value="territorialText ? territorialText : filterValue"
+        size="sm"
+        @input="(e) => { territorialText = ''; filterValue = e.target.value; }"
+      >
+        <div v-if="!territorialText && !filterValue" class="search-icon" style="pointer-events: none;" aria-hidden="true">
+          <search-icon />
+        </div>
+        <button v-else class="search-icon search-reset" @click="territorialText = ''; filterValue = ''; $refs.municipality.$refs.input.focus();">
+          <back-icon /> <span class="visually-hidden">Neteja filtre</span>
+        </button>
+      </b-input>
+      <input type="submit" name="municipality_filter" class="search-button visually-hidden-focusable" value="Filtra" />
     </form>
     <ul v-if="filteredResults.length > 0" class="nav-network-list pill-list mt-2">
       <li v-if="territorialUrl">
@@ -30,11 +42,13 @@
 </template>
 
 <script>
+import BInput from '../inputs/BInput.vue'
 import SearchIcon from './SearchIcon.vue'
 import BackIcon from './BackIcon.vue'
 
 export default {
   components: {
+    BInput,
     BackIcon,
     SearchIcon
   },
@@ -92,26 +106,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.search-form {
-  position: relative;
-}
-
-.search-icon {
-  position: absolute;
-  top: 50%;
-  left: .8rem;
-  color: var(--text-muted);
-  width: 1em;
-  height: 1em;
-  margin-top: -.5em;
-  z-index: 10;
-}
-
-.search-button {
-  position: absolute;
-  right: .5rem;
-  top: .5rem;
-}
-</style>

@@ -1,5 +1,6 @@
 <script setup>
 import CardDocs from './sections/CardDocs.vue'
+import InputDocs from './sections/InputDocs.vue'
 import BNav from '../components/nav/BNav.vue'
 import BNavItem from '../components/nav/BNavItem.vue'
 import CloseIcon from '../components/nav/CloseIcon.vue'
@@ -43,6 +44,7 @@ import CloseIcon from '../components/nav/CloseIcon.vue'
     <main class="docs">
       <section>
         <card-docs />
+        <input-docs />
       </section>
     </main>
   </div>

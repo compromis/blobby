@@ -238,7 +238,7 @@ const cardList = reactive({
         </b-card>
       </div>
     </div>
-  </div>i
+  </div>
 </template>
 
 <style lang="scss">

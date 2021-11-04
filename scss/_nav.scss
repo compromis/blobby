@@ -96,6 +96,7 @@ $nav-y-padding: .85rem;
         border-radius: .25rem;
         white-space: nowrap;
         align-items: center;
+        width: 100%;
 
         &:hover {
           color: var(--text-color);
@@ -287,6 +288,42 @@ $nav-y-padding: .85rem;
     .logos svg {
       height: 1.75em;
       width: auto;
+    }
+
+    .search-form {
+      position: relative;
+
+      .search-field {
+        --input-padding: .5rem .75rem .5rem 2rem;
+        width: 100%;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        left: .6rem;
+        color: var(--text-muted);
+        transform: translateY(calc(-50% - 1px));
+        z-index: 10;
+
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      }
+      
+      .search-button {
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+      }
+
+      .search-reset {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
     }
   }
 
