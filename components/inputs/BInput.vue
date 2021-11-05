@@ -1,5 +1,15 @@
 <template>
-  <div :class="['input-field', `input-${variant}`, `input-${size}`, { 'input-has-errors': hasErrors, 'input-has-value': hasValue }]">
+  <div
+    :class="[
+      'input-field',
+      `input-${variant}`,
+      `input-${size}`,
+      spanClass,
+      {
+        'input-has-errors': hasErrors,
+        'input-has-value': hasValue || labelOnTop
+      }
+    ]">
     <label :for="name" :class="['input-label', 'text-sm', { 'visually-hidden': noLabel }]">
       {{ label }}
     </label>
@@ -41,6 +51,10 @@
         type: Boolean,
         default: false
       },
+      labelOnTop: {
+        type: Boolean,
+        default: false
+      },
       variant: {
         type: String,
         default: 'default',
@@ -51,13 +65,18 @@
         default: 'md',
         validator: (value) => ['sm', 'md', 'lg'].indexOf(value) !== -1
       },
+      
       error: {
         type: String,
         default: ''
       },
       block: {
         type: Boolean,
-        default: false
+        default: true
+      },
+      span: {
+        type: [String, Number, Object],
+        default: '4'
       }
     },
 
@@ -76,6 +95,18 @@
 
       hasValue () {
         return this.focused || !!this.modelValue
+      },
+
+      spanClass () {
+        const { span } = this
+
+        if (!span) return null
+
+        if (typeof span === 'object') {
+          return span
+        }
+
+        return `span-${span}`
       }
     }
   }

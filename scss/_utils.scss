@@ -126,3 +126,26 @@
 .text-gradient {
   @include gradient-text($gradient);
 }
+
+// Grid
+@for $i from 1 through 4 {
+  .span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+@include media-breakpoint-down (md) {
+  @for $i from 1 through 4 {
+    .md\:span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+}
+
+@include media-breakpoint-down (sm) {
+  @for $i from 1 through 4 {
+    .sm\:span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+}

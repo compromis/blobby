@@ -12,8 +12,8 @@
         'card-rises': rises
       }
     ]"
-    :to="to"
-    :href="href">
+    :to="to || null"
+    :href="href || null">
     <div :class="['card-content', { 'overlay-content': !!image }]">
       <slot />
     </div>
