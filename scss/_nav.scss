@@ -114,6 +114,17 @@ $nav-y-padding: .85rem;
         width: 1em;
         margin-right: .5rem;
       }
+
+      &-chev {
+        transform: rotate(-90deg);
+        height: .9em;
+        width: auto;
+        margin-left: .5rem;
+
+        @at-root .nav-menu-mobile & {
+          display: none;
+        }
+      }
     }
 
     & > li:hover .nav-submenu {

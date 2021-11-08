@@ -26,7 +26,7 @@
         </transition>
 
         <div class="nav-toggle">
-          <button id="nav-toggler" :aria-expanded="expanded ? 'true' : 'false'" aria-controls="nav-drawer" @click="expanded = !expanded">
+          <button id="nav-toggler" :aria-expanded="expanded ? 'true' : 'false'" aria-controls="nav-drawer" @click="toggleDrawer">
             <hamburger-icon v-if="!expanded" />
             <close-icon v-else />
             <span class="visually-hidden">Xarxa de webs de Compromís</span>
@@ -100,6 +100,10 @@
       onScroll () {
         const { scrollY } = window
         this.scrolled = scrollY > 24
+      },
+
+      toggleDrawer () {
+        this.expanded = !this.expanded
       }
     }
   }

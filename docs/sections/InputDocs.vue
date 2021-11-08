@@ -169,7 +169,7 @@ const inputGroup = reactive({
             <td>Object</td>
             <td></td>
             <td></td>
-            <td>Props de la card</td>
+            <td>Props de la <code>&lt;b-card&gt;</code></td>
             <td></td>
           </tr>
         </tbody>

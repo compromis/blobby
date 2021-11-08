@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import CompromisLogo from './CompromisLogo.vue'
+  import CompromisLogo from '../logos/CompromisLogo.vue'
 
   export default {
     components: {
