@@ -1,6 +1,11 @@
 <template>
-  <fieldset class="input-group">
-    <legend v-if="title || $slots.title" class="input-group-legend">
+  <fieldset class="input-card">
+    <legend
+      v-if="title || $slots.title"
+      :class="[
+        'input-card-legend',
+        { 'visually-hidden': titleHidden }
+      ]">
       {{ title }}
       <slot name="title" />
     </legend>
@@ -24,6 +29,11 @@
         default: ''
       },
 
+      titleHidden: {
+        type: Boolean,
+        default: false
+      },
+
       card: {
         type: Object,
         default: () => null
@@ -31,7 +41,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

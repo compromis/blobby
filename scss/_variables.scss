@@ -80,6 +80,7 @@ $text-3xl: 2.369rem !default;
 $text-4xl: 3.157rem !default;
 $text-5xl: 4.209rem !default;
 $text-6xl: 5.653rem !default;
+$text-7xl: 7rem !default;
 
 // Shadows
 $shadow-default: 0 .8rem 1.7rem -.3rem rgba($gray-darkest, .15),
@@ -157,7 +158,8 @@ $text-sizes: (
   '3xl': $text-3xl,
   '4xl': $text-4xl,
   '5xl': $text-5xl,
-  '6xl': $text-6xl
+  '6xl': $text-6xl,
+  '7xl': $text-7xl
 );
 
 $text-colors: (

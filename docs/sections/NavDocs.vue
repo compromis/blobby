@@ -24,9 +24,7 @@
             <td><code>lg</code></td>
             <td><code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code></td>
             <td>Breakpoint per amagar el menú</td>
-            <td>
-
-            </td>
+            <td></td>
           </tr>
           <tr>
             <td>menu-title</td>

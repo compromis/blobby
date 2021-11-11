@@ -1,7 +1,9 @@
 <script setup>
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import BInput from '../../components/inputs/BInput.vue'
 import BInputGroup from '../../components/inputs/BInputGroup.vue'
+import BRadio from '../../components/inputs/BRadio.vue'
+import BRadioGroup from '../../components/inputs/BRadioGroup.vue'
 
 const input = reactive({
   name: 'name',
@@ -20,6 +22,14 @@ const inputGroup = reactive({
   last_name: '',
   email: ''
 })
+
+const radio = reactive({
+  name: 'number',
+  card: true,
+  disabled: false
+})
+
+const radioValue = ref('one')
 </script>
 
 <template>
@@ -198,6 +208,95 @@ const inputGroup = reactive({
             name="email"
             span="4" />
         </b-input-group>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-cols">
+    <div class="docs-col-schema">
+      <h3>&lt;b-radio&gt;</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>nom</th>
+            <th>tipus</th>
+            <th>defecte</th>
+            <th>valors</th>
+            <th>descripció</th>
+            <th>play</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>String</td>
+            <td><span class="badge bg-gray">Required</span></td>
+            <td></td>
+            <td>Nom de l'input</td>
+            <td>
+              <b-input v-model="radio.name" type="text" size="sm" />
+            </td>
+          </tr>
+          <tr>
+            <td>value</td>
+            <td>String</td>
+            <td><span class="badge bg-gray">Required</span></td>
+            <td></td>
+            <td>Vaue de l'input</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>disabled</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Self-explanatory</td>
+            <td><input v-model="radio.disabled" type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>card</td>
+            <td>Bool, Object</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Si és una card. Opcionalment es poden passar les props de la <code>&lt;b-card&gt;</code> com a object</td>
+            <td><input v-model="radio.card" type="checkbox" value="true" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>&lt;b-radio-group&gt;</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>nom</th>
+            <th>tipus</th>
+            <th>defecte</th>
+            <th>valors</th>
+            <th>descripció</th>
+            <th>play</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>title</td>
+            <td>String</td>
+            <td></td>
+            <td></td>
+            <td>Títol del grup <span class="badge bg-gray">sr-only</span></td>
+            <td>
+              <b-input v-model="radioGroup.title" type="text" size="sm" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="docs-col-preview">
+      <div class="sticky">
+        <b-radio-group :title="radioGroup.title">
+          <b-radio v-model="radioValue" value="one" v-bind="radio">One</b-radio>
+          <b-radio v-model="radioValue" value="two" v-bind="radio">Two</b-radio>
+          <b-radio v-model="radioValue" value="three" v-bind="radio">Three</b-radio>
+        </b-radio-group>
+        <p>Value is {{ radioValue }}</p>
       </div>
     </div>
   </div>

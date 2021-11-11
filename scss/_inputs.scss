@@ -114,8 +114,8 @@
   }
 }
 
-// Input group
-.input-group {
+// Input card
+.input-card {
   &-legend {
     font-weight: 900;
     font-size: $text-2xl;
@@ -127,6 +127,39 @@
     background: var(--gray-300);
     gap: 1px;
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Radio group
+.radio-group {
+  display: flex;
+  gap: 1rem;
+
+  .radio-field.card {
+    position: relative;
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover:not(.disabled) {
+      transform: translateY(-5%);
+      box-shadow: $shadow-raised;
+    }
+
+    &:active:not(.disabled) {
+      transform: translateY(2.5%);
+    }
+
+    &:focus-within:not(.disabled) {
+      @include focus-shadow($primary);
+    }
+
+    &.selected {
+      background: $gradient;
+      color: $white;
+    }
+
+    &.disabled {
+      opacity: .5;
+    }
   }
 }
 
