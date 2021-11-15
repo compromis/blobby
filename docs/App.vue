@@ -89,6 +89,11 @@ import CloseIcon from '../components/nav/CloseIcon.vue'
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  &-col-preview {
+    padding-top: 4rem;
   }
 }
 

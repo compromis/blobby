@@ -1,6 +1,14 @@
 <template>
   <fieldset class="radio-group">
-    <legend v-if="title" class="visually-hidden">{{ title }}</legend>
+    <legend
+      v-if="title || $slots.title"
+      :class="[
+        'radio-group-legend',
+        { 'visually-hidden': titleHidden }
+      ]">
+      {{ title }}
+      <slot name="title" />
+    </legend>
     <slot></slot>
   </fieldset>
 </template>
@@ -11,11 +19,12 @@
       title: {
         type: String,
         default: ''
+      },
+
+      titleHidden: {
+        type: Boolean,
+        default: false
       }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -133,7 +133,8 @@
 // Radio group
 .radio-group {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
 
   .radio-field.card {
     position: relative;
@@ -161,6 +162,21 @@
       opacity: .5;
     }
   }
+
+  &-legend {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-weight: 900;
+    font-size: $text-2xl;
+    letter-spacing: -.02em;
+    margin: 0;
+  }
+}
+
+.input-field-with-slot {
+  background: var(--white);
+  padding: .75rem 1.25rem;
 }
 
 // Autocomplete background color
@@ -168,7 +184,7 @@
   input:-webkit-autofill,
   input:-webkit-autofill:hover, 
   input:-webkit-autofill:focus, 
-  input:-webkit-autofill:active{
+  input:-webkit-autofill:active {
       -webkit-box-shadow: 0 0 0 100px mix($yellow, $white, 20%) inset !important;
   }
 }

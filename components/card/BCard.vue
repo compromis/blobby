@@ -14,7 +14,7 @@
     ]"
     :to="to || null"
     :href="href || null">
-    <div :class="['card-content', { 'overlay-content': !!image }]">
+    <div :class="['card-content', { 'overlay-content': !!image }, ...computedContentClass]">
       <slot />
     </div>
     <div v-if="image && ['gradient', 'solid'].includes(type)" class="overlay-background">
@@ -77,6 +77,10 @@ export default {
     rises: {
       type: Boolean,
       default: false
+    },
+    contentClass: {
+      type: Array,
+      default: () => []
     }
   },
 
@@ -135,6 +139,14 @@ export default {
         return this.as
       }
       return 'div'
+    },
+
+    computedContentClass () {
+      if(typeof this.contentClass === 'string') {
+        return [this.contentClass]
+      }
+
+      return this.contentClass
     }
   }
 }

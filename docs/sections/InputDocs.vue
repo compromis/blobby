@@ -30,6 +30,11 @@ const radio = reactive({
 })
 
 const radioValue = ref('one')
+
+const radioGroup = reactive({
+  title: 'Grup',
+  titleHidden: false
+})
 </script>
 
 <template>
@@ -263,7 +268,8 @@ const radioValue = ref('one')
           </tr>
         </tbody>
       </table>
-      <h3>&lt;b-radio-group&gt;</h3>
+
+      <h3 class="mt-5">&lt;b-radio-group&gt;</h3>
       <table class="table">
         <thead>
           <tr>
@@ -281,9 +287,19 @@ const radioValue = ref('one')
             <td>String</td>
             <td></td>
             <td></td>
-            <td>Títol del grup <span class="badge bg-gray">sr-only</span></td>
+            <td>Títol del grup</td>
             <td>
               <b-input v-model="radioGroup.title" type="text" size="sm" />
+            </td>
+          </tr>
+          <tr>
+            <td>title-hidden</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Amaga el titol</td>
+            <td>
+              <input v-model="radioGroup.titleHidden" type="checkbox" />
             </td>
           </tr>
         </tbody>
@@ -291,12 +307,11 @@ const radioValue = ref('one')
     </div>
     <div class="docs-col-preview">
       <div class="sticky">
-        <b-radio-group :title="radioGroup.title">
+        <b-radio-group v-bind="radioGroup">
           <b-radio v-model="radioValue" value="one" v-bind="radio">One</b-radio>
           <b-radio v-model="radioValue" value="two" v-bind="radio">Two</b-radio>
           <b-radio v-model="radioValue" value="three" v-bind="radio">Three</b-radio>
         </b-radio-group>
-        <p>Value is {{ radioValue }}</p>
       </div>
     </div>
   </div>
