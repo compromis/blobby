@@ -4,7 +4,7 @@ import NavDocs from './sections/NavDocs.vue'
 import InputDocs from './sections/InputDocs.vue'
 import BNav from '../components/nav/BNav.vue'
 import BNavItem from '../components/nav/BNavItem.vue'
-import CloseIcon from '../components/nav/CloseIcon.vue'
+import CloseIcon from '../components/icons/CloseIcon.vue'
 </script>
 
 <template>

@@ -64,6 +64,7 @@
         color: var(--text-muted);
         pointer-events: none;
         transition: .25s ease;
+        z-index: 10;
       }
     }
 
@@ -177,6 +178,21 @@
 .input-field-with-slot {
   background: var(--white);
   padding: .75rem 1.25rem;
+}
+
+// Select
+.select-with-chevron {
+  position: relative;
+
+  .select-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+  }
 }
 
 // Autocomplete background color

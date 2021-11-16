@@ -43,8 +43,8 @@
 
 <script>
 import BInput from '../inputs/BInput.vue'
-import SearchIcon from './SearchIcon.vue'
-import BackIcon from './BackIcon.vue'
+import SearchIcon from '../icons/SearchIcon.vue'
+import BackIcon from '../icons/BackIcon.vue'
 
 export default {
   components: {

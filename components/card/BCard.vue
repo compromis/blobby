@@ -79,7 +79,7 @@ export default {
       default: false
     },
     contentClass: {
-      type: Array,
+      type: [Array, String],
       default: () => []
     }
   },

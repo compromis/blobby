@@ -52,8 +52,8 @@
 <script>
   import BNavNetwork from './BNavNetwork.vue'
   import CompromisLogo from '../logos/CompromisLogo.vue'
-  import HamburgerIcon from './HamburgerIcon.vue'
-  import CloseIcon from './CloseIcon.vue'
+  import HamburgerIcon from '../icons/HamburgerIcon.vue'
+  import CloseIcon from '../icons/CloseIcon.vue'
 
   export default {
     components: {

@@ -166,7 +166,8 @@ $text-colors: (
   'base': var(--text-color),
   'muted': var(--text-muted),
   'white': var(--white),
-  'primary': var(--primary)
+  'primary': var(--primary),
+  'red': $red
 );
 
 $gradients: (

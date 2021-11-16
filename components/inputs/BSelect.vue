@@ -2,6 +2,7 @@
   <div
     :class="[
       'input-field',
+      'select-field',
       `input-${variant}`,
       `input-${size}`,
       spanClass,
@@ -13,27 +14,37 @@
     <label :for="name" :class="['input-label', 'text-sm', { 'visually-hidden': noLabel }]">
       {{ label }}
     </label>
-    <input
-      :id="name"
-      ref="input"
-      :name="name"
-      :value="modelValue"
-      v-bind="$attrs"
-      :class="['input', { 'w-100': block }]"
-      :aria-describedby="error ? name + 'Errors' : null"
-      @input="$emit('update:modelValue', $event.target.value)"
-      @focus="focused = true"
-      @blur="focused = false"
-    />
+    <div class="select-with-chevron">
+      <select
+        :id="name"
+        ref="input"
+        :name="name"
+        :value="modelValue"
+        v-bind="$attrs"
+        :class="['input', 'select', { 'w-100': block }]"
+        :aria-describedby="error ? name + 'Errors' : null"
+        @change="$emit('update:modelValue', $event.target.value)"
+        @focus="focused = true"
+        @blur="focused = false"
+      >
+        <slot />
+      </select>
+      <down-icon class="select-icon" />
+    </div>
     <div v-if="hasErrors" :id="name + 'Errors'" class="field-errors mt-1 text-sm">
       {{ error }}
     </div>
-    <slot></slot>
   </div>
 </template>
 
 <script>
+  import DownIcon from '../icons/DownIcon.vue'
+
   export default {
+    components: {
+      DownIcon
+    },
+  
     props: {
       modelValue: {
         type: String,

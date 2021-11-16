@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import BackIcon from './BackIcon.vue'
+  import BackIcon from '../icons/BackIcon.vue'
 
   export default {
     components: {

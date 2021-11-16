@@ -4,6 +4,7 @@ import BInput from '../../components/inputs/BInput.vue'
 import BInputGroup from '../../components/inputs/BInputGroup.vue'
 import BRadio from '../../components/inputs/BRadio.vue'
 import BRadioGroup from '../../components/inputs/BRadioGroup.vue'
+import BSelect from '../../components/inputs/BSelect.vue'
 
 const input = reactive({
   name: 'name',
@@ -29,12 +30,14 @@ const radio = reactive({
   disabled: false
 })
 
-const radioValue = ref('one')
+const radioValue = ref('two')
 
 const radioGroup = reactive({
   title: 'Grup',
   titleHidden: false
 })
+
+const selectValue = ref('')
 </script>
 
 <template>
@@ -312,6 +315,13 @@ const radioGroup = reactive({
           <b-radio v-model="radioValue" value="two" v-bind="radio">Two</b-radio>
           <b-radio v-model="radioValue" value="three" v-bind="radio">Three</b-radio>
         </b-radio-group>
+
+        <b-select v-model="selectValue" name="select" label="Label" variant="float">
+          <option value="one">Option 1</option>
+          <option value="two">Option 2</option>
+        </b-select>
+
+        Value is {{ selectValue }}
       </div>
     </div>
   </div>
