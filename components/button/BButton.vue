@@ -1,6 +1,6 @@
 <template>
-  <component :is="tag" :to="to" :href="href" :class="['button', `button-${variant}`, `button-${size}`]">
-    <slot />
+  <component :is="tag" :to="to" :href="href" :class="['button', `button-${variant}`, `text-${size}`, `button-${size}`, `button-${type}`]">
+    <span><slot /></span>
   </component>
 </template>
 
@@ -14,6 +14,10 @@
       href: {
         type: String,
         default: null
+      },
+      type: {
+        type: String,
+        default: 'solid'
       },
       variant: {
         type: String,
