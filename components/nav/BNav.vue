@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['nav', 'container', { 'nav-scrolled': scrolled, 'nav-expanded': expanded }]">
+  <nav :class="['nav', { 'container': !fullWidth, 'container-fluid': fullWidth, 'nav-scrolled': scrolled, 'nav-expanded': expanded }]">
     <div class="nav-card bg-white rounded-xs shadow">
       <div class="nav-bar d-flex">
         <slot name="logo">
@@ -71,6 +71,10 @@
       menuTitle: {
         type: String,
         default: 'Menú principal'
+      },
+      fullWidth: {
+        type: Boolean,
+        default: false
       }
     },
 

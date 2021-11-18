@@ -9,7 +9,7 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
 </script>
 
 <template>
-  <b-nav>
+  <b-nav full-width>
     <b-nav-item href="/hello" :icon="CloseIcon">
       Item 1
       <template #submenu>
@@ -79,7 +79,7 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
 }
 
 .container-fluid {
-  padding: 3rem;
+  padding: 0 2rem;
 }
 
 .docs {

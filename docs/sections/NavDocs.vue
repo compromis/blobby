@@ -27,6 +27,14 @@
             <td></td>
           </tr>
           <tr>
+            <td>full-width</td>
+            <td>Boolean</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Fa que l'amplària de la nav siga el 100%</td>
+            <td></td>
+          </tr>
+          <tr>
             <td>menu-title</td>
             <td>String</td>
             <td><code>Menú principal</code></td>

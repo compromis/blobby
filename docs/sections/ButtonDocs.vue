@@ -132,13 +132,9 @@ const button = reactive({
     <div class="docs-col-preview">
       <div class="sticky">
         <b-button
-          :type="button.type"
-          :variant="button.variant"
-          :size="button.size"
-          :has-shadow="button.hasShadow"
-          :focus-dark="button.focusDark"
+          v-bind="button"
           class="mb-4">
-          Aasfdasf ->
+          Anar ->
         </b-button>
       </div>
     </div>
