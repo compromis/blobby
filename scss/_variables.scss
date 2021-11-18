@@ -1,5 +1,5 @@
 // Brand colors
-$primary: #FF6720 !default;
+$primary: #ff6720 !default;
 $gray-darkest: #353949 !default;
 $gray-lightest: #f8faff !default;
 $black: $gray-darkest !default;
@@ -12,12 +12,12 @@ $gradient-feminism-start: #7d3a81 !default;
 $gradient-feminism-end: #c54687 !default;
 
 // Secondary colors
-$yellow: #FFD10F !default;
-$orange: #F79226 !default;
-$red: #EF404D !default;
-$purple: #A14A9C !default;
-$blue: #55A4DB !default;
-$green: #7FC347 !default;
+$yellow: #ffd10f !default;
+$orange: #f79226 !default;
+$red: #ef404d !default;
+$purple: #a14a9c !default;
+$blue: #55a4db !default;
+$green: #7fc347 !default;
 $indigo: #6610f2 !default;
 $pink: #d63384 !default;
 $teal: #20c997 !default;
@@ -36,7 +36,7 @@ $social-networks: (
   youtube: #ff0800,
   telegram: #08c,
   tiktok: #000,
-  twitch: #772ce8
+  twitch: #772ce8,
 );
 
 // Grays
@@ -51,11 +51,41 @@ $gray-800: mix($gray-darkest, $gray-lightest, 90%);
 $gray-900: $gray-darkest;
 
 // Gradients
-$gradient: linear-gradient(var(--gradient-orientation, 45deg), var(--gradient-start, #{$gradient-primary-start}), var(--gradient-end, #{$gradient-primary-end}));
-$gradient-primary: linear-gradient(var(--gradient-orientation, 45deg), $gradient-primary-start, $gradient-primary-end) !default;
-$gradient-secondary: linear-gradient(var(--gradient-orientation, 45deg), $gradient-secondary-start, $gradient-secondary-end) !default;
-$gradient-feminista: linear-gradient(var(--gradient-orientation, 45deg), $gradient-feminism-start, $gradient-feminism-end) !default;
-$gradient-lgtb: linear-gradient(180deg, $red 0%, $red 16.6%, $orange 16.6%, $orange 33.2%, $yellow 33.2%, $yellow 49.8%, $green 49.8%, $green 66.4%, $blue 66.4%, $blue 83%, $purple 83%, $purple 100%) !default;
+$gradient: linear-gradient(
+  var(--gradient-orientation, 45deg),
+  var(--gradient-start, #{$gradient-primary-start}),
+  var(--gradient-end, #{$gradient-primary-end})
+);
+$gradient-primary: linear-gradient(
+  var(--gradient-orientation, 45deg),
+  $gradient-primary-start,
+  $gradient-primary-end
+) !default;
+$gradient-secondary: linear-gradient(
+  var(--gradient-orientation, 45deg),
+  $gradient-secondary-start,
+  $gradient-secondary-end
+) !default;
+$gradient-feminista: linear-gradient(
+  var(--gradient-orientation, 45deg),
+  $gradient-feminism-start,
+  $gradient-feminism-end
+) !default;
+$gradient-lgtb: linear-gradient(
+  180deg,
+  $red 0%,
+  $red 16.6%,
+  $orange 16.6%,
+  $orange 33.2%,
+  $yellow 33.2%,
+  $yellow 49.8%,
+  $green 49.8%,
+  $green 66.4%,
+  $blue 66.4%,
+  $blue 83%,
+  $purple 83%,
+  $purple 100%
+) !default;
 
 // UI colors
 $body-bg: $gray-lightest !default;
@@ -67,11 +97,12 @@ $link-decoration: none !default;
 $link-decoration-hover: underline;
 
 // Typography
-$font-family-sans-serif: 'Manrope', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif: 'Manrope', system-ui, -apple-system, 'Segoe UI',
+  Helvetica, Arial, sans-serif !default;
 
 // Font sizes
-$text-xs: .75rem !default;
-$text-sm: .875rem !default;
+$text-xs: 0.75rem !default;
+$text-sm: 0.875rem !default;
 $text-md: 1rem !default;
 $text-lg: 1.125rem !default;
 $text-xl: 1.25rem !default;
@@ -83,17 +114,17 @@ $text-6xl: 5.653rem !default;
 $text-7xl: 7rem !default;
 
 // Shadows
-$shadow-default: 0 .8rem 1.7rem -.3rem rgba($gray-darkest, .15),
-    0 .5rem 1rem -.5rem rgba($gray-darkest, .2),
-    0 -.4rem 1rem -.4rem rgba($gray-darkest, .015) !default;
-$shadow-raised: 0 1.25rem 2.1rem -.3rem rgba($gray-darkest, .15),
-    0 .9rem 1.4rem -.5rem rgba($gray-darkest, .2),
-    0 -.75rem 1.4rem -.4rem rgba($gray-darkest, .015) !default;
+$shadow-default: 0 0.8rem 1.7rem -0.3rem rgba($gray-darkest, 0.15),
+  0 0.5rem 1rem -0.5rem rgba($gray-darkest, 0.2),
+  0 -0.4rem 1rem -0.4rem rgba($gray-darkest, 0.015) !default;
+$shadow-raised: 0 1.25rem 2.1rem -0.3rem rgba($gray-darkest, 0.15),
+  0 0.9rem 1.4rem -0.5rem rgba($gray-darkest, 0.2),
+  0 -0.75rem 1.4rem -0.4rem rgba($gray-darkest, 0.015) !default;
 $box-shadow: $shadow-default;
 
 // Border radii
-$border-radius-xs: .5rem !default;
-$border-radius-sm: .75rem !default;
+$border-radius-xs: 0.5rem !default;
+$border-radius-sm: 0.75rem !default;
 $border-radius-md: 1rem !default;
 $border-radius-lg: 1.5rem !default;
 $border-radius-xl: 2rem !default;
@@ -122,30 +153,30 @@ $css-vars: (
   'text-color': $text-color,
   'text-muted': $text-muted,
   'link-color': $link-color,
-  'link-color-hover': $link-color-hover
+  'link-color-hover': $link-color-hover,
 );
 
 $backgrounds: (
   'white': (
     'bg': var(--white),
-    'text': var(--black)
+    'text': var(--black),
   ),
   'dark': (
     'bg': var(--black),
-    'text': var(--white)
+    'text': var(--white),
   ),
   'primary': (
     'bg': var(--primary),
-    'text': var(--white)
+    'text': var(--white),
   ),
   'gray': (
     'bg': var(--gray-700),
-    'text': var(--white)
+    'text': var(--white),
   ),
   'gradient': (
     'bg': $gradient,
-    'text': $white
-  )
+    'text': $white,
+  ),
 );
 
 $text-sizes: (
@@ -159,7 +190,7 @@ $text-sizes: (
   '4xl': $text-4xl,
   '5xl': $text-5xl,
   '6xl': $text-6xl,
-  '7xl': $text-7xl
+  '7xl': $text-7xl,
 );
 
 $text-colors: (
@@ -167,7 +198,7 @@ $text-colors: (
   'muted': var(--text-muted),
   'white': var(--white),
   'primary': var(--primary),
-  'red': $red
+  'red': $red,
 );
 
 $gradients: (
@@ -177,12 +208,12 @@ $gradients: (
   ),
   'secondary': (
     'start': $gradient-secondary-start,
-    'end': $gradient-secondary-end
+    'end': $gradient-secondary-end,
   ),
   'feminism': (
     'start': $gradient-feminism-start,
-    'end': $gradient-feminism-end
-  )
+    'end': $gradient-feminism-end,
+  ),
 );
 
 $border-radii: (
@@ -190,5 +221,5 @@ $border-radii: (
   'sm': $border-radius-sm,
   'md': $border-radius-md,
   'lg': $border-radius-lg,
-  'xl': $border-radius-xl
+  'xl': $border-radius-xl,
 );

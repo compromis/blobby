@@ -6,6 +6,8 @@ const button = reactive({
   type: 'solid',
   variant: 'default',
   size: 'md',
+  hasShadow: false,
+  focusDark: false,
   to: '',
   href: '',
   as: ''
@@ -53,6 +55,7 @@ const button = reactive({
                 <option>default</option>
                 <option>inverted</option>
                 <option>muted</option>
+                <option>supermuted</option>
                 <option>primary</option>
                 <option>secondary</option>
               </select>
@@ -71,6 +74,26 @@ const button = reactive({
                 <option>lg</option>
                 <option>xl</option>
               </select>
+            </td>
+          </tr>
+          <tr>
+            <td>hasShadow</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Activa o desactiva la sombra del botó</td>
+            <td>
+              <input v-model="button.hasShadow" type="checkbox">
+            </td>
+          </tr>
+          <tr>
+            <td>focusDark</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Canvia el color del contorn de l'estat focus a negre</td>
+            <td>
+              <input v-model="button.focusDark" type="checkbox">
             </td>
           </tr>
           <tr>
@@ -112,6 +135,8 @@ const button = reactive({
           :type="button.type"
           :variant="button.variant"
           :size="button.size"
+          :has-shadow="button.hasShadow"
+          :focus-dark="button.focusDark"
           class="mb-4">
           Aasfdasf ->
         </b-button>

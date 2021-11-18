@@ -30,25 +30,15 @@
     color: var(--white);
   }
 
+  &-supermuted {
+    --button-color: var(--gray-100);
+    color: var(--gray-700);
+  }
+
   //Types
   &-solid {
     background: var(--button-color);
-    box-shadow: $shadow-default;
     transition: 0.25s ease;
-
-    &:hover {
-      box-shadow: $shadow-raised;
-      transform: translateY(-3%);
-    }
-
-    &.button-sm {
-      box-shadow: none;
-
-      &:hover {
-        transform: none;
-        box-shadow: none;
-      }
-    }
   }
 
   &-outline {
@@ -56,18 +46,10 @@
     border-color: var(--button-color);
     border-style: solid;
     color: var(--button-color);
+    transition: 0.25s ease;
 
-    &:hover {
-      background: var(--button-color);
-      color: $white;
-    }
-
-    &.button-default:hover {
-      color: var(--black);
-    }
-
-    &.button-inverted:hover {
-      color: var(--white);
+    &.button-supermuted {
+      color: var(--gray-700);
     }
 
     &.button-primary,
@@ -94,6 +76,37 @@
         }
       }
     }
+
+    &:hover {
+      background: var(--button-color);
+      color: $white;
+    }
+
+    &.button-default:hover {
+      color: var(--black);
+    }
+
+    &.button-inverted:hover {
+      color: var(--white);
+    }
+
+    &.button-supermuted:hover {
+      color: var(--black);
+      background: var(--white);
+      border-color: var(--white);
+    }
+  }
+
+  //Shadow
+  &-has-shadow {
+    &.button-solid {
+      box-shadow: $shadow-default;
+    }
+
+    &:hover {
+      box-shadow: $shadow-raised;
+      transform: translateY(-4%);
+    }
   }
 
   //Sizes
@@ -107,5 +120,22 @@
 
   &-xl {
     --border-radius: #{$border-radius-md};
+  }
+
+  //Focus
+  &:focus {
+    @include focus-shadow($primary);
+  }
+
+  &-focus-dark:focus {
+    @include focus-shadow($black);
+  }
+
+  &-secondary:focus {
+    @include focus-shadow($gradient-secondary-start);
+  }
+
+  &-primary:focus {
+    @include focus-shadow($primary);
   }
 }

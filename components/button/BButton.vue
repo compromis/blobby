@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :to="to" :href="href" :class="['button', `button-${variant}`, `text-${size}`, `button-${size}`, `button-${type}`]">
+  <component :is="tag" :to="to" :href="href" :class="['button', `button-${variant}`, `text-${size}`, `button-${size}`, `button-${type}`, {'button-has-shadow' : hasShadow}, {'button-focus-dark' : focusDark}]">
     <span><slot /></span>
   </component>
 </template>
@@ -26,6 +26,14 @@
       size: {
         type: String,
         default: 'md'
+      },
+      hasShadow: {
+        type: Boolean,
+        default: false,
+      },
+      focusDark: {
+        type: Boolean,
+        default: false,
       }
     },
     computed: {
