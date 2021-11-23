@@ -23,15 +23,19 @@
       </b-input>
       <input type="submit" name="municipality_filter" class="search-button visually-hidden-focusable" value="Filtra" />
     </form>
-    <ul v-if="filteredResults.length > 0" class="nav-network-list pill-list mt-2">
-      <li v-if="territorialUrl">
-        <a class="pill" :href="territorialUrl">Web comarcal</a>
-      </li>
-      <li v-for="website in filteredResults" :key="website.id">
-        <a v-if="website.hasOwnProperty('territori_id')" class="pill" :href="website.url ? website.url : `https://compromis.net/info/local/#/${website.ref}`"><span>{{ website.name }}</span></a>
-        <a v-else class="pill" href="#" @click.prevent="setTerritory(website)"><span>{{ website.name }}</span></a>
-      </li>
-    </ul>
+    <b-pill-list v-if="filteredResults.length > 0" class="nav-network-list mt-2">
+      <b-pill v-if="territorialUrl" variant="to-primary" :href="territorialUrl">
+        Web comarcal
+      </b-pill>
+      <template v-for="website in filteredResults">
+        <b-pill v-if="website.hasOwnProperty('territori_id')" :key="website.id" variant="to-primary" :href="website.url ? website.url : `https://compromis.net/info/local/#/${website.ref}`">
+          {{ website.name }}
+        </b-pill>
+        <b-pill v-else :key="website.id" variant="to-primary" href="#" @click.prevent="setTerritory(website)">
+            {{ website.name }}
+        </b-pill>
+      </template>
+    </b-pill-list>
     <div v-else-if="loading" class="mt-2 text-muted">
       Carregant...
     </div>
@@ -45,12 +49,16 @@
 import BInput from '../inputs/BInput.vue'
 import SearchIcon from '../icons/SearchIcon.vue'
 import BackIcon from '../icons/BackIcon.vue'
+import BPill from '../pill/BPill.vue'
+import BPillList from '../pill/BPillList.vue'
 
 export default {
   components: {
     BInput,
     BackIcon,
-    SearchIcon
+    SearchIcon,
+    BPill,
+    BPillList
   },
 
   data () {

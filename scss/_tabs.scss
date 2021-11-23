@@ -1,0 +1,80 @@
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  .tab {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0.5em 1em;
+    border-radius: 10rem;
+    white-space: nowrap;
+
+    &.selected {
+      background: $gradient-primary;
+      color: var(--white);
+
+      &:hover {
+        background: $gradient-primary;
+        color: var(--white);
+      }
+    }
+
+    &:focus {
+      @include focus-shadow($primary);
+    }
+  }
+
+  &-default .tab {
+    background-color: var(--gray-100);
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--gray-200);
+      color: var(--black);
+    }
+  }
+
+  &-outline .tab {
+    background: transparent;
+    border: 1px solid var(--gray-600);
+    color: var(--gray-600);
+
+    &.selected {
+      border-style: solid;
+      border-width: 1px;
+      border-color: transparent;
+      background: $gradient-primary padding-box, $gradient-primary border-box;
+      color: var(--white);
+
+      &:hover {
+        background: $gradient-primary padding-box, $gradient-primary border-box;
+      }
+    }
+
+    &:hover {
+      background: var(--gray-600);
+      color: var(--white);
+    }
+  }
+
+  &-sm .tab {
+    font-size: $text-sm;
+  }
+
+  &-lg .tab {
+    font-size: $text-lg;
+  }
+
+  &-focus-dark .tab:focus {
+    @include focus-shadow($black);
+  }
+
+  button {
+    margin: 0 0.5em 0.5em 0;
+  }
+}

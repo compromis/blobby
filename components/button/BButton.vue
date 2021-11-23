@@ -1,5 +1,18 @@
 <template>
-  <component :is="tag" :to="to" :href="href" :class="['button', `button-${variant}`, `text-${size}`, `button-${size}`, `button-${type}`, {'button-has-shadow' : hasShadow}, {'button-focus-dark' : focusDark}]">
+  <component
+    :is="tag"
+    :to="to"
+    :href="href"
+    :class="[
+      'button',
+      `button-${variant}`,
+      `text-${size}`,
+      `button-${size}`,
+      `button-${type}`,
+      { 'button-has-shadow' : hasShadow },
+      { 'button-focus-dark' : focusDark },
+      { 'w-100 d-block': block }
+    ]">
     <span><slot /></span>
   </component>
 </template>
@@ -26,6 +39,10 @@
       size: {
         type: String,
         default: 'md'
+      },
+      block: {
+        type: Boolean,
+        default: false
       },
       hasShadow: {
         type: Boolean,

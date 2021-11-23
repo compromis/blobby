@@ -2,7 +2,7 @@
   appearance: none;
   border: none;
   background: none;
-  padding: var(--button-padding, 0.6em 1em);
+  padding: 0.6em 1.5em;
   border-radius: var(--border-radius, #{$border-radius-sm});
 
   //Variants (Colors)
@@ -120,6 +120,7 @@
 
   &-xl {
     --border-radius: #{$border-radius-md};
+    padding: 1.25rem calc(1.5rem + 3vw);
   }
 
   //Focus

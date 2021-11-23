@@ -1,17 +1,48 @@
 .pill {
-  background-color: $white;
-  padding: .5em 1em;
+  background-color: var(--white);
+  color: $primary;
   border-radius: 10rem;
   white-space: nowrap;
+  padding: 0.5em 1em;
+
+  &-sm {
+    font-size: $text-sm;
+  }
+
+  &-lg {
+    font-size: $text-lg;
+  }
 
   &:hover {
-    background: $gradient;
-    color: $white;
+    background-color: var(--gray-100);
+    color: var(--black);
     text-decoration: none;
   }
 
-  &:active {
-    background: var(--gray-900);
+  &-to-primary:hover {
+    background: $gradient;
+    color: var(--white);
+  }
+
+  &-to-secondary {
+    color: $gradient-secondary-start;
+
+    &:hover {
+      color: var(--white);
+      background: $gradient-secondary;
+    }
+
+    &:focus {
+      @include focus-shadow($gradient-secondary-start);
+    }
+  }
+
+  &:focus {
+    @include focus-shadow($primary);
+  }
+
+  &-focus-dark:focus {
+    @include focus-shadow($black);
   }
 }
 
@@ -24,7 +55,7 @@
   line-height: 1;
 
   li {
-    margin: 0 .5em .5em 0;
+    margin: 0 0.5em 0.5em 0;
   }
 
   a {

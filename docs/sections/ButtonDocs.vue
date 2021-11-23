@@ -6,6 +6,7 @@ const button = reactive({
   type: 'solid',
   variant: 'default',
   size: 'md',
+  block: false,
   hasShadow: false,
   focusDark: false,
   to: '',
@@ -74,6 +75,16 @@ const button = reactive({
                 <option>lg</option>
                 <option>xl</option>
               </select>
+            </td>
+          </tr>
+          <tr>
+            <td>block</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Si el botó el full width</td>
+            <td>
+              <input v-model="button.block" type="checkbox">
             </td>
           </tr>
           <tr>

@@ -3,6 +3,8 @@ import CardDocs from './sections/CardDocs.vue'
 import NavDocs from './sections/NavDocs.vue'
 import InputDocs from './sections/InputDocs.vue'
 import ButtonDocs from './sections/ButtonDocs.vue'
+import PillDocs from './sections/PillDocs.vue'
+import TabDocs from './sections/TabDocs.vue'
 import BNav from '../components/nav/BNav.vue'
 import BNavItem from '../components/nav/BNavItem.vue'
 import CloseIcon from '../components/icons/CloseIcon.vue'
@@ -49,6 +51,8 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
         <nav-docs />
         <input-docs />
         <button-docs />
+        <pill-docs />
+        <tab-docs />
       </section>
     </main>
   </div>
