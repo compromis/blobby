@@ -7,21 +7,43 @@
 
   &-sm {
     font-size: $text-sm;
+    padding: .25em .5em;
   }
 
   &-lg {
     font-size: $text-lg;
   }
 
+  &-muted {
+    background: var(--gray-600);
+    color: $white;
+  }
+
+  &-supermuted {
+    color: var(--text-muted);
+  }
+}
+
+a.pill {
   &:hover {
     background-color: var(--gray-100);
     color: var(--black);
     text-decoration: none;
   }
 
-  &-to-primary:hover {
-    background: $gradient;
-    color: $white;
+  &:focus {
+    @include focus-shadow($primary);
+  }
+
+  &-focus-dark:focus {
+    @include focus-shadow($black);
+  }
+
+  &-to-primary {
+    &:hover {
+      background: $gradient;
+      color: $white;
+    }
   }
 
   &-to-secondary {
@@ -35,14 +57,6 @@
     &:focus {
       @include focus-shadow($gradient-secondary-start);
     }
-  }
-
-  &:focus {
-    @include focus-shadow($primary);
-  }
-
-  &-focus-dark:focus {
-    @include focus-shadow($black);
   }
 }
 
@@ -58,7 +72,7 @@
     margin: 0 0.5em 0.5em 0;
   }
 
-  a {
+  .pill {
     display: block;
   }
 }

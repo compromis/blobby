@@ -184,6 +184,10 @@
 .select-with-chevron {
   position: relative;
 
+  .select {
+    padding-right: 2.5rem;
+  }
+
   .select-icon {
     position: absolute;
     right: 1rem;
@@ -192,6 +196,15 @@
     width: 1em;
     height: 1em;
     pointer-events: none;
+  }
+}
+
+.select-field.input-float {
+  background: var(--white);
+
+  &:focus-within {
+    @include focus-shadow($primary);
+    outline: 10px black solid;
   }
 }
 

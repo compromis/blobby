@@ -118,6 +118,10 @@
     --border-radius: #{$border-radius-xs};
   }
 
+  &-md {
+    --border-radius: #{$border-radius-sm};
+  }
+
   &-lg {
     --border-radius: #{$border-radius-sm};
   }

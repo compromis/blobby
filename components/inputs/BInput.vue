@@ -41,11 +41,11 @@
       },
       name: {
         type: String,
-        required: true
+        default: null
       },
       label: {
         type: String,
-        required: true
+        default: null
       },
       noLabel: {
         type: Boolean,

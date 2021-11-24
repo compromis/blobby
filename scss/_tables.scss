@@ -3,7 +3,6 @@
 
   td {
     padding: var(--card-padding, 0.75rem 1rem);
-    background: var(--gray-50);
   }
 
   th {
@@ -17,13 +16,17 @@
   }
 
   &.vertical-divisions {
-    td,
-    th {
+    td:not(:last-child),
+    th:not(:last-child) {
       border-right: 1px solid var(--gray-200);
     }
   }
 
   &.tint-alternate-rows {
+    tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
     tr:nth-child(odd) td {
       background: var(--white);
     }
