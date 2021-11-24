@@ -21,14 +21,14 @@
 
   &-to-primary:hover {
     background: $gradient;
-    color: var(--white);
+    color: $white;
   }
 
   &-to-secondary {
     color: $gradient-secondary-start;
 
     &:hover {
-      color: var(--white);
+      color: $white;
       background: $gradient-secondary;
     }
 

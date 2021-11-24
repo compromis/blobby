@@ -39,6 +39,10 @@
   &-solid {
     background: var(--button-color);
     transition: 0.25s ease;
+
+    &.button-default {
+      color: var(--black);
+    }
   }
 
   &-outline {

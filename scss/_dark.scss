@@ -1,0 +1,5 @@
+.dark {
+  @each $name, $value in $css-vars-dark {
+    --#{$name}: #{$value};
+  }
+}

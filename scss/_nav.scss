@@ -1,6 +1,6 @@
 $nav-separation: 24px;
 $nav-x-padding: 1rem;
-$nav-y-padding: .85rem;
+$nav-y-padding: 0.85rem;
 
 .nav {
   position: absolute;
@@ -21,7 +21,7 @@ $nav-y-padding: .85rem;
 
   &-card {
     padding: $nav-y-padding $nav-x-padding;
-    transition: border-radius .25s ease;
+    transition: border-radius 0.25s ease;
   }
 
   &-logo {
@@ -33,7 +33,7 @@ $nav-y-padding: .85rem;
     margin-right: auto;
 
     &-compromis {
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       padding: $nav-y-padding $nav-x-padding;
       margin: #{-$nav-y-padding} #{-$nav-x-padding};
       line-height: 1;
@@ -54,10 +54,10 @@ $nav-y-padding: .85rem;
 
       a {
         display: block;
-        border-radius: .25rem;
-        padding: $nav-y-padding .5rem;
-        margin: #{-$nav-y-padding} -.5rem;
-        margin-left: .25rem;
+        border-radius: 0.25rem;
+        padding: $nav-y-padding 0.5rem;
+        margin: #{-$nav-y-padding} -0.5rem;
+        margin-left: 0.25rem;
         color: var(--text-muted);
         line-height: 1;
 
@@ -90,10 +90,10 @@ $nav-y-padding: .85rem;
         display: flex;
         font-size: 1.25em;
         color: var(--text-muted);
-        padding: $nav-y-padding .75rem;
+        padding: $nav-y-padding 0.75rem;
         margin: #{-$nav-y-padding} 0;
         line-height: 1;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         white-space: nowrap;
         align-items: center;
         width: 100%;
@@ -112,14 +112,14 @@ $nav-y-padding: .85rem;
       &-icon {
         height: 1em;
         width: 1em;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
       }
 
       &-chev {
         transform: rotate(-90deg);
-        height: .9em;
+        height: 0.9em;
         width: auto;
-        margin-left: .5rem;
+        margin-left: 0.5rem;
 
         @at-root .nav-menu-mobile & {
           display: none;
@@ -135,7 +135,7 @@ $nav-y-padding: .85rem;
       transition-delay: 0s;
     }
 
-    &-abridged li:nth-child(n+6) {
+    &-abridged li:nth-child(n + 6) {
       display: none;
     }
 
@@ -150,7 +150,7 @@ $nav-y-padding: .85rem;
         font-weight: 900;
         font-size: $text-2xl;
         color: var(--text-color);
-        padding: .75rem;
+        padding: 0.75rem;
 
         &:hover {
           @include gradient-text($gradient);
@@ -166,17 +166,18 @@ $nav-y-padding: .85rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background: rgba($white, .85);
+    background: rgba($white, 0.85);
     top: 4rem;
     min-width: 18rem;
     padding: 1rem;
     backdrop-filter: blur(0) saturate(0);
     z-index: 11000;
     box-shadow: $shadow-default;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     flex-direction: column;
     opacity: 0;
-    transition: visibility 0s linear .2s, opacity .2s ease, transform .2s ease;
+    transition: visibility 0s linear 0.2s, opacity 0.2s ease,
+      transform 0.2s ease;
     transform: translateY(15px) rotateX(-20deg);
     transform-origin: 0 -15px;
     will-change: visibility, opacity, transform, backdrop-filter;
@@ -190,7 +191,7 @@ $nav-y-padding: .85rem;
       font-weight: bold;
       color: var(--text-color);
       margin: 0;
-      padding: .5rem;
+      padding: 0.5rem;
 
       &:hover {
         @include gradient-text($gradient);
@@ -202,8 +203,8 @@ $nav-y-padding: .85rem;
       position: absolute;
       top: -1rem;
       left: 2.25rem;
-      border: .5rem solid transparent;
-      border-bottom: .5rem solid rgba($white, .85);
+      border: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid rgba($white, 0.85);
     }
 
     &:after {
@@ -223,7 +224,7 @@ $nav-y-padding: .85rem;
     border-left: 1px var(--gray-200) solid;
 
     button {
-      background: $white;
+      background: var(--white);
       border: 0;
       display: flex;
       align-items: center;
@@ -284,7 +285,7 @@ $nav-y-padding: .85rem;
       color: var(--gray-700);
       font-size: 1rem;
       text-decoration: none;
-      letter-spacing: .05em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
@@ -293,7 +294,7 @@ $nav-y-padding: .85rem;
     }
 
     &-list a {
-      font-size: .9em;
+      font-size: 0.9em;
     }
 
     .logos svg {
@@ -305,14 +306,14 @@ $nav-y-padding: .85rem;
       position: relative;
 
       .search-field {
-        --input-padding: .5rem .75rem .5rem 2rem;
+        --input-padding: 0.5rem 0.75rem 0.5rem 2rem;
         width: 100%;
       }
 
       .search-icon {
         position: absolute;
         top: 50%;
-        left: .6rem;
+        left: 0.6rem;
         color: var(--text-muted);
         transform: translateY(calc(-50% - 1px));
         z-index: 10;
@@ -322,11 +323,11 @@ $nav-y-padding: .85rem;
           height: 1em;
         }
       }
-      
+
       .search-button {
         position: absolute;
-        right: .5rem;
-        top: .5rem;
+        right: 0.5rem;
+        top: 0.5rem;
       }
 
       .search-reset {
@@ -353,7 +354,7 @@ $nav-y-padding: .85rem;
   &-backdrop {
     position: fixed;
     z-index: 9900;
-    background: rgba($black, .25);
+    background: rgba($black, 0.25);
     top: 0;
     left: 0;
     right: 0;

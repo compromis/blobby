@@ -1,8 +1,6 @@
 // Brand colors
 $primary: #ff6720 !default;
-$gray-darkest: #353949 !default;
-$gray-lightest: #f8faff !default;
-$black: $gray-darkest !default;
+$black: #353949 !default;
 $white: #fff !default;
 $gradient-primary-start: #d23517 !default;
 $gradient-primary-end: #f39128 !default;
@@ -40,15 +38,17 @@ $social-networks: (
 );
 
 // Grays
-$gray-100: mix($gray-darkest, $gray-lightest, 5%);
-$gray-200: mix($gray-darkest, $gray-lightest, 10%);
-$gray-300: mix($gray-darkest, $gray-lightest, 20%);
-$gray-400: mix($gray-darkest, $gray-lightest, 30%);
-$gray-500: mix($gray-darkest, $gray-lightest, 40%);
-$gray-600: mix($gray-darkest, $gray-lightest, 50%);
-$gray-700: mix($gray-darkest, $gray-lightest, 70%);
-$gray-800: mix($gray-darkest, $gray-lightest, 90%);
-$gray-900: $gray-darkest;
+$gray-50: #f8faff;
+$gray-100: #eef0f6;
+$gray-200: #e5e7ed;
+$gray-300: #d1d3db;
+$gray-400: #bec0c8;
+$gray-500: #aaadb6;
+$gray-600: #979aa4;
+$gray-700: #707380;
+$gray-800: #414554;
+$gray-900: #353949;
+$gray-1000: #262934;
 
 // Gradients
 $gradient: linear-gradient(
@@ -88,7 +88,7 @@ $gradient-lgtb: linear-gradient(
 ) !default;
 
 // UI colors
-$body-bg: $gray-lightest !default;
+$body-bg: $gray-50 !default;
 $text-color: $black !default;
 $text-muted: $gray-700 !default;
 $link-color: $primary !default;
@@ -114,12 +114,12 @@ $text-6xl: 5.653rem !default;
 $text-7xl: 7rem !default;
 
 // Shadows
-$shadow-default: 0 0.8rem 1.7rem -0.3rem rgba($gray-darkest, 0.15),
-  0 0.5rem 1rem -0.5rem rgba($gray-darkest, 0.2),
-  0 -0.4rem 1rem -0.4rem rgba($gray-darkest, 0.015) !default;
-$shadow-raised: 0 1.25rem 2.1rem -0.3rem rgba($gray-darkest, 0.15),
-  0 0.9rem 1.4rem -0.5rem rgba($gray-darkest, 0.2),
-  0 -0.75rem 1.4rem -0.4rem rgba($gray-darkest, 0.015) !default;
+$shadow-default: 0 0.8rem 1.7rem -0.3rem rgba($gray-900, 0.15),
+  0 0.5rem 1rem -0.5rem rgba($gray-900, 0.2),
+  0 -0.4rem 1rem -0.4rem rgba($gray-900, 0.015) !default;
+$shadow-raised: 0 1.25rem 2.1rem -0.3rem rgba($gray-900, 0.15),
+  0 0.9rem 1.4rem -0.5rem rgba($gray-900, 0.2),
+  0 -0.75rem 1.4rem -0.4rem rgba($gray-900, 0.015) !default;
 $box-shadow: $shadow-default;
 
 // Border radii
@@ -138,8 +138,9 @@ $navbar-safe-area: 6.25rem;
 // Utility variables
 $css-vars: (
   'primary': $primary,
-  'black': $gray-darkest,
+  'black': $gray-900,
   'white': #fff,
+  'gray-50': $gray-50,
   'gray-100': $gray-100,
   'gray-200': $gray-200,
   'gray-300': $gray-300,
@@ -152,6 +153,27 @@ $css-vars: (
   'body-bg': $body-bg,
   'text-color': $text-color,
   'text-muted': $text-muted,
+  'link-color': $link-color,
+  'link-color-hover': $link-color-hover,
+);
+
+$css-vars-dark: (
+  'primary': $primary,
+  'black': $white,
+  'white': $gray-900,
+  'gray-50': $gray-1000,
+  'gray-100': $gray-800,
+  'gray-200': $gray-700,
+  'gray-300': $gray-600,
+  'gray-400': $gray-500,
+  'gray-500': $gray-400,
+  'gray-600': $gray-300,
+  'gray-700': $gray-200,
+  'gray-800': $gray-100,
+  'gray-900': $gray-50,
+  'body-bg': $gray-1000,
+  'text-color': $white,
+  'text-muted': $gray-300,
   'link-color': $link-color,
   'link-color-hover': $link-color-hover,
 );
@@ -196,7 +218,8 @@ $text-sizes: (
 $text-colors: (
   'base': var(--text-color),
   'muted': var(--text-muted),
-  'white': var(--white),
+  'white': $white,
+  'black': $black,
   'primary': var(--primary),
   'red': $red,
 );
