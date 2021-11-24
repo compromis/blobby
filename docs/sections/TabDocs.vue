@@ -19,88 +19,109 @@ const tabItem = reactive({
 </script>
 
 <template>
-  <h2>Pills</h2>
+  <h2>Tabs</h2>
   <div class="docs-cols">
     <div class="docs-col-schema">
-      <h3>&lt;b-tab&gt;</h3>
-      <p>Item individual dins d'un grup de tabs</p>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>nom</th>
-            <th>tipus</th>
-            <th>defecte</th>
-            <th>valors</th>
-            <th>descripció</th>
-            <th>play</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>selected</td>
-            <td>Boolean</td>
-            <td><code>false</code></td>
-            <td></td>
-            <td>Tab seleccionada si o no</td>
-            <td>
-              <input v-model="tabItem.selected" type="checkbox">
-            </td>
-          </tr>
-        </tbody>
-      </table>
       <h3>&lt;b-tab-list&gt;</h3>
       <p>Contenidor d'un grup de tabs.</p>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>nom</th>
-            <th>tipus</th>
-            <th>defecte</th>
-            <th>valors</th>
-            <th>descripció</th>
-            <th>play</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>variant</td>
-            <td>String</td>
-            <td><code>default</code></td>
-            <td><code>default</code>, <code>outline</code></td>
-            <td>Variant de la pastilla</td>
-            <td>
-              <select v-model="tab.variant">
-                <option>default</option>
-                <option>outline</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>size</td>
-            <td>String</td>
-            <td><code>md</code></td>
-            <td><code>sm</code>, <code>md</code>, <code>lg</code></td>
-            <td>Tamany de la pastilla</td>
-            <td>
-              <select v-model="tab.size">
-                <option>sm</option>
-                <option>md</option>
-                <option>lg</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>focusDark</td>
-            <td>Bool</td>
-            <td><code>false</code></td>
-            <td></td>
-            <td>Canvia el color del contorn de l'estat focus a negre</td>
-            <td>
-              <input v-model="tab.focusDark" type="checkbox">
-            </td>
-          </tr>
+      <b-card type="outline" size="sm" overflow-hidden>
+        <table class="table tint-alternate-rows vertical-divisions">
+          <colgroup>
+            <col width="15%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="225" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>nom</th>
+              <th>tipus</th>
+              <th>defecte</th>
+              <th>valors</th>
+              <th>descripció</th>
+              <th>play</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>variant</td>
+              <td>String</td>
+              <td><code>default</code></td>
+              <td><code>default</code>, <code>outline</code></td>
+              <td>Variant de la pastilla</td>
+              <td>
+                <b-select v-model="tab.variant" size="sm">
+                  <option>default</option>
+                  <option>outline</option>
+                </b-select>
+              </td>
+            </tr>
+            <tr>
+              <td>size</td>
+              <td>String</td>
+              <td><code>md</code></td>
+              <td><code>sm</code>, <code>md</code>, <code>lg</code></td>
+              <td>Tamany de la pastilla</td>
+              <td>
+                <b-select v-model="tab.size" size="sm">
+                  <option>sm</option>
+                  <option>md</option>
+                  <option>lg</option>
+                </b-select>
+              </td>
+            </tr>
+            <tr>
+              <td>focusDark</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Canvia el color del contorn de l'estat focus a negre</td>
+              <td>
+                <input v-model="tab.focusDark" type="checkbox">
+              </td>
+            </tr>
+            </tbody>
+        </table>
+      </b-card>
+
+      <h3>&lt;b-tab&gt;</h3>
+      <p>Item individual dins d'un grup de tabs</p>
+      <b-card type="outline" size="sm" overflow-hidden>
+        <table class="table tint-alternate-rows vertical-divisions">
+          <colgroup>
+            <col width="15%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="225" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>nom</th>
+              <th>tipus</th>
+              <th>defecte</th>
+              <th>valors</th>
+              <th>descripció</th>
+              <th>play</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>selected</td>
+              <td>Boolean</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Tab seleccionada si o no</td>
+              <td>
+                <input type="checkbox" disabled>
+              </td>
+            </tr>
           </tbody>
-      </table>
+        </table>
+      </b-card>
     </div>
     <div class="docs-col-preview">
       <div class="sticky">
@@ -124,7 +145,9 @@ const tabItem = reactive({
             Tab 3
           </b-tab>
         </b-tab-list>
-        {{tabItem.selectedTab}}
+        <div>
+          Selected tab is: {{tabItem.selectedTab}}
+        </div>
       </div>
     </div>
   </div>

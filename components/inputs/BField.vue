@@ -6,7 +6,7 @@
       spanClass,
       { 'input-has-errors': hasErrors }
     ]">
-    <label :for="labelFor || null" :class="['input-label', 'text-sm']">
+    <label :for="labelFor || null" :class="['input-label', 'text-muted', 'text-sm']">
       {{ label }}
     </label>
     <slot />

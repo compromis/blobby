@@ -86,6 +86,11 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
 .docs {
   h3 {
     font-family: var(--bs-font-monospace);
+    margin-bottom: 1.25rem;
+  }
+
+  h3:not(:first-child) {
+    margin-top: 3rem;
   }
 
   &-cols {
@@ -96,12 +101,16 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
   }
 
   &-col-preview {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
 }
 
 .sticky {
   position: sticky;
   top: $navbar-safe-area;
+}
+
+code {
+  color: $primary;
 }
 </style>
