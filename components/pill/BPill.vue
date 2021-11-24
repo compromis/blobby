@@ -1,13 +1,15 @@
 <template>
-  <li>
+  <component :is="wrapper">
     <component :is="tag" :to="to" :href="href" :class="['pill', `pill-${variant}`, `pill-${size}`, {'pill-focus-dark' : focusDark}]">
       <slot />
     </component>
-  </li>
+  </component>
 </template>
 
 <script>
   export default {
+    inject: ['isItemInList'],
+
     props: {
       to: {
         type: String,
@@ -28,8 +30,13 @@
       size: {
         type: String,
         default: 'md'
+      },
+      as: {
+        type: String,
+        default: 'span'
       }
     },
+
     computed: {
       tag () {
         if (this.to) {
@@ -40,7 +47,11 @@
           return 'a'
         }
 
-        return 'span'
+        return this.as
+      },
+
+      wrapper () {
+        return this.isItemInList ? 'li' : 'span'
       }
     }
   }

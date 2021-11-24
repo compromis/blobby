@@ -6,10 +6,9 @@
 
 <script>
   export default {
-
+    provide: {
+      isItemInList: true
+    }
   }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
