@@ -61,9 +61,6 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Mono&display=swap');
 @import '../scss/blobby';
-@import 'bootstrap/scss/type';
-@import 'bootstrap/scss/tables';
-@import 'bootstrap/scss/badge';
 
 :root {
   --bs-font-monospace: 'IBM Plex Mono', monospace;

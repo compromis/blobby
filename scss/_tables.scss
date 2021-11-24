@@ -1,0 +1,31 @@
+.table {
+  width: 100%;
+
+  td {
+    padding: var(--card-padding, 0.75rem 1rem);
+    background: var(--gray-50);
+  }
+
+  th {
+    border-bottom: 1px solid var(--gray-300);
+    padding: calc(var(--card-padding, 0.75rem) * 1.5) var(--card-padding, 1rem);
+    background: var(--gray-50);
+  }
+
+  tr:not(:last-child) td {
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  &.vertical-divisions {
+    td,
+    th {
+      border-right: 1px solid var(--gray-200);
+    }
+  }
+
+  &.tint-alternate-rows {
+    tr:nth-child(odd) td {
+      background: var(--white);
+    }
+  }
+}

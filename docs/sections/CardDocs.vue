@@ -29,7 +29,11 @@ const cardList = reactive({
   <div class="docs-cols">
     <div class="docs-col-schema">
       <h3>&lt;b-card&gt;</h3>
-      <table class="table">
+      <b-card type="outline" size="sm" overflow-hidden>
+        <b-card-section>
+          <h2>Titol</h2>
+        </b-card-section>
+      <table class="table tint-alternate-rows vertical-divisions">
         <thead>
           <tr>
             <th>nom</th>
@@ -168,6 +172,8 @@ const cardList = reactive({
           </tr>
         </tbody>
       </table>
+      <div>Footer</div>
+      </b-card>
 
       <h3>&lt;b-card-section&gt;</h3>
       <p>Secció amb padding de la card</p>
@@ -231,7 +237,7 @@ const cardList = reactive({
           <b-card-section>
             Hello
           </b-card-section>
-          <b-card-list :padded="cardList.padded" :as="as" class="border-top">
+          <b-card-list :padded="cardList.padded" :as="as">
             <li>I'm item one</li>
             <li>I'm item two</li>
           </b-card-list>
