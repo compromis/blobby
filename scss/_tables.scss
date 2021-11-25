@@ -3,12 +3,14 @@
 
   td {
     padding: var(--card-padding, 0.75rem 1rem);
+    vertical-align: top;
   }
 
   th {
     border-bottom: 1px solid var(--gray-300);
     padding: calc(var(--card-padding, 0.75rem) * 1.5) var(--card-padding, 1rem);
     background: var(--gray-50);
+    vertical-align: bottom;
   }
 
   tr:not(:last-child) td {
@@ -29,6 +31,12 @@
 
     tr:nth-child(odd) td {
       background: var(--white);
+    }
+  }
+
+  &.align-center {
+    td {
+      vertical-align: center;
     }
   }
 }
