@@ -205,7 +205,7 @@ const cardList = reactive({
           </thead>
           <tbody>
             <tr>
-              <td>borderTop</td>
+              <td>border-top</td>
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
@@ -215,13 +215,33 @@ const cardList = reactive({
               </td>
             </tr>
             <tr>
-              <td>borderBottom</td>
+              <td>border-bottom</td>
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
               <td>Borde inferior</td>
               <td>
                 <input v-model="cardSection.borderBottom" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td>border-left</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Borde esquerra</td>
+              <td>
+                <input v-model="cardSection.borderLeft" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td>border-right</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Borde dreta</td>
+              <td>
+                <input v-model="cardSection.borderRight" type="checkbox">
               </td>
             </tr>
           </tbody>

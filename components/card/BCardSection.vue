@@ -1,5 +1,5 @@
 <template>
-  <div :class="['card-padded', { 'border-top': borderTop, 'border-bottom': borderBottom }]">
+  <div :class="['card-padded', { 'border-top': borderTop, 'border-bottom': borderBottom, 'border-left': borderLeft, 'border-right': borderRight }]">
     <slot />
   </div>
 </template>
@@ -13,7 +13,15 @@ export default {
       type: Boolean,
       default: false
     },
-    borderBottom:{
+    borderBottom: {
+      type: Boolean,
+      default: false
+    },
+    borderRight: {
+      type: Boolean,
+      default: false
+    },
+    borderLeft: {
       type: Boolean,
       default: false
     }
