@@ -28,9 +28,9 @@
         type: String,
         default: null
       },
-      type: {
-        type: String,
-        default: 'solid'
+      outline: {
+        type: Boolean,
+        default: false
       },
       variant: {
         type: String,
@@ -54,6 +54,10 @@
       }
     },
     computed: {
+      type () {
+        return this.outline ? 'outline' : 'solid'
+      },
+
       tag () {
         if (this.to) {
           return 'nuxt-link'

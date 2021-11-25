@@ -3,7 +3,7 @@ import { reactive, ref } from 'vue'
 import BButton from '../../components/button/BButton.vue'
 
 const button = reactive({
-  type: 'solid',
+  outline: false,
   variant: 'default',
   size: 'md',
   block: false,
@@ -43,19 +43,6 @@ const previewBg = ref('#fff')
             </tr>
           </thead>
           <tbody>
-          <tr>
-              <td>type</td>
-              <td>String</td>
-              <td><code>solid</code></td>
-              <td><code>solid</code>, <code>outline</code></td>
-              <td>Tipus de botó</td>
-              <td>
-                <b-select v-model="button.type" size="sm">
-                  <option>solid</option>
-                  <option>outline</option>
-                </b-select>
-              </td>
-            </tr>
             <tr>
               <td>variant</td>
               <td>String</td>
@@ -71,6 +58,16 @@ const previewBg = ref('#fff')
                   <option>primary</option>
                   <option>secondary</option>
                 </b-select>
+              </td>
+            </tr>
+            <tr>
+              <td>outline</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Si el botó és solid o outline</td>
+              <td>
+                <input v-model="button.outline" type="checkbox" />
               </td>
             </tr>
             <tr>
