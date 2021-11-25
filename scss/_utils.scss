@@ -175,3 +175,20 @@
 .text-regular {
   font-weight: 500;
 }
+
+// Focus
+.focus-primary:focus {
+  @include focus-shadow($primary);
+}
+
+.focus-primary-within:focus-within {
+  @include focus-shadow($primary);
+}
+
+.focus-dark:focus {
+  @include focus-shadow($black);
+}
+
+.focus-dark-within:focus-within {
+  @include focus-shadow($black);
+}

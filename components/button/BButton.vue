@@ -9,9 +9,11 @@
       `text-${size}`,
       `button-${size}`,
       `button-${type}`,
-      { 'button-has-shadow' : hasShadow },
-      { 'button-focus-dark' : focusDark },
-      { 'w-100 d-block': block }
+      {
+        'button-has-shadow' : hasShadow,
+        'focus-dark' : focusDark,
+        'w-100 d-block': block
+      }
     ]">
     <span><slot /></span>
   </component>
