@@ -12,7 +12,8 @@ const input = reactive({
   block: true,
   size: 'md',
   noLabel: false,
-  labelOnTop: false
+  labelOnTop: false,
+  focusDark: false
 })
 
 const select = reactive({
@@ -22,7 +23,8 @@ const select = reactive({
   block: true,
   size: 'md',
   noLabel: false,
-  labelOnTop: false
+  labelOnTop: false,
+  focusDark: false
 })
 
 const selectValue = ref('')
@@ -37,7 +39,8 @@ const inputGroup = reactive({
 const radio = reactive({
   name: 'number',
   card: true,
-  disabled: false
+  disabled: false,
+  focusDark: false
 })
 
 const radioValue = ref('two')
@@ -159,6 +162,16 @@ const radioGroup = reactive({
               <td>Força que la label estiga sempre dalt <b-pill variant="muted" size="sm">float-only</b-pill></td>
               <td>
                 <input v-model="input.labelOnTop" type="checkbox" />
+              </td>
+            </tr>
+            <tr>
+              <td>focus-dark</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Canvia el color del contorn de l'estat focus a negre <b-pill variant="muted" size="sm">float-only</b-pill></td>
+              <td>
+                <input v-model="input.focusDark" type="checkbox">
               </td>
             </tr>
             <tr>
@@ -292,6 +305,16 @@ const radioGroup = reactive({
             <td>Força que la label estiga sempre dalt <b-pill variant="muted" size="sm">float-only</b-pill></td>
             <td>
               <input v-model="select.labelOnTop" type="checkbox" />
+            </td>
+          </tr>
+          <tr>
+            <td>focusDark</td>
+            <td>Bool</td>
+            <td><code>false</code></td>
+            <td></td>
+            <td>Canvia el color del contorn de l'estat focus a negre <b-pill variant="muted" size="sm">float-only</b-pill></td>
+            <td>
+              <input v-model="select.focusDark" type="checkbox">
             </td>
           </tr>
           <tr>
@@ -440,6 +463,16 @@ const radioGroup = reactive({
               <td></td>
               <td>Self-explanatory</td>
               <td><input v-model="radio.disabled" type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>focusDark</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Canvia el color del contorn de l'estat focus a negre</td>
+              <td>
+                <input v-model="radio.focusDark" type="checkbox">
+              </td>
             </tr>
             <tr>
               <td>card</td>

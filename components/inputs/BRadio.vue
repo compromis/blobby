@@ -5,8 +5,11 @@
     :class="[
       'radio-field',
       'form-check',
-      { 'selected': isSelected },
-      { 'disabled': disabled }
+      {
+        'selected': isSelected,
+        'disabled': disabled,
+        'focus-dark-within' : focusDark && !!card
+      }
     ]">
     <input
       :id="name + value"
@@ -46,6 +49,10 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      focusDark: {
+        type: Boolean,
+        default: false,
       },
       card: {
         type: [Boolean, Object],

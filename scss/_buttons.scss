@@ -142,10 +142,6 @@
     @include focus-shadow($primary);
   }
 
-  &-focus-dark:focus {
-    @include focus-shadow($black);
-  }
-
   &-secondary:focus {
     @include focus-shadow($gradient-secondary-start);
   }

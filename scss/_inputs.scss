@@ -150,7 +150,7 @@
       transform: translateY(2.5%);
     }
 
-    &:focus-within:not(.disabled) {
+    &:focus-within:not(.disabled):not(.focus-dark-within) {
       @include focus-shadow($primary);
     }
 
@@ -201,11 +201,6 @@
 
 .select-field.input-float {
   background: var(--white);
-
-  &:focus-within {
-    @include focus-shadow($primary);
-    outline: 10px black solid;
-  }
 }
 
 // Autocomplete background color
