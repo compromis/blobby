@@ -158,3 +158,12 @@
 .border-bottom {
   border-bottom: 1px solid var(--border-color, var(--gray-200)) !important;
 }
+
+// Text
+.text-bold {
+  font-weight: 900;
+}
+
+.text-regular {
+  font-weight: 500;
+}
