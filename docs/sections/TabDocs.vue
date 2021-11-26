@@ -1,21 +1,21 @@
 <script setup>
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import BTab from '../../components/tab/BTab.vue'
 import BTabList from '../../components/tab/BTabList.vue'
 
-const tab = reactive({
+const tabList = reactive({
   variant: 'default',
   focusDark: false,
-  to: '',
-  href: '',
-  as: '',
   size: 'md'
 })
 
 const tabItem = reactive({
-  selected: false,
-  selectedTab: 1,
+  to: '',
+  href: '',
+  as: 'button',
 })
+
+const selectedTab = ref(1)
 </script>
 
 <template>
@@ -52,7 +52,7 @@ const tabItem = reactive({
               <td><code>default</code>, <code>outline</code></td>
               <td>Variant de la pastilla</td>
               <td>
-                <b-select v-model="tab.variant" size="sm">
+                <b-select v-model="tabList.variant" size="sm">
                   <option>default</option>
                   <option>outline</option>
                 </b-select>
@@ -65,7 +65,7 @@ const tabItem = reactive({
               <td><code>sm</code>, <code>md</code>, <code>lg</code></td>
               <td>Tamany de la pastilla</td>
               <td>
-                <b-select v-model="tab.size" size="sm">
+                <b-select v-model="tabList.size" size="sm">
                   <option>sm</option>
                   <option>md</option>
                   <option>lg</option>
@@ -79,7 +79,7 @@ const tabItem = reactive({
               <td></td>
               <td>Canvia el color del contorn de l'estat focus a negre</td>
               <td>
-                <input v-model="tab.focusDark" type="checkbox">
+                <input v-model="tabList.focusDark" type="checkbox">
               </td>
             </tr>
             </tbody>
@@ -110,6 +110,36 @@ const tabItem = reactive({
           </thead>
           <tbody>
             <tr>
+              <td>to</td>
+              <td>String</td>
+              <td></td>
+              <td></td>
+              <td>Enllaç <code>&lt;nuxt-link&gt;</code></td>
+              <td>
+                <b-input v-model="tabItem.to" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
+              <td>href</td>
+              <td>String</td>
+              <td></td>
+              <td></td>
+              <td>Enllaç <code>&lt;a&gt;</code></td>
+              <td>
+                <b-input v-model="tabItem.href" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
+              <td>as</td>
+              <td>String</td>
+              <td><code>button</code></td>
+              <td></td>
+              <td>Tag HTML</td>
+              <td>
+                <b-input v-model="tabItem.as" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
               <td>selected</td>
               <td>Boolean</td>
               <td><code>false</code></td>
@@ -125,28 +155,31 @@ const tabItem = reactive({
     </div>
     <div class="docs-col-preview">
       <div class="sticky">
-        <b-tab-list v-bind="tab">
+        <b-tab-list v-bind="tabList">
           <b-tab
             class="mb-4"
-            :selected="tabItem.selectedTab === 1"
-            @click="tabItem.selectedTab = 1">
+            v-bind="tabItem"
+            :selected="selectedTab === 1"
+            @click="selectedTab = 1">
             Tab 1
           </b-tab>
           <b-tab
             class="mb-4"
-            :selected="tabItem.selectedTab === 2"
-            @click="tabItem.selectedTab = 2">
+            v-bind="tabItem"
+            :selected="selectedTab === 2"
+            @click="selectedTab = 2">
             Tab 2
           </b-tab>
           <b-tab
             class="mb-4"
-            :selected="tabItem.selectedTab === 3"
-            @click="tabItem.selectedTab = 3">
+            v-bind="tabItem"
+            :selected="selectedTab === 3"
+            @click="selectedTab = 3">
             Tab 3
           </b-tab>
         </b-tab-list>
         <div>
-          Selected tab is: {{tabItem.selectedTab}}
+          Selected tab is: {{selectedTab}}
         </div>
       </div>
     </div>
