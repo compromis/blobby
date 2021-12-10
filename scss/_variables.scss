@@ -138,6 +138,10 @@ $navbar-safe-area: 6.25rem;
 // Utility variables
 $css-vars: (
   'primary': $primary,
+  'gradient-primary-start': $gradient-primary-start,
+  'gradient-primary-end': $gradient-primary-end,
+  'gradient-secondary-start': $gradient-secondary-start,
+  'gradient-secondary-end': $gradient-secondary-end,
   'black': $gray-900,
   'white': #fff,
   'gray-50': $gray-50,

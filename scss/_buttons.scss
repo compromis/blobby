@@ -78,7 +78,19 @@
           -webkit-background-clip: text;
           background-clip: text;
         }
+
+        svg {
+          color: $white;
+        }
       }
+    }
+
+    &.button-primary svg {
+      color: $gradient-primary-start;
+    }
+
+    &.button-secondary svg {
+      color: $gradient-secondary-start;
     }
 
     &:hover {
