@@ -14,7 +14,8 @@
         'focus-dark' : focusDark,
         'w-100 d-block': block
       }
-    ]">
+    ]"
+    @click="$emit('click')">
     <span><slot /></span>
   </component>
 </template>
@@ -55,6 +56,9 @@
         default: false,
       }
     },
+
+    emits: ['click'],
+
     computed: {
       type () {
         return this.outline ? 'outline' : 'solid'

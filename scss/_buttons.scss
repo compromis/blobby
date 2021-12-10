@@ -26,7 +26,7 @@
   }
 
   &-muted {
-    --button-color: var(--gray-600);
+    --button-color: var(--gray-400);
     color: var(--white);
   }
 
@@ -52,7 +52,8 @@
     color: var(--button-color);
     transition: 0.25s ease;
 
-    &.button-supermuted {
+    &.button-supermuted,
+    &.button-muted {
       color: var(--gray-700);
     }
 
@@ -69,7 +70,7 @@
         -webkit-text-fill-color: transparent;
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         background: var(--button-color) padding-box,
           var(--button-color) border-box;
 
@@ -93,20 +94,20 @@
       color: $gradient-secondary-start;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: var(--button-color);
       color: $white;
     }
 
-    &.button-default:hover {
+    &.button-default:hover:not(:disabled) {
       color: var(--black);
     }
 
-    &.button-inverted:hover {
+    &.button-inverted:hover:not(:disabled) {
       color: var(--white);
     }
 
-    &.button-supermuted:hover {
+    &.button-supermuted:hover:not(:disabled) {
       color: var(--black);
       background: var(--white);
       border-color: var(--white);
@@ -119,7 +120,7 @@
       box-shadow: $shadow-default;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       box-shadow: $shadow-raised;
       transform: translateY(-4%);
     }
@@ -144,7 +145,7 @@
   }
 
   //Hover
-  &:hover {
+  &:hover:not(:disabled) {
     text-decoration: none;
   }
 
@@ -159,6 +160,10 @@
 
   &-primary:focus {
     @include focus-shadow($primary);
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 }
 

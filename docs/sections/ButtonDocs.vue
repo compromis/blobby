@@ -9,6 +9,7 @@ const button = reactive({
   block: false,
   hasShadow: false,
   focusDark: false,
+  disabled: true,
   to: '',
   href: '',
   as: ''
@@ -113,6 +114,16 @@ const previewBg = ref('#fff')
               <td>Canvia el color del contorn de l'estat focus a negre</td>
               <td>
                 <input v-model="button.focusDark" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Desactiva el botó</td>
+              <td>
+                <input v-model="button.disabled" type="checkbox">
               </td>
             </tr>
             <tr>
