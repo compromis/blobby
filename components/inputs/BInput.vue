@@ -13,7 +13,7 @@
     <label :for="name" :class="['input-label', 'text-sm', { 'visually-hidden': noLabel }]">
       {{ label }}
     </label>
-    <input
+    <component :is="inputType"
       :id="name"
       ref="input"
       :name="name"
@@ -92,6 +92,14 @@
     },
 
     computed: {
+      inputType () {
+        if (this.$attrs.type === 'textarea') {
+          return 'textarea'
+        }
+
+        return 'input'
+      },
+
       hasErrors () {
         return this.error.length > 0
       },
