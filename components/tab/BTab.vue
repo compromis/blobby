@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :to="to || null" :href="href || null" :class="['tab', { selected }]">
+  <component :is="tag" :to="to || null" :href="href || null" :class="['tab', { selected }]" @click="$emit('click')">
     <slot />
   </component>
 </template>
@@ -25,6 +25,8 @@
       }
     },
 
+    emits: ['click'],
+
     computed: {
       tag () {
         if (this.to) {
@@ -36,7 +38,7 @@
         }
 
         return this.as
+      },
     }
-  }
   }
 </script>
