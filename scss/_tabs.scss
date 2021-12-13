@@ -70,6 +70,17 @@
     }
   }
 
+  &-muted .tab {
+    &.selected,
+    &.nuxt-link-exact-active {
+      background: var(--gray-600);
+
+      &:hover {
+        background: var(--gray-600);
+      }
+    }
+  }
+
   &-sm .tab {
     font-size: $text-sm;
   }

@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['tab-list', `tab-list-${variant}`, `tab-list-${size}`, {'tab-list-focus-dark' : focusDark}]">
+  <nav :class="['tab-list', `tab-list-${variant}`, `tab-list-${size}`, {'tab-list-focus-dark' : focusDark}, {'tab-list-muted' : muted}]">
     <slot />
   </nav>
 </template>
@@ -12,6 +12,10 @@
         default: 'default'
       },
       focusDark: {
+        type: Boolean,
+        default: false
+      },
+      muted: {
         type: Boolean,
         default: false
       },

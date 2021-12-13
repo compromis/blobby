@@ -6,7 +6,8 @@ import BTabList from '../../components/tab/BTabList.vue'
 const tabList = reactive({
   variant: 'default',
   focusDark: false,
-  size: 'md'
+  size: 'md',
+  muted: false
 })
 
 const tabItem = reactive({
@@ -56,6 +57,16 @@ const selectedTab = ref(1)
                   <option>default</option>
                   <option>outline</option>
                 </b-select>
+              </td>
+            </tr>
+            <tr>
+              <td>muted</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Pastilla muted</td>
+              <td>
+                <input v-model="tabList.muted" type="checkbox">
               </td>
             </tr>
             <tr>
