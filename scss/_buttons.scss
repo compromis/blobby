@@ -43,6 +43,17 @@
     &.button-default {
       color: var(--black);
     }
+
+    &.button-inverted:hover,
+    &.button-muted:hover,
+    &.button-primary:hover,
+    &.button-secondary:hover {
+      color: var(--white);
+    }
+
+    &.button-supermuted:hover {
+      color: var(--black);
+    }
   }
 
   &-outline {
