@@ -44,10 +44,10 @@
   }
 
   &-float {
+    --input-padding: 2rem 1.25rem .75rem;
     position: relative;
 
     .input {
-      --input-padding: 2rem 1.25rem .75rem;
       border: 0;
       font-size: 1.25rem;
 
@@ -91,13 +91,11 @@
     }
 
     &.input-float {
+      --input-padding: 1.2rem 1.25rem 1.55rem;
+
       .input-label {
         font-size: $text-sm;
         transform: translateY(calc(-50% - 1.35rem));
-      }
-
-      .input {
-        --input-padding: 1.2rem 1.25rem 1.55rem;
       }
 
       .field-errors {
