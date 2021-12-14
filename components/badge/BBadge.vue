@@ -1,5 +1,5 @@
 <template>
-  <component :is="wrapper">
+  <component :is="wrapper" class="badge-wrapper">
     <component :is="as" :class="['badge', `badge-${variant}`, `badge-${size}`, `badge-${type}`]">
       <span><slot /></span>
     </component>
@@ -8,8 +8,6 @@
 
 <script>
   export default {
-    inject: ['isItemInList'],
-
     props: {
       outline: {
         type: Boolean,
@@ -31,7 +29,7 @@
 
     computed: {
       wrapper () {
-        return this.isItemInList ? 'li' : 'span'
+        return 'isList' in this.$parent ? 'li' : 'span'
       },
 
       type () {

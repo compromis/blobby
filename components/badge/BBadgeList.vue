@@ -6,8 +6,11 @@
 
 <script>
   export default {
-    provide: {
-      isItemInList: true
-    }
+    props: {
+      isList: {
+        type: Boolean,
+        default: true
+      },
+    },
   }
 </script>

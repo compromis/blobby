@@ -11,6 +11,7 @@ $variants: (
   border-radius: 10rem;
   white-space: nowrap;
   padding: 0.5em 1em;
+  line-height: 1;
 
   &-sm {
     font-size: $text-sm;
@@ -96,6 +97,10 @@ $variants: (
         -webkit-text-fill-color: transparent;
       }
     }
+  }
+
+  &-wrapper {
+    display: inline-flex;
   }
 }
 

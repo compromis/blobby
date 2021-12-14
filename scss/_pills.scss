@@ -68,6 +68,10 @@ a.pill {
     background: var(--gray-200);
     color: var(--gray-700);
   }
+
+  &-wrapper {
+    display: inline-flex;
+  }
 }
 
 .pill-list {
