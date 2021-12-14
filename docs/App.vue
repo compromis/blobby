@@ -5,6 +5,7 @@ import InputDocs from './sections/InputDocs.vue'
 import ButtonDocs from './sections/ButtonDocs.vue'
 import PillDocs from './sections/PillDocs.vue'
 import TabDocs from './sections/TabDocs.vue'
+import BadgeDocs from './sections/BadgeDocs.vue'
 import BNav from '../components/nav/BNav.vue'
 import BNavItem from '../components/nav/BNavItem.vue'
 import CloseIcon from '../components/icons/CloseIcon.vue'
@@ -53,6 +54,7 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
         <button-docs />
         <pill-docs />
         <tab-docs />
+        <badge-docs />
       </section>
     </main>
   </div>
