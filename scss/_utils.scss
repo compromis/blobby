@@ -176,6 +176,10 @@
   font-weight: 500;
 }
 
+.text-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
 // Focus
 .focus-primary:focus {
   @include focus-shadow($primary);
