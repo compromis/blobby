@@ -1,0 +1,117 @@
+$variants: (
+  info: $blue,
+  danger: $red,
+  success: $green,
+  warning: $yellow,
+);
+
+.badge {
+  background-color: var(--white);
+  color: $primary;
+  border-radius: 10rem;
+  white-space: nowrap;
+  padding: 0.5em 1em;
+
+  &-sm {
+    font-size: $text-sm;
+  }
+
+  &-lg {
+    font-size: $text-lg;
+  }
+
+  &-default {
+    --badge-color: var(--white);
+    color: $primary;
+  }
+
+  &-inverted {
+    --badge-color: var(--black);
+    color: var(--white);
+  }
+
+  &-primary {
+    --badge-color: #{$gradient};
+    color: $white;
+  }
+
+  &-secondary {
+    --badge-color: #{$gradient-secondary};
+    color: $white;
+  }
+
+  &-muted {
+    --badge-color: var(--gray-400);
+    color: var(--white);
+  }
+
+  &-supermuted {
+    --badge-color: var(--gray-100);
+    color: var(--gray-700);
+  }
+
+  @each $name, $color in $variants {
+    &-solid {
+      &.badge-#{$name} {
+        --badge-color: #{mix($color, $white, 25%)};
+        color: mix($color, $black, 45%);
+      }
+    }
+
+    &-outline {
+      &.badge-#{$name} {
+        --badge-color: #{$color};
+        color: $color;
+      }
+    }
+  }
+
+  &-solid {
+    background: var(--badge-color);
+  }
+
+  &-outline {
+    border-width: 2px;
+    border-color: var(--badge-color);
+    border-style: solid;
+    color: var(--badge-color);
+    transition: 0.25s ease;
+    background: transparent;
+
+    &.badge-supermuted,
+    &.badge-muted {
+      color: var(--gray-700);
+    }
+
+    &.badge-primary,
+    &.badge-secondary {
+      border-color: transparent;
+      background: linear-gradient(var(--white), var(--white)) padding-box,
+        var(--badge-color) border-box;
+
+      span {
+        background: var(--badge-color);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  li {
+    margin: 0 0.5em 0.5em 0;
+  }
+
+  .badge {
+    display: block;
+  }
+}
