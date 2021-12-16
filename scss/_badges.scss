@@ -6,7 +6,7 @@ $variants: (
 );
 
 .badge {
-  background-color: var(--white);
+  background-color: var(--b-white);
   color: $primary;
   border-radius: 10rem;
   white-space: nowrap;
@@ -22,76 +22,76 @@ $variants: (
   }
 
   &-default {
-    --badge-color: var(--white);
+    --b-badge-color: var(--b-white);
     color: $primary;
   }
 
   &-inverted {
-    --badge-color: var(--black);
-    color: var(--white);
+    --b-badge-color: var(--b-black);
+    color: var(--b-white);
   }
 
   &-primary {
-    --badge-color: #{$gradient};
+    --b-badge-color: #{$gradient};
     color: $white;
   }
 
   &-secondary {
-    --badge-color: #{$gradient-secondary};
+    --b-badge-color: #{$gradient-secondary};
     color: $white;
   }
 
   &-muted {
-    --badge-color: var(--gray-400);
-    color: var(--white);
+    --b-badge-color: var(--b-gray-400);
+    color: var(--b-white);
   }
 
   &-supermuted {
-    --badge-color: var(--gray-100);
-    color: var(--gray-700);
+    --b-badge-color: var(--b-gray-100);
+    color: var(--b-gray-700);
   }
 
   @each $name, $color in $variants {
     &-solid {
       &.badge-#{$name} {
-        --badge-color: #{mix($color, $white, 25%)};
+        --b-badge-color: #{mix($color, $white, 25%)};
         color: mix($color, $black, 45%);
       }
     }
 
     &-outline {
       &.badge-#{$name} {
-        --badge-color: #{$color};
+        --b-badge-color: #{$color};
         color: $color;
       }
     }
   }
 
   &-solid {
-    background: var(--badge-color);
+    background: var(--b-badge-color);
   }
 
   &-outline {
     border-width: 2px;
-    border-color: var(--badge-color);
+    border-color: var(--b-badge-color);
     border-style: solid;
-    color: var(--badge-color);
+    color: var(--b-badge-color);
     transition: 0.25s ease;
     background: transparent;
 
     &.badge-supermuted,
     &.badge-muted {
-      color: var(--gray-700);
+      color: var(--b-gray-700);
     }
 
     &.badge-primary,
     &.badge-secondary {
       border-color: transparent;
-      background: linear-gradient(var(--white), var(--white)) padding-box,
-        var(--badge-color) border-box;
+      background: linear-gradient(var(--b-white), var(--b-white)) padding-box,
+        var(--b-badge-color) border-box;
 
       span {
-        background: var(--badge-color);
+        background: var(--b-badge-color);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;

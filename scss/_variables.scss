@@ -52,22 +52,22 @@ $gray-1000: #262934;
 
 // Gradients
 $gradient: linear-gradient(
-  var(--gradient-orientation, 45deg),
-  var(--gradient-start, #{$gradient-primary-start}),
-  var(--gradient-end, #{$gradient-primary-end})
+  var(--b-gradient-orientation, 45deg),
+  var(--b-gradient-start, #{$gradient-primary-start}),
+  var(--b-gradient-end, #{$gradient-primary-end})
 );
 $gradient-primary: linear-gradient(
-  var(--gradient-orientation, 45deg),
+  var(--b-gradient-orientation, 45deg),
   $gradient-primary-start,
   $gradient-primary-end
 ) !default;
 $gradient-secondary: linear-gradient(
-  var(--gradient-orientation, 45deg),
+  var(--b-gradient-orientation, 45deg),
   $gradient-secondary-start,
   $gradient-secondary-end
 ) !default;
 $gradient-feminista: linear-gradient(
-  var(--gradient-orientation, 45deg),
+  var(--b-gradient-orientation, 45deg),
   $gradient-feminism-start,
   $gradient-feminism-end
 ) !default;
@@ -184,20 +184,20 @@ $css-vars-dark: (
 
 $backgrounds: (
   'white': (
-    'bg': var(--white),
-    'text': var(--black),
+    'bg': var(--b-white),
+    'text': var(--b-black),
   ),
   'dark': (
-    'bg': var(--black),
-    'text': var(--white),
+    'bg': var(--b-black),
+    'text': var(--b-white),
   ),
   'primary': (
-    'bg': var(--primary),
-    'text': var(--white),
+    'bg': var(--b-primary),
+    'text': var(--b-white),
   ),
   'gray': (
-    'bg': var(--gray-700),
-    'text': var(--white),
+    'bg': var(--b-gray-700),
+    'text': var(--b-white),
   ),
   'gradient': (
     'bg': $gradient,
@@ -220,11 +220,11 @@ $text-sizes: (
 );
 
 $text-colors: (
-  'base': var(--text-color),
-  'muted': var(--text-muted),
+  'base': var(--b-text-color),
+  'muted': var(--b-text-muted),
   'white': $white,
   'black': $black,
-  'primary': var(--primary),
+  'primary': var(--b-primary),
   'red': $red,
 );
 

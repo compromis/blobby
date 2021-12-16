@@ -3,87 +3,87 @@
   border: none;
   background: none;
   padding: 0.6em 1.5em;
-  border-radius: var(--border-radius, #{$border-radius-sm});
+  border-radius: var(--b-border-radius, #{$border-radius-sm});
 
   //Variants (Colors)
   &-default {
-    --button-color: var(--white);
+    --b-button-color: var(--b-white);
   }
 
   &-inverted {
-    --button-color: var(--black);
-    color: var(--white);
+    --b-button-color: var(--b-black);
+    color: var(--b-white);
   }
 
   &-primary {
-    --button-color: #{$gradient};
+    --b-button-color: #{$gradient};
     color: $white;
   }
 
   &-secondary {
-    --button-color: #{$gradient-secondary};
+    --b-button-color: #{$gradient-secondary};
     color: $white;
   }
 
   &-muted {
-    --button-color: var(--gray-400);
-    color: var(--white);
+    --b-button-color: var(--b-gray-400);
+    color: var(--b-white);
   }
 
   &-supermuted {
-    --button-color: var(--gray-100);
-    color: var(--gray-700);
+    --b-button-color: var(--b-gray-100);
+    color: var(--b-gray-700);
   }
 
   //Types
   &-solid {
-    background: var(--button-color);
+    background: var(--b-button-color);
     transition: 0.25s ease;
 
     &.button-default {
-      color: var(--black);
+      color: var(--b-black);
     }
 
     &.button-inverted:hover,
     &.button-muted:hover,
     &.button-primary:hover,
     &.button-secondary:hover {
-      color: var(--white);
+      color: var(--b-white);
     }
 
     &.button-supermuted:hover {
-      color: var(--black);
+      color: var(--b-black);
     }
   }
 
   &-outline {
     border-width: 2px;
-    border-color: var(--button-color);
+    border-color: var(--b-button-color);
     border-style: solid;
-    color: var(--button-color);
+    color: var(--b-button-color);
     transition: 0.25s ease;
 
     &.button-supermuted,
     &.button-muted {
-      color: var(--gray-700);
+      color: var(--b-gray-700);
     }
 
     &.button-primary,
     &.button-secondary {
       border-color: transparent;
-      background: linear-gradient(var(--white), var(--white)) padding-box,
-        var(--button-color) border-box;
+      background: linear-gradient(var(--b-white), var(--b-white)) padding-box,
+        var(--b-button-color) border-box;
 
       span {
-        background: var(--button-color);
+        background: var(--b-button-color);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
       &:hover:not(:disabled) {
-        background: var(--button-color) padding-box,
-          var(--button-color) border-box;
+        background: var(--b-button-color) padding-box,
+          var(--b-button-color) border-box;
 
         span {
           background: $white;
@@ -106,22 +106,22 @@
     }
 
     &:hover:not(:disabled) {
-      background: var(--button-color);
+      background: var(--b-button-color);
       color: $white;
     }
 
     &.button-default:hover:not(:disabled) {
-      color: var(--black);
+      color: var(--b-black);
     }
 
     &.button-inverted:hover:not(:disabled) {
-      color: var(--white);
+      color: var(--b-white);
     }
 
     &.button-supermuted:hover:not(:disabled) {
-      color: var(--black);
-      background: var(--white);
-      border-color: var(--white);
+      color: var(--b-black);
+      background: var(--b-white);
+      border-color: var(--b-white);
     }
   }
 

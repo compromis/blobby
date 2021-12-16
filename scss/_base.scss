@@ -1,6 +1,6 @@
 :root {
   @each $name, $value in $css-vars {
-    --#{$name}: #{$value};
+    --b-#{$name}: #{$value};
   }
 }
 
@@ -10,18 +10,18 @@ body {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  background-color: var(--body-bg);
-  color: var(--text-color);
+  background-color: var(--b-body-bg);
+  color: var(--b-text-color);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--link-color);
+  color: var(--b-link-color);
   text-decoration: $link-decoration;
 
   &:hover {
-    color: var(--link-color-hover);
+    color: var(--b-link-color-hover);
     text-decoration: $link-decoration-hover;
   }
 

@@ -9,17 +9,17 @@
 // Text sizes
 @each $name, $size in $text-sizes {
   .text-#{$name} {
-    font-size: var(--#{$name}, #{$size});
+    font-size: var(--b-#{$name}, #{$size});
   }
 }
 
 @include media-breakpoint-down (sm) {
   :root {
-    --text-2xl: #{$text-2xl - ($text-2xl * 0.175)};
-    --text-3xl: #{$text-3xl - ($text-3xl * 0.2)};
-    --text-4xl: #{$text-4xl - ($text-4xl * 0.25)};
-    --text-5xl: #{$text-5xl - ($text-5xl * 0.25)};
-    --text-6xl: #{$text-6xl - ($text-6xl * 0.25)};
+    --b-text-2xl: #{$text-2xl - ($text-2xl * 0.175)};
+    --b-text-3xl: #{$text-3xl - ($text-3xl * 0.2)};
+    --b-text-4xl: #{$text-4xl - ($text-4xl * 0.25)};
+    --b-text-5xl: #{$text-5xl - ($text-5xl * 0.25)};
+    --b-text-6xl: #{$text-6xl - ($text-6xl * 0.25)};
   }
 }
 
@@ -33,8 +33,8 @@
 // Gradients
 @each $name, $colors in $gradients {
   .gradient-#{$name} {
-    --gradient-start: #{map-get($colors, 'start')};
-    --gradient-end: #{map-get($colors, 'end')};
+    --b-gradient-start: #{map-get($colors, 'start')};
+    --b-gradient-end: #{map-get($colors, 'end')};
   }
 }
 
@@ -59,27 +59,27 @@
 // Rounded
 @each $name, $size in $border-radii {
   .rounded-#{$name} {
-    --border-radius: #{$size};
-    border-radius: var(--border-radius);
+    --b-border-radius: #{$size};
+    border-radius: var(--b-border-radius);
   }
 }
 
 // Links
 .link-muted-to-black {
-  color: var(--text-muted);
+  color: var(--b-text-muted);
   transition: .2s ease;
 
   &:hover {
-    color: var(--text-color);
+    color: var(--b-text-color);
   }
 }
 
 .link-muted-to-primary {
-  color: var(--text-muted);
+  color: var(--b-text-muted);
   transition: .2s ease;
 
   &:hover {
-    color: var(--primary);
+    color: var(--b-primary);
   }
 }
 
@@ -152,19 +152,19 @@
 
 // Borders
 .border-top {
-  border-top: 1px solid var(--border-color, var(--gray-200)) !important;
+  border-top: 1px solid var(--b-border-color, var(--b-gray-200)) !important;
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--border-color, var(--gray-200)) !important;
+  border-bottom: 1px solid var(--b-border-color, var(--b-gray-200)) !important;
 }
 
 .border-right {
-  border-right: 1px solid var(--border-color, var(--gray-200)) !important;
+  border-right: 1px solid var(--b-border-color, var(--b-gray-200)) !important;
 }
 
 .border-left {
-  border-left: 1px solid var(--border-color, var(--gray-200)) !important;
+  border-left: 1px solid var(--b-border-color, var(--b-gray-200)) !important;
 }
 
 // Text

@@ -1,5 +1,5 @@
 .pill {
-  background-color: var(--white);
+  background-color: var(--b-white);
   color: $primary;
   border-radius: 10rem;
   white-space: nowrap;
@@ -14,20 +14,20 @@
   }
 
   &-muted {
-    background: var(--gray-400);
-    color: var(--white);
+    background: var(--b-gray-400);
+    color: var(--b-white);
   }
 
   &-supermuted {
-    background: var(--gray-100);
-    color: var(--gray-700);
+    background: var(--b-gray-100);
+    color: var(--b-gray-700);
   }
 }
 
 a.pill {
   &:hover {
-    background-color: var(--gray-100);
-    color: var(--black);
+    background-color: var(--b-gray-100);
+    color: var(--b-black);
     text-decoration: none;
   }
 
@@ -60,13 +60,13 @@ a.pill {
   }
 
   &-muted:hover {
-    background: var(--gray-600);
-    color: var(--white);
+    background: var(--b-gray-600);
+    color: var(--b-white);
   }
 
   &-supermuted:hover {
-    background: var(--gray-200);
-    color: var(--gray-700);
+    background: var(--b-gray-200);
+    color: var(--b-gray-700);
   }
 
   &-wrapper {

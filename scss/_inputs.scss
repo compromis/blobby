@@ -1,25 +1,25 @@
 // Text input
 .input {
   appearance: none;
-  background: var(--white);
+  background: var(--b-white);
   font-family: inherit;
-  padding: var(--input-padding, .5rem);
-  font-size: var(--input-font-size, 1rem);
-  color: var(--text-color);
+  padding: var(--b-input-padding, .5rem);
+  font-size: var(--b-input-font-size, 1rem);
+  color: var(--b-text-color);
 
   &-sm {
-    --input-font-size: .9rem;
-    --input-padding: .25rem .5rem;
+    --b-input-font-size: .9rem;
+    --b-input-padding: .25rem .5rem;
   }
 
   &-md {
-    --input-font-size: 1rem;
-    --input-padding: .5rem .75rem;
+    --b-input-font-size: 1rem;
+    --b-input-padding: .5rem .75rem;
   }
 
   &-lg {
-    --input-font-size: 1.25rem;
-    --input-padding: .75rem 1rem;
+    --b-input-font-size: 1.25rem;
+    --b-input-padding: .75rem 1rem;
   }
 
   &-label {
@@ -32,8 +32,8 @@
       margin-bottom: .25rem;
     }
     .input {
-      border: 1px var(--gray-400) solid;
-      border-radius: var(--input-border-radius, #{$border-radius-xs});
+      border: 1px var(--b-gray-400) solid;
+      border-radius: var(--b-input-border-radius, #{$border-radius-xs});
 
       &:focus {
         border-color: $primary;
@@ -44,7 +44,7 @@
   }
 
   &-float {
-    --input-padding: 2rem 1.25rem .75rem;
+    --b-input-padding: 2rem 1.25rem .75rem;
     position: relative;
 
     .input {
@@ -61,7 +61,7 @@
         transform: translateY(-50%);
         left: 1.25rem;
         font-size: 1.25rem;
-        color: var(--text-muted);
+        color: var(--b-text-muted);
         pointer-events: none;
         transition: .25s ease;
         z-index: 10;
@@ -91,7 +91,7 @@
     }
 
     &.input-float {
-      --input-padding: 1.2rem 1.25rem 1.55rem;
+      --b-input-padding: 1.2rem 1.25rem 1.55rem;
 
       .input-label {
         font-size: $text-sm;
@@ -123,7 +123,7 @@
 
   .card-content {
     display: grid;
-    background: var(--gray-300);
+    background: var(--b-gray-300);
     gap: 1px;
     grid-template-columns: repeat(4, 1fr);
   }
@@ -174,7 +174,7 @@
 }
 
 .input-field-with-slot {
-  background: var(--white);
+  background: var(--b-white);
   padding: .75rem 1.25rem;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .select-field.input-float {
-  background: var(--white);
+  background: var(--b-white);
 }
 
 // Autocomplete background color

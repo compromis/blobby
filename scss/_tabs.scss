@@ -23,11 +23,11 @@
     &.selected,
     &.nuxt-link-exact-active {
       background: $gradient-primary;
-      color: var(--white);
+      color: var(--b-white);
 
       &:hover {
         background: $gradient-primary;
-        color: var(--white);
+        color: var(--b-white);
       }
     }
 
@@ -37,19 +37,19 @@
   }
 
   &-default .tab {
-    background-color: var(--gray-100);
-    color: var(--black);
+    background-color: var(--b-gray-100);
+    color: var(--b-black);
 
     &:hover {
-      background-color: var(--gray-200);
-      color: var(--black);
+      background-color: var(--b-gray-200);
+      color: var(--b-black);
     }
   }
 
   &-outline .tab {
     background: transparent;
-    border: 1px solid var(--gray-600);
-    color: var(--gray-600);
+    border: 1px solid var(--b-gray-600);
+    color: var(--b-gray-600);
 
     &.selected,
     &.nuxt-link-exact-active {
@@ -57,7 +57,7 @@
       border-width: 1px;
       border-color: transparent;
       background: $gradient-primary padding-box, $gradient-primary border-box;
-      color: var(--white);
+      color: var(--b-white);
 
       &:hover {
         background: $gradient-primary padding-box, $gradient-primary border-box;
@@ -65,18 +65,18 @@
     }
 
     &:hover {
-      background: var(--gray-600);
-      color: var(--white);
+      background: var(--b-gray-600);
+      color: var(--b-white);
     }
   }
 
   &-muted .tab {
     &.selected,
     &.nuxt-link-exact-active {
-      background: var(--gray-600);
+      background: var(--b-gray-600);
 
       &:hover {
-        background: var(--gray-600);
+        background: var(--b-gray-600);
       }
     }
   }
