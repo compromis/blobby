@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :to="to || null" :href="href || null" :class="['tab', { selected }]" @click="$emit('click')">
+  <component :is="tag" :to="to" :href="href || to" :class="['tab', { selected }]" @click="$emit('click')">
     <slot />
   </component>
 </template>

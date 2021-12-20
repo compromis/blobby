@@ -2,7 +2,7 @@
   <component
     :is="tag"
     :to="to"
-    :href="href"
+    :href="href || to"
     :class="[
       'button',
       `button-${variant}`,

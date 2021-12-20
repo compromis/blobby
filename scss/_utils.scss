@@ -66,20 +66,29 @@
 
 // Links
 .link-muted-to-black {
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
   transition: .2s ease;
 
   &:hover {
-    color: var(--text-color);
+    color: var(--text-color) !important;
   }
 }
 
 .link-muted-to-primary {
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
   transition: .2s ease;
 
   &:hover {
-    color: var(--primary);
+    color: var(--primary) !important;
+  }
+}
+
+.link-default-to-primary {
+  color: var(--text-base) !important;
+  transition: .2s ease;
+
+  &:hover {
+    color: var(--primary) !important;
   }
 }
 
