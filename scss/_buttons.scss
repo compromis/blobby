@@ -2,10 +2,10 @@
   appearance: none;
   border: none;
   background: none;
-  padding: 0.6em 1.5em;
   border-radius: var(--border-radius, #{$border-radius-sm});
+  padding: var(--button-padding-y) var(--button-padding-x);
 
-  //Variants (Colors)
+  // Variants (Colors)
   &-default {
     --button-color: var(--white);
   }
@@ -35,10 +35,11 @@
     color: var(--gray-700);
   }
 
-  //Types
+  // Types
   &-solid {
     background: var(--button-color);
     transition: 0.25s ease;
+    padding: calc(var(--button-padding-y) + 2px) calc(var(--button-padding-x) + 2px); /* Compensate for outline border */
 
     &.button-default {
       color: var(--black);
@@ -125,7 +126,7 @@
     }
   }
 
-  //Shadow
+  // Shadow
   &-has-shadow {
     &.button-solid {
       box-shadow: $shadow-default;
@@ -137,22 +138,29 @@
     }
   }
 
-  //Sizes
+  // Sizes
   &-sm {
     --border-radius: #{$border-radius-xs};
+    --button-padding-y: 0.25rem;
+    --button-padding-x: 0.5rem;
   }
 
   &-md {
     --border-radius: #{$border-radius-sm};
+    --button-padding-y: 0.5rem;
+    --button-padding-x: 1rem;
   }
 
   &-lg {
     --border-radius: #{$border-radius-sm};
+    --button-padding-y: 1rem;
+    --button-padding-x: 1.75rem;
   }
 
   &-xl {
     --border-radius: #{$border-radius-md};
-    padding: 1.25rem calc(1.5rem + 3vw);
+    --button-padding-y: 1.5rem;
+    --button-padding-x: 2.25rem;
   }
 
   //Hover
