@@ -20,7 +20,7 @@
 @mixin focus-shadow($color) {
   box-shadow: 0 0.8rem 1.7rem -0.3rem rgba($color, 0.15),
     0 0.5rem 1rem -0.5rem rgba($color, 0.2),
-    0 -0.4rem 1rem -0.4rem rgba($color, 0.015), 0 0 0 0.25rem rgba($color, 0.5) !important;
+    0 -0.4rem 1rem -0.4rem rgba($color, 0.015), 0 0 0 0.2rem rgba($color, 0.35) !important;
   outline: 0;
 }
 

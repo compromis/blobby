@@ -1,7 +1,7 @@
 // Text input
 .input {
   appearance: none;
-  background: var(--white);
+  background: var(--input-background-color, var(--white));
   font-family: inherit;
   padding: var(--input-padding, .5rem);
   font-size: var(--input-font-size, 1rem);
@@ -32,13 +32,13 @@
       margin-bottom: .25rem;
     }
     .input {
-      border: 1px var(--gray-400) solid;
+      border: 2px var(--input-border-color, var(--gray-200)) solid;
       border-radius: var(--input-border-radius, #{$border-radius-xs});
 
       &:focus {
         border-color: $primary;
         outline: 0;
-        box-shadow: 0 0 0 .25em rgba($primary, .35);
+        @include focus-shadow($primary);
       }
     }
   }
@@ -86,7 +86,7 @@
       border-color: $red;
 
       &:focus {
-        box-shadow: 0 0 0 .25em rgba($red, .35);
+        @include focus-shadow($red);
       }
     }
 
@@ -194,11 +194,62 @@
     width: 1em;
     height: 1em;
     pointer-events: none;
+    color: var(--gray-600);
   }
 }
 
 .select-field.input-float {
   background: var(--white);
+}
+
+// Input appends
+.input-append {
+  display: flex;
+
+  & > *:not(:first-child):not(:last-child),
+  & > *:not(:first-child):not(:last-child) .input {
+    border-radius: 0;
+  }
+
+  & > *:first-child,
+  & > *:first-child .input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & > *:last-child,
+  & > *:last-child .input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+// Border color
+.input-border-default {
+  --input-border-color: var(--gray-200);
+}
+
+.input-border-supermuted {
+  --input-border-color: var(--gray-100);
+}
+
+.input-border-muted {
+  --input-border-color: var(--gray-400);
+}
+
+.input-border-outline {
+  --input-border-color: var(--white);
+  --input-background-color: transparent;
+
+  .select-icon {
+    color: var(--white);
+  }
+}
+
+// Input focus
+.input:focus {
+  position: relative;
+  z-index: 2;
 }
 
 // Autocomplete background color

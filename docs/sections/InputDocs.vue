@@ -11,6 +11,7 @@ const input = reactive({
   value: '',
   block: true,
   size: 'md',
+  border: 'default',
   noLabel: false,
   labelOnTop: false,
   focusDark: false
@@ -22,6 +23,7 @@ const select = reactive({
   variant: 'default',
   block: true,
   size: 'md',
+  border: 'default',
   noLabel: false,
   labelOnTop: false,
   focusDark: false
@@ -121,6 +123,21 @@ const radioGroup = reactive({
                   <option>sm</option>
                   <option>md</option>
                   <option>lg</option>
+                </b-select>
+              </td>
+            </tr>
+            <tr>
+              <td>border</td>
+              <td>String</td>
+              <td><code>default</code></td>
+              <td><code>default</code>, <code>muted</code>, <code>supermuted</code>, <code>outline</code></td>
+              <td>Color del borde</td>
+              <td>
+                <b-select v-model="input.border" size="sm">
+                  <option>default</option>
+                  <option>muted</option>
+                  <option>supermuted</option>
+                  <option>outline</option>
                 </b-select>
               </td>
             </tr>
@@ -264,6 +281,21 @@ const radioGroup = reactive({
                 <option>sm</option>
                 <option>md</option>
                 <option>lg</option>
+              </b-select>
+            </td>
+          </tr>
+          <tr>
+            <td>border</td>
+            <td>String</td>
+            <td><code>default</code></td>
+            <td><code>default</code>, <code>muted</code>, <code>supermuted</code>, <code>outline</code></td>
+            <td>Color del borde</td>
+            <td>
+              <b-select v-model="select.border" size="sm">
+                <option>default</option>
+                <option>muted</option>
+                <option>supermuted</option>
+                <option>outline</option>
               </b-select>
             </td>
           </tr>

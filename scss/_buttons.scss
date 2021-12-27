@@ -153,13 +153,13 @@
 
   &-lg {
     --border-radius: #{$border-radius-sm};
-    --button-padding-y: 1rem;
+    --button-padding-y: calc(0.75rem + 1.5px);
     --button-padding-x: 1.75rem;
   }
 
   &-xl {
     --border-radius: #{$border-radius-md};
-    --button-padding-y: 1.5rem;
+    --button-padding-y: 1.25rem;
     --button-padding-x: 2.25rem;
   }
 

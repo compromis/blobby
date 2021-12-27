@@ -5,6 +5,7 @@
       'select-field',
       `input-${variant}`,
       `input-${size}`,
+      `input-border-${border}`,
       spanClass,
       {
         'input-has-errors': hasErrors,
@@ -75,6 +76,11 @@
         type: String,
         default: 'md',
         validator: (value) => ['sm', 'md', 'lg'].indexOf(value) !== -1
+      },
+      border: {
+        type: String,
+        default: 'default',
+        validator: (value) => ['default', 'muted', 'supermuted', 'outline'].indexOf(value) !== -1
       },
       error: {
         type: String,

@@ -9,7 +9,7 @@ const button = reactive({
   block: false,
   hasShadow: false,
   focusDark: false,
-  disabled: true,
+  disabled: false,
   to: '',
   href: '',
   as: ''
