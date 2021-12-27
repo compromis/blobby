@@ -1,0 +1,14 @@
+.dropdown {
+  &.opens-on-click:focus-within,
+  &.opens-on-hover:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+
+  .dropdown-content {
+    position: absolute;
+    padding-top: 0.5rem;
+    display: none;
+  }
+}

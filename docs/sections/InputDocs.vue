@@ -117,7 +117,7 @@ const radioGroup = reactive({
               <td>String</td>
               <td><code>md</code></td>
               <td><code>sm</code>, <code>md</code>, <code>lg</code></td>
-              <td>Label del input <b-pill variant="muted" size="sm">default-only</b-pill></td>
+              <td>Label del input <b-badge variant="supermuted" size="sm">default-only</b-badge></td>
               <td>
                 <b-select v-model="input.size" size="sm">
                   <option>sm</option>
@@ -176,7 +176,7 @@ const radioGroup = reactive({
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
-              <td>Força que la label estiga sempre dalt <b-pill variant="muted" size="sm">float-only</b-pill></td>
+              <td>Força que la label estiga sempre dalt <b-badge variant="supermuted" size="sm">float-only</b-badge></td>
               <td>
                 <input v-model="input.labelOnTop" type="checkbox" />
               </td>
@@ -186,7 +186,7 @@ const radioGroup = reactive({
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
-              <td>Canvia el color del contorn de l'estat focus a negre <b-pill variant="muted" size="sm">float-only</b-pill></td>
+              <td>Canvia el color del contorn de l'estat focus a negre <b-badge variant="supermuted" size="sm">float-only</b-badge></td>
               <td>
                 <input v-model="input.focusDark" type="checkbox">
               </td>
@@ -196,7 +196,7 @@ const radioGroup = reactive({
               <td>Number, Object</td>
               <td><code>4</code></td>
               <td><code>1-4</code></td>
-              <td>Columnes que ocupa dins d'un <code>b-input-group</code> <b-pill variant="muted" size="sm">group-only</b-pill></td>
+              <td>Columnes que ocupa dins d'un <code>b-input-group</code> <b-badge variant="supermuted" size="sm">group-only</b-badge></td>
               <td></td>
             </tr>
           </tbody>
@@ -275,7 +275,7 @@ const radioGroup = reactive({
             <td>String</td>
             <td><code>md</code></td>
             <td><code>sm</code>, <code>md</code>, <code>lg</code></td>
-            <td>Label del input <b-pill variant="muted" size="sm">default-only</b-pill></td>
+            <td>Label del input <b-badge variant="supermuted" size="sm">default-only</b-badge></td>
             <td>
               <b-select v-model="select.size" size="sm">
                 <option>sm</option>
@@ -334,7 +334,7 @@ const radioGroup = reactive({
             <td>Bool</td>
             <td><code>false</code></td>
             <td></td>
-            <td>Força que la label estiga sempre dalt <b-pill variant="muted" size="sm">float-only</b-pill></td>
+            <td>Força que la label estiga sempre dalt <b-badge variant="supermuted" size="sm">float-only</b-badge></td>
             <td>
               <input v-model="select.labelOnTop" type="checkbox" />
             </td>
@@ -344,7 +344,7 @@ const radioGroup = reactive({
             <td>Bool</td>
             <td><code>false</code></td>
             <td></td>
-            <td>Canvia el color del contorn de l'estat focus a negre <b-pill variant="muted" size="sm">float-only</b-pill></td>
+            <td>Canvia el color del contorn de l'estat focus a negre <b-badge variant="supermuted" size="sm">float-only</b-badge></td>
             <td>
               <input v-model="select.focusDark" type="checkbox">
             </td>
@@ -354,7 +354,7 @@ const radioGroup = reactive({
             <td>Number, Object</td>
             <td><code>4</code></td>
             <td><code>1-4</code></td>
-            <td>Columnes que ocupa dins d'un <code>b-input-group</code> <b-pill variant="muted" size="sm">group-only</b-pill></td>
+            <td>Columnes que ocupa dins d'un <code>b-input-group</code> <b-badge variant="supermuted" size="sm">group-only</b-badge></td>
             <td></td>
           </tr>
         </tbody>
@@ -473,7 +473,7 @@ const radioGroup = reactive({
             <tr>
               <td>name</td>
               <td>String</td>
-              <td><b-pill variant="muted" size="sm">Required</b-pill></td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
               <td></td>
               <td>Nom de l'input</td>
               <td>
@@ -483,7 +483,7 @@ const radioGroup = reactive({
             <tr>
               <td>value</td>
               <td>String</td>
-              <td><b-pill variant="muted" size="sm">Required</b-pill></td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
               <td></td>
               <td>Vaue de l'input</td>
               <td></td>

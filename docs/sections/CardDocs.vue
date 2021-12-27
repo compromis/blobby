@@ -1,5 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
+import BDropdown from '../../components/dropdown/BDropdown.vue'
+import BButton from '../../components/button/BButton.vue'
 
 const card = reactive({
   type: 'shadow',
@@ -22,6 +24,9 @@ const cardSection = reactive({
 
 const cardList = reactive({
   padded: true,
+  divisions: true,
+  blockLinks: false,
+  menu: false,
   as: 'ul'
 })
 </script>
@@ -102,7 +107,7 @@ const cardList = reactive({
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
-              <td>Targeta degradat glowy <b-pill variant="muted" size="sm">Gradient-only</b-pill></td>
+              <td>Targeta degradat glowy <b-badge variant="supermuted" size="sm">Gradient-only</b-badge></td>
               <td>
                 <input v-model="card.glowy" type="checkbox">
               </td>
@@ -132,7 +137,7 @@ const cardList = reactive({
               <td>String</td>
               <td></td>
               <td></td>
-              <td>Imatge de fons <b-pill variant="muted" size="sm">Gradient</b-pill> <b-pill variant="muted" size="sm">Solid</b-pill></td>
+              <td>Imatge de fons <b-badge variant="supermuted" size="sm">Gradient</b-badge> <b-badge variant="supermuted" size="sm">Solid</b-badge></td>
               <td>
                 <b-input v-model="card.image" type="text" size="sm" checked />
               </td>
@@ -172,7 +177,7 @@ const cardList = reactive({
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
-              <td>Efecte on hover <b-pill variant="muted" size="sm">Shadow-only</b-pill></td>
+              <td>Efecte on hover <b-badge variant="supermuted" size="sm">Shadow-only</b-badge></td>
               <td>
                 <input v-model="card.rises" type="checkbox">
               </td>
@@ -282,6 +287,36 @@ const cardList = reactive({
               </td>
             </tr>
             <tr>
+              <td>divisions</td>
+              <td>Bool</td>
+              <td><code>true</code></td>
+              <td></td>
+              <td>Si la card té línies divisories</td>
+              <td>
+                <input v-model="cardList.divisions" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td>block-links</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Si la llista té block links</td>
+              <td>
+                <input v-model="cardList.blockLinks" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+              <td>menu</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Shortcut per a block-links, divisions false i padded false</td>
+              <td>
+                <input v-model="cardList.menu" type="checkbox">
+              </td>
+            </tr>
+            <tr>
               <td>as</td>
               <td>String</td>
               <td><code>ul</code></td>
@@ -317,11 +352,26 @@ const cardList = reactive({
           <b-card-section v-bind="cardSection">
             Hello
           </b-card-section>
-          <b-card-list :padded="cardList.padded" :as="as">
-            <li>I'm item one</li>
-            <li>I'm item two</li>
+          <b-card-list v-bind="cardList">
+            <li><a href="sads">I'm item one</a></li>
+            <li><a href="sads">I'm item two</a></li>
           </b-card-list>
         </b-card>
+
+        <b-dropdown opens="hover,click">
+          <template #toggler>
+            <b-button size="lg" variant="supermuted">
+              Button
+            </b-button>
+          </template>
+
+          <b-card size="sm">
+            <b-card-list menu>
+              <li><a href="sads">I'm item one</a></li>
+              <li><a href="sads">I'm item two</a></li>
+            </b-card-list>
+          </b-card>
+        </b-dropdown>
       </div>
     </div>
   </div>
