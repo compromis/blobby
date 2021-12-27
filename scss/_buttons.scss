@@ -64,6 +64,14 @@
     color: var(--button-color);
     transition: 0.25s ease;
 
+    /* For some reason we need this */
+    /* to make the outline appear */
+    /* and prevent post-css from messing with us */
+    &:not(.dummy) {
+      border-width: 2px;
+      border-color: var(--button-color);
+    }
+
     &.button-supermuted,
     &.button-muted {
       color: var(--gray-700);
