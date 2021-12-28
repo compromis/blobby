@@ -12,8 +12,6 @@ $utilities: map-merge(
     'pointer-events': null,
     'text-opacity': null,
     'color': null,
-    'word-wrap': null,
-    'white-space': null,
     'text-decoration': null,
     'float': null,
   )
@@ -28,13 +26,13 @@ $utilities: map-merge(
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
-@import "bootstrap/scss/forms/form-text";
-@import "bootstrap/scss/forms/form-control";
-@import "bootstrap/scss/forms/form-select";
-@import "bootstrap/scss/forms/form-check";
-@import "bootstrap/scss/forms/form-range";
-@import "bootstrap/scss/helpers/ratio";
-@import "bootstrap/scss/helpers/position";
-@import "bootstrap/scss/helpers/visually-hidden";
-@import "bootstrap/scss/helpers/text-truncation";
+@import 'bootstrap/scss/forms/form-text';
+@import 'bootstrap/scss/forms/form-control';
+@import 'bootstrap/scss/forms/form-select';
+@import 'bootstrap/scss/forms/form-check';
+@import 'bootstrap/scss/forms/form-range';
+@import 'bootstrap/scss/helpers/ratio';
+@import 'bootstrap/scss/helpers/position';
+@import 'bootstrap/scss/helpers/visually-hidden';
+@import 'bootstrap/scss/helpers/text-truncation';
 @import 'bootstrap/scss/utilities/api';

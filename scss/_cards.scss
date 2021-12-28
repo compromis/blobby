@@ -144,31 +144,45 @@
       }
     }
 
-    &-with-block-links a {
+    &-with-block-links :is(a, button) {
       display: block;
       padding: calc(var(--card-padding) / 2) var(--card-padding);
     }
 
-    &:last-child li:last-child a {
+    &-with-block-links button {
+      appearance: none;
+      background: transparent;
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      text-align: left;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    &:last-child li:last-child :is(a, button) {
       border-bottom-left-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
     }
 
-    &:first-child li:first-child a {
+    &:first-child li:first-child :is(a, button) {
       border-top-left-radius: var(--border-radius);
       border-top-right-radius: var(--border-radius);
     }
 
-    &:not(.card-list-divisions).card-list-with-block-links a {
+    &:not(.card-list-divisions).card-list-with-block-links :is(a, button) {
       color: var(--text-base);
       transition: .25s ease;
     
-      &:hover {
+      &:hover:not(:disabled) {
         background: var(--gray-100);
         text-decoration: none;
       }
 
       &:focus {
+        @include focus-shadow($primary);
         position: relative;
         z-index: 2;
       }

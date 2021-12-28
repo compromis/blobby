@@ -2,7 +2,7 @@
   appearance: none;
   border: none;
   background: none;
-  border-radius: var(--border-radius, #{$border-radius-sm});
+  border-radius: var(--button-border-radius, #{$border-radius-sm});
   padding: var(--button-padding-y) var(--button-padding-x);
 
   // Variants (Colors)
@@ -146,25 +146,25 @@
 
   // Sizes
   &-sm {
-    --border-radius: #{$border-radius-xs};
+    --button-border-radius: #{$border-radius-xs};
     --button-padding-y: 0.25rem;
     --button-padding-x: 0.5rem;
   }
 
   &-md {
-    --border-radius: #{$border-radius-sm};
+    --button-border-radius: #{$border-radius-sm};
     --button-padding-y: 0.5rem;
     --button-padding-x: 1rem;
   }
 
   &-lg {
-    --border-radius: #{$border-radius-sm};
+    --button-border-radius: #{$border-radius-sm};
     --button-padding-y: calc(0.75rem + 1.5px);
     --button-padding-x: 1.75rem;
   }
 
   &-xl {
-    --border-radius: #{$border-radius-md};
+    --button-border-radius: #{$border-radius-md};
     --button-padding-y: 1.25rem;
     --button-padding-x: 2.25rem;
   }
