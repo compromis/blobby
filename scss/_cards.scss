@@ -144,32 +144,34 @@
       }
     }
 
-    &-with-block-links :is(a, button) {
-      display: block;
-      padding: calc(var(--card-padding) / 2) var(--card-padding);
-    }
-
-    &-with-block-links button {
-      appearance: none;
-      background: transparent;
-      font-family: inherit;
-      width: 100%;
-      border: 0;
-      text-align: left;
-
-      &:disabled {
-        opacity: 0.5;
+    &-with-block-links {
+      :is(a, button) {
+        display: block;
+        padding: calc(var(--card-padding) / 2) var(--card-padding);
       }
-    }
 
-    &:last-child li:last-child :is(a, button) {
-      border-bottom-left-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-    }
+      button {
+        appearance: none;
+        background: transparent;
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        text-align: left;
 
-    &:first-child li:first-child :is(a, button) {
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+
+      &:last-child li:last-child :is(a, button) {
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+
+      &:first-child li:first-child :is(a, button) {
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+      }
     }
 
     &:not(.card-list-divisions).card-list-with-block-links :is(a, button) {
