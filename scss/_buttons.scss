@@ -5,6 +5,12 @@
   border-radius: var(--button-border-radius, #{$border-radius-sm});
   padding: var(--button-padding-y) var(--button-padding-x);
 
+  & > span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   // Variants (Colors)
   &-default {
     --button-color: var(--white);
@@ -81,7 +87,7 @@
       background: linear-gradient(var(--white), var(--white)) padding-box,
         var(--button-color) border-box;
 
-      span {
+      & > span {
         background: var(--button-color);
         -webkit-background-clip: text;
         background-clip: text;
@@ -92,7 +98,7 @@
         background: var(--button-color) padding-box,
           var(--button-color) border-box;
 
-        span {
+        & > span {
           background: $white;
           -webkit-background-clip: text;
           background-clip: text;
