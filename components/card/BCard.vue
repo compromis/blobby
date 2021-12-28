@@ -13,7 +13,7 @@
       }
     ]"
     :to="to || null"
-    :href="href || null">
+    :href="href || to || null">
     <div :class="['card-content', { 'overlay-content': !!image }, ...computedContentClass]">
       <slot />
     </div>

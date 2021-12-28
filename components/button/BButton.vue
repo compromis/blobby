@@ -1,8 +1,8 @@
 <template>
   <component
     :is="tag"
-    :to="to"
-    :href="href || to"
+    :to="to || null"
+    :href="href || to || null"
     :class="[
       'button',
       `button-${variant}`,
