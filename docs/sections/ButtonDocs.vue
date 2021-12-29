@@ -167,11 +167,13 @@ const previewBg = ref('#fff')
             <input v-model="previewBg" type="color">
           </b-card-section>
           <b-card-section :style="{ backgroundColor: previewBg }">
-            <b-button
-              v-bind="button"
-              class="mb-4">
-              Anar ->
-            </b-button>
+            <div class="input-append">
+              <b-input size="lg" label="lsks" no-label name="jsjs" />
+              <b-button
+                v-bind="button">
+                Anar ->
+              </b-button>
+            </div>
           </b-card-section>
         </b-card>
       </div>

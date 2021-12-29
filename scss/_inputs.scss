@@ -3,23 +3,25 @@
   appearance: none;
   background: var(--input-background-color, var(--white));
   font-family: inherit;
-  padding: var(--input-padding, .5rem);
-  font-size: var(--input-font-size, 1rem);
+  font-size: inherit;
+  padding: var(--input-padding-y) var(--input-padding-x);
   color: var(--text-color);
+  line-height: 1.5;
+  min-height: calc(1.5em + calc(var(--input-padding-y) * 2) + 4px);
 
   &-sm {
-    --input-font-size: .9rem;
-    --input-padding: .25rem .5rem;
+    --input-padding-x: .5rem;
+    --input-padding-y: .25rem;
   }
 
   &-md {
-    --input-font-size: 1rem;
-    --input-padding: .5rem .75rem;
+    --input-padding-x: .75rem;
+    --input-padding-y: .5rem;
   }
 
   &-lg {
-    --input-font-size: 1.25rem;
-    --input-padding: .75rem 1rem;
+    --input-padding-x: 1rem;
+    --input-padding-y: .75rem;
   }
 
   &-label {
@@ -45,12 +47,12 @@
   }
 
   &-float {
-    --input-padding: 2rem 1.25rem .75rem;
     position: relative;
 
     .input {
       border: 0;
       font-size: 1.25rem;
+      padding: 2rem 1.25rem .75rem;
 
       &:focus {
         outline: 0;
@@ -92,7 +94,9 @@
     }
 
     &.input-float {
-      --input-padding: 1.2rem 1.25rem 1.55rem;
+      .input {
+        padding: 1.2rem 1.25rem 1.55rem;
+      }
 
       .input-label {
         font-size: $text-sm;
@@ -207,6 +211,7 @@
 // Input appends
 .input-append {
   display: flex;
+  align-items: stretch;
 
   & > *:not(:first-child):not(:last-child),
   & > *:not(:first-child):not(:last-child) :is(.input, .button) {

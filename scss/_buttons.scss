@@ -4,6 +4,8 @@
   background: none;
   border-radius: var(--button-border-radius, #{$border-radius-sm});
   padding: var(--button-padding-y) var(--button-padding-x);
+  line-height: 1.5;
+  min-height: calc(1.5em + calc(var(--button-padding-y) * 2) + 4px);
 
   & > span {
     display: flex;
@@ -153,26 +155,28 @@
   // Sizes
   &-sm {
     --button-border-radius: #{$border-radius-xs};
-    --button-padding-y: 0.25rem;
-    --button-padding-x: 0.5rem;
+    --button-padding-x: .5rem;
+    --button-padding-y: .25rem;
   }
 
   &-md {
     --button-border-radius: #{$border-radius-sm};
-    --button-padding-y: 0.5rem;
-    --button-padding-x: 1rem;
+    --button-padding-x: .75rem;
+    --button-padding-y: .5rem;
   }
 
   &-lg {
     --button-border-radius: #{$border-radius-sm};
-    --button-padding-y: calc(0.75rem + 1.5px);
-    --button-padding-x: 1.75rem;
+    --button-padding-x: 1rem;
+    --button-padding-y: .75rem;
+    font-weight: 900;
   }
 
   &-xl {
     --button-border-radius: #{$border-radius-md};
     --button-padding-y: 1.25rem;
     --button-padding-x: 2.25rem;
+    font-weight: 900;
   }
 
   //Hover

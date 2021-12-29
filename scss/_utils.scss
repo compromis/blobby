@@ -92,6 +92,14 @@
   }
 }
 
+.link-default-to-gradient {
+  color: var(--text-base) !important;
+
+  &:hover {
+    @include gradient-text($gradient);
+  }
+}
+
 .link-underlined {
   text-decoration: underline;
 }

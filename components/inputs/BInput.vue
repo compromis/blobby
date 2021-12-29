@@ -4,6 +4,7 @@
       'input-field',
       `input-${variant}`,
       `input-${size}`,
+      `text-${size}`,
       `input-border-${border}`,
       spanClass,
       {
