@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   appearance: none;
   border: none;
   background: none;
@@ -194,8 +195,9 @@
   &:disabled {
     opacity: 0.5;
   }
-}
 
-a.button {
-  display: inline-block;
+  // Fix Firefox height issue
+  &::-moz-focus-inner { 
+    border: 0;
+  }
 }
