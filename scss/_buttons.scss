@@ -1,4 +1,5 @@
 .button {
+  display: inline-flex;
   appearance: none;
   border: none;
   background: none;
@@ -6,6 +7,7 @@
   padding: var(--button-padding-y) var(--button-padding-x);
   line-height: 1.5;
   min-height: calc(1.5em + calc(var(--button-padding-y) * 2) + 4px);
+  align-items: center;
 
   & > span {
     display: flex;
@@ -66,17 +68,9 @@
   }
 
   &-outline {
-    border-style: solid;
+    border: 2px solid var(--button-color);
     color: var(--button-color);
     transition: 0.25s ease;
-
-    /* For some reason we need this */
-    /* to make the outline appear */
-    /* and prevent post-css from messing with us */
-    &:not(.dummy) {
-      border-width: 2px;
-      border-color: var(--button-color);
-    }
 
     &.button-supermuted,
     &.button-muted {
@@ -85,39 +79,32 @@
 
     &.button-primary,
     &.button-secondary {
-      border-color: transparent;
-      background: linear-gradient(var(--white), var(--white)) padding-box,
-        var(--button-color) border-box;
+      background: var(--button-color);
+      padding: 2px;
+      border: 0;
+      position: relative;
 
-      & > span {
+      span {
+        position: relative;
+        padding: var(--button-padding-y) var(--button-padding-x);
         background: var(--button-color);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        z-index: 2;
       }
 
-      &:hover:not(:disabled) {
-        background: var(--button-color) padding-box,
-          var(--button-color) border-box;
-
-        & > span {
-          background: $white;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-
-        svg {
-          color: $white;
-        }
+      &::before {
+        content: '';
+        background: var(--white);
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: calc(var(--button-border-radius, #{$border-radius-sm}) - 2px);
+        z-index: 1;
       }
-    }
-
-    &.button-primary svg {
-      color: $gradient-primary-start;
-    }
-
-    &.button-secondary svg {
-      color: $gradient-secondary-start;
     }
 
     &:hover:not(:disabled) {
@@ -200,8 +187,4 @@
   &:disabled {
     opacity: 0.5;
   }
-}
-
-a.button {
-  display: inline-block;
 }
