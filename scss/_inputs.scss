@@ -74,7 +74,7 @@
     &.input-has-value {
       .input-label {
         font-size: $text-sm;
-        transform: translateY(calc(-50% - .75rem));
+        transform: translateY(calc(-50% - 1rem));
       }
     }
   }
