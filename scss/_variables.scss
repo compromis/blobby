@@ -27,15 +27,13 @@ $iniciativa: #ad283f !default;
 $verds: #5ab552 !default;
 
 // Social networks
-$social-networks: (
-  facebook: #3b5998,
-  twitter: #00acee,
-  instagram: #e1306c,
-  youtube: #ff0800,
-  telegram: #08c,
-  tiktok: #000,
-  twitch: #772ce8,
-);
+$facebook: #3b5998;
+$twitter: #00acee;
+$instagram: #e1306c;
+$youtube: #ff0800;
+$telegram: #08c;
+$tiktok: #000;
+$twitch: #772ce8;
 
 // Grays
 $gray-50: #f8faff;
@@ -254,10 +252,20 @@ $border-radii: (
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 2,
   6: $spacer * 3,
+);
+
+$social-networks: (
+  'facebook': $facebook,
+  'twitter': $twitter,
+  'instagram': $instagram,
+  'youtube': $youtube,
+  'telegram': $telegram,
+  'tiktok': $tiktok,
+  'twitch': $twitch,
 );
