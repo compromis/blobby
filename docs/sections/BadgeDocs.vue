@@ -1,13 +1,18 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
 import BBadgeList from '@/components/badge/BBadgeList.vue'
 import BBadge from '@/components/badge/BBadge.vue'
+import Snippet from '../components/Snippet.vue'
 
 const badge = reactive({
   variant: 'default',
   outline: false,
   as: 'span',
   size: 'md'
+})
+
+const as = computed(() => {
+  return badge.as != 'span' ? ` as="${badge.as}"` : ''
 })
 </script>
 
@@ -116,19 +121,20 @@ const badge = reactive({
           </b-badge>
         </b-badge-list>
       </div>
-      <code>
-        <b-badge-list>
-          <b-badge v-bind="badge">
-            Badge 1
-          </b-badge>
-          <b-badge v-bind="badge">
-            Badge 2
-          </b-badge>
-          <b-badge v-bind="badge">
-            Badge 3
-          </b-badge>
-        </b-badge-list>
-      </code>
+      <snippet :properties="badge">{{`
+<b-badge-list>
+  <b-badge variant="${badge.variant}" size="${badge.size}"${as}${badge.outline ? ' outline' : ''}>
+    Badge 1
+  </b-badge>
+  <b-badge variant="${badge.variant}">
+    Badge 2
+  </b-badge>
+  <b-badge variant="${badge.variant}">
+    Badge 3
+  </b-badge>
+</b-badge-list>
+`}}
+</snippet>
     </div>
   </div>
 </template>
