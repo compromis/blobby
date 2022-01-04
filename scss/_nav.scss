@@ -182,6 +182,10 @@ $nav-y-padding: 0.85rem;
     transform-origin: 0 -15px;
     will-change: visibility, opacity, transform, backdrop-filter;
 
+    @at-root .dark .nav-submenu {
+      background: rgba($black, 0.85);
+    }
+
     li {
       flex-grow: 1;
     }
@@ -282,7 +286,7 @@ $nav-y-padding: 0.85rem;
     }
 
     h3 {
-      color: var(--gray-700);
+      color: var(--text-muted);
       font-size: 1rem;
       text-decoration: none;
       letter-spacing: 0.05em;

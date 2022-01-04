@@ -104,7 +104,7 @@ export default {
         outline: {
           base: 'border',
           variants: {
-            default: 'text-muted border-gray',
+            default: 'text-muted border-outline',
             inverted: 'text-white border-white'
           }
         },

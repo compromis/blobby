@@ -13,7 +13,7 @@
   }
 }
 
-@include media-breakpoint-down (sm) {
+@include media-breakpoint-down(sm) {
   :root {
     --text-2xl: #{$text-2xl - ($text-2xl * 0.175)};
     --text-3xl: #{$text-3xl - ($text-3xl * 0.2)};
@@ -43,15 +43,15 @@
   box-shadow: $shadow-default;
 
   &-rises {
-    transition: .25s ease;
+    transition: 0.25s ease;
 
     &:hover {
       box-shadow: $shadow-raised;
-      translate: translateY(-.5rem);
+      translate: translateY(-0.5rem);
     }
 
     &:active {
-      translate: translateY(-.5rem);
+      translate: translateY(-0.5rem);
     }
   }
 }
@@ -67,7 +67,7 @@
 // Links
 .link-muted-to-black {
   color: var(--text-muted) !important;
-  transition: .2s ease;
+  transition: 0.2s ease;
 
   &:hover {
     color: var(--text-color) !important;
@@ -76,7 +76,7 @@
 
 .link-muted-to-primary {
   color: var(--text-muted) !important;
-  transition: .2s ease;
+  transition: 0.2s ease;
 
   &:hover {
     color: var(--primary) !important;
@@ -85,7 +85,7 @@
 
 .link-default-to-primary {
   color: var(--text-base) !important;
-  transition: .2s ease;
+  transition: 0.2s ease;
 
   &:hover {
     color: var(--primary) !important;
@@ -102,6 +102,14 @@
 
 .link-underlined {
   text-decoration: underline;
+}
+
+.link-not-underlined {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .link-to-underlined {
@@ -129,7 +137,7 @@
 
   a {
     display: block;
-    transition: color .15s ease-in-out;
+    transition: color 0.15s ease-in-out;
   }
 
   @each $name, $color in $social-networks {
@@ -151,7 +159,7 @@
   }
 }
 
-@include media-breakpoint-down (md) {
+@include media-breakpoint-down(md) {
   @for $i from 1 through 4 {
     .md\:span-#{$i} {
       grid-column: span #{$i} / span #{$i};
@@ -159,7 +167,7 @@
   }
 }
 
-@include media-breakpoint-down (sm) {
+@include media-breakpoint-down(sm) {
   @for $i from 1 through 4 {
     .sm\:span-#{$i} {
       grid-column: span #{$i} / span #{$i};
@@ -182,6 +190,22 @@
 
 .border-left {
   border-left: 1px solid var(--border-color, var(--gray-200)) !important;
+}
+
+.border {
+  border: 1px solid var(--border-color, var(--gray-200)) !important;
+}
+
+.border-outline {
+  --border-color: var(--gray-300);
+}
+
+.border-white {
+  --border-color: #{$white};
+}
+
+.border-black {
+  --border-color: #{$black};
 }
 
 // Text

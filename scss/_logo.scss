@@ -1,9 +1,9 @@
 .compromis-logo {
   .letter {
-    fill: #353949;
+    fill: var(--text-color);
   }
   .background {
-    fill: #ffffff;
+    fill: $white;
   }
   .careta {
     fill: url(#compromisGradient);
@@ -19,9 +19,14 @@
       display: none;
     }
   }
-  .inverted {
+  .force-white {
     .letter {
-      fill: white;
+      fill: $white;
+    }
+  }
+  .force-black {
+    .letter {
+      fill: $black;
     }
   }
 }

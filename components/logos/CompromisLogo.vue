@@ -7,7 +7,7 @@
       viewBox="0 0 940.3 160.1"
       class="compromis-logo"
     >
-      <g :class="{ 'mono': mono, 'inverted' : inverted }">
+      <g :class="{ 'mono': mono, 'force-white' : forceWhite, 'force-black' : forceBlack}">
         <g>
           <path
             class="letter"
@@ -106,7 +106,8 @@ export default {
   name: 'CompromisLogo',
   props: {
     mono: Boolean,
-    inverted: Boolean,
+    forceWhite: Boolean,
+    forceBlack: Boolean,
     collapsible: {
       type: String,
       default: null

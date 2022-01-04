@@ -116,6 +116,19 @@ const badge = reactive({
           </b-badge>
         </b-badge-list>
       </div>
+      <code>
+        <b-badge-list>
+          <b-badge v-bind="badge">
+            Badge 1
+          </b-badge>
+          <b-badge v-bind="badge">
+            Badge 2
+          </b-badge>
+          <b-badge v-bind="badge">
+            Badge 3
+          </b-badge>
+        </b-badge-list>
+      </code>
     </div>
   </div>
 </template>

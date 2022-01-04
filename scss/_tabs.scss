@@ -23,11 +23,11 @@
     &.selected,
     &.nuxt-link-exact-active {
       background: $gradient-primary;
-      color: var(--white);
+      color: $white;
 
       &:hover {
         background: $gradient-primary;
-        color: var(--white);
+        color: $white;
       }
     }
 
@@ -49,7 +49,7 @@
   &-outline .tab {
     background: transparent;
     border: 1px solid var(--gray-600);
-    color: var(--gray-600);
+    color: var(--text-muted);
 
     &.selected,
     &.nuxt-link-exact-active {
@@ -57,7 +57,7 @@
       border-width: 1px;
       border-color: transparent;
       background: $gradient-primary padding-box, $gradient-primary border-box;
-      color: var(--white);
+      color: $white;
 
       &:hover {
         background: $gradient-primary padding-box, $gradient-primary border-box;

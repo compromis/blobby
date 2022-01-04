@@ -48,14 +48,18 @@ $variants: (
 
   &-supermuted {
     --badge-color: var(--gray-100);
-    color: var(--gray-700);
+    color: var(--text-muted);
   }
 
   @each $name, $color in $variants {
     &-solid {
       &.badge-#{$name} {
-        --badge-color: #{mix($color, $white, 25%)};
+        --badge-color: #{rgba($color, 0.25)};
         color: mix($color, $black, 45%);
+
+        @at-root .dark .badge-solid.badge-#{$name} {
+          color: mix($color, $white, 45%);
+        }
       }
     }
 
@@ -81,7 +85,7 @@ $variants: (
 
     &.badge-supermuted,
     &.badge-muted {
-      color: var(--gray-700);
+      color: var(--text-muted);
     }
 
     &.badge-primary,
