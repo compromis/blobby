@@ -1,9 +1,5 @@
 <template>
-  <pre>
-    <code class="language-html">
-      <slot />
-    </code>
-  </pre>
+  <pre><code class="language-html"><slot /></code></pre>
 </template>
 
 <script>
@@ -16,4 +12,3 @@ export default {
   }
 }
 </script>
-

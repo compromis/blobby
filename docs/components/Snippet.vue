@@ -28,7 +28,6 @@ import SnippetCode from './SnippetCode.vue'
     watch: {
       properties: {
         handler () {
-          console.log('slot changed')
           this.ref = Math.random()
         },
         deep: true
@@ -37,6 +36,3 @@ import SnippetCode from './SnippetCode.vue'
   }
 </script>
 
-<style lang="scss" scoped>
-
-</style>

@@ -10,6 +10,7 @@ import BInput from '../components/inputs/BInput.vue'
 import BSelect from '../components/inputs/BSelect.vue'
 import BPill from '../components/pill/BPill.vue'
 import BBadge from '../components/badge/BBadge.vue'
+import Snippet from './components/Snippet.vue'
 
 const app = createApp(App)
 
@@ -22,5 +23,6 @@ app.component('BInput', BInput)
 app.component('BSelect', BSelect)
 app.component('BPill', BPill)
 app.component('BBadge', BBadge)
+app.component('Snippet', Snippet)
 
 app.mount('#app')

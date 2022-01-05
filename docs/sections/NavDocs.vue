@@ -1,4 +1,36 @@
 <script setup>
+import { reactive, computed} from 'vue'
+import inlineProps from '../composables/inlineProps.js'
+
+const nav = reactive({
+  collapseAt: 'lg',
+  fullWidth: false,
+  menuTitle: 'Menú principal',
+})
+
+const navSlots = reactive({
+  logoPrepend: '',
+  logoAppend: ''
+})
+
+const navProps = inlineProps(nav)
+
+const logoAppendSlot = computed(() => {
+  let templates = ''
+  if (navSlots.logoPrepend) {
+    templates += `
+
+  <template #logoPrepend>${navSlots.logoPrepend}</template>`
+    }
+
+  if (navSlots.logoAppend) {
+    templates += `
+
+  <template #logoAppend>${navSlots.logoAppend}</template>`
+    }
+
+  return templates
+})
 </script>
 
 <template>
@@ -33,7 +65,14 @@
               <td><code>lg</code></td>
               <td><code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code></td>
               <td>Breakpoint per amagar el menú</td>
-              <td></td>
+              <td>
+                <b-select v-model="nav.collapseAt" size="sm">
+                  <option>sm</option>
+                  <option>md</option>
+                  <option>lg</option>
+                  <option>xl</option>
+                </b-select>
+              </td>
             </tr>
             <tr>
               <td>full-width</td>
@@ -41,7 +80,9 @@
               <td><code>false</code></td>
               <td></td>
               <td>Fa que l'amplària de la nav siga el 100%</td>
-              <td></td>
+              <td>
+                <input v-model="nav.fullWidth" type="checkbox">
+              </td>
             </tr>
             <tr>
               <td>menu-title</td>
@@ -49,7 +90,9 @@
               <td><code>Menú principal</code></td>
               <td></td>
               <td>ARIA Title per al menú</td>
-              <td></td>
+              <td>
+                <b-input v-model="nav.menuTitle" type="text" size="sm" />
+              </td>
             </tr>
             <tr>
               <td>Main slot</td>
@@ -65,7 +108,9 @@
               <td></td>
               <td></td>
               <td>Contingut a afegir abans del logo</td>
-              <td></td>
+              <td>
+                <b-input v-model="navSlots.logoPrepend" type="text" size="sm" />
+              </td>
             </tr>
             <tr>
               <td>#logo-append</td>
@@ -73,13 +118,21 @@
               <td></td>
               <td></td>
               <td>Text a afegir després del logo</td>
-              <td></td>
+              <td>
+                <b-input v-model="navSlots.logoAppend" type="text" size="sm" />
+              </td>
             </tr>
           </tbody>
         </table>
       </b-card>
     </div>
     <div class="docs-col-preview">
+      <snippet :properties="[nav, navSlots]">{{`<b-nav${navProps}>
+  <template #submenu>
+    <b-nav-item to="/">Enllaç</b-nav-item>
+    <b-nav-item to="/">Enllaç 2</b-nav-item>
+  </template>${logoAppendSlot}
+</b-card>`}}</snippet>
     </div>
   </div>
 </template>

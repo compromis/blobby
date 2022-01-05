@@ -1,8 +1,8 @@
 <script setup>
-import { reactive, computed } from 'vue'
+import { reactive } from 'vue'
+import inlineProps from '../composables/inlineProps.js'
 import BBadgeList from '@/components/badge/BBadgeList.vue'
 import BBadge from '@/components/badge/BBadge.vue'
-import Snippet from '../components/Snippet.vue'
 
 const badge = reactive({
   variant: 'default',
@@ -11,9 +11,7 @@ const badge = reactive({
   size: 'md'
 })
 
-const as = computed(() => {
-  return badge.as != 'span' ? ` as="${badge.as}"` : ''
-})
+const badgeProps = inlineProps(badge)
 </script>
 
 <template>
@@ -121,20 +119,17 @@ const as = computed(() => {
           </b-badge>
         </b-badge-list>
       </div>
-      <snippet :properties="badge">{{`
-<b-badge-list>
-  <b-badge variant="${badge.variant}" size="${badge.size}"${as}${badge.outline ? ' outline' : ''}>
+      <snippet :properties="badge">{{`<b-badge-list>
+  <b-badge${badgeProps}>
     Badge 1
   </b-badge>
-  <b-badge variant="${badge.variant}">
+  <b-badge${badgeProps}>
     Badge 2
   </b-badge>
-  <b-badge variant="${badge.variant}">
+  <b-badge${badgeProps}>
     Badge 3
   </b-badge>
-</b-badge-list>
-`}}
-</snippet>
+</b-badge-list>`}}</snippet>
     </div>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
+import inlineProps from '../composables/inlineProps.js'
 import BButton from '../../components/button/BButton.vue'
 
 const button = reactive({
@@ -16,6 +17,8 @@ const button = reactive({
 })
 
 const previewBg = ref('#fff')
+
+const buttonProps = inlineProps(button)
 </script>
 
 <template>
@@ -167,15 +170,15 @@ const previewBg = ref('#fff')
             <input v-model="previewBg" type="color">
           </b-card-section>
           <b-card-section :style="{ backgroundColor: previewBg }">
-            <div class="input-append">
-              <b-input size="lg" label="lsks" no-label name="jsjs" />
-              <b-button
-                v-bind="button">
-                Anar ->
-              </b-button>
-            </div>
+            <b-button
+              v-bind="button">
+              Anar ->
+            </b-button>
           </b-card-section>
         </b-card>
+        <snippet :properties="button">{{`<b-button${buttonProps}>
+  Anar ->
+</b-button>`}}</snippet>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
+import inlineProps from '../composables/inlineProps.js'
 import BDropdown from '../../components/dropdown/BDropdown.vue'
 import BButton from '../../components/button/BButton.vue'
 
@@ -19,7 +20,9 @@ const card = reactive({
 
 const cardSection = reactive({
   borderTop: false,
-  borderBottom: false
+  borderBottom: false,
+  borderLeft: false,
+  borderRight: false
 })
 
 const cardList = reactive({
@@ -29,6 +32,10 @@ const cardList = reactive({
   menu: false,
   as: 'ul'
 })
+
+const cardProps = inlineProps(card)
+const cardSectionProps = inlineProps(cardSection)
+const cardListProps = inlineProps(cardList)
 </script>
 
 <template>
@@ -139,7 +146,7 @@ const cardList = reactive({
               <td></td>
               <td>Imatge de fons <b-badge variant="supermuted" size="sm">Gradient</b-badge> <b-badge variant="supermuted" size="sm">Solid</b-badge></td>
               <td>
-                <b-input v-model="card.image" type="text" size="sm" checked />
+                <b-input v-model="card.image" type="text" size="sm" />
               </td>
             </tr>
             <tr>
@@ -332,19 +339,7 @@ const cardList = reactive({
     </div>
     <div class="docs-col-preview">
       <div class="sticky">
-        <b-card
-          :type="card.type"
-          :variant="card.variant"
-          :size="card.size"
-          :glowy="card.glowy"
-          :padded="card.padded"
-          :overflow-hidden="card.overflowHidden"
-          :image="card.image"
-          :to="card.to"
-          :href="card.href"
-          :as="card.as"
-          :rises="card.rises"
-          class="mb-4">
+        <b-card v-bind="card" class="mb-4">
           <b-card-section v-bind="cardSection">
             <h2>Title</h2>
           </b-card-section>
@@ -358,20 +353,18 @@ const cardList = reactive({
           </b-card-list>
         </b-card>
 
-        <b-dropdown opens="hover,click">
-          <template #toggler>
-            <b-button size="lg" variant="supermuted">
-              Button
-            </b-button>
-          </template>
-
-          <b-card size="sm">
-            <b-card-list menu>
-              <li><a href="sads">I'm item one</a></li>
-              <li><a href="sads">I'm item two</a></li>
-            </b-card-list>
-          </b-card>
-        </b-dropdown>
+        <snippet :properties="[card, cardSection, cardList]">{{`<b-card${cardProps}>
+  <b-card-section${cardSectionProps}>
+    <h2>Title</h2>
+  </b-card-section>
+  <b-card-section${cardSectionProps}>
+    Hello
+  </b-card-section>
+  <b-card-list${cardListProps}>
+    <li><a href="sads">I'm item one</a></li>
+    <li><a href="sads">I'm item two</a></li>
+  </b-card-list>
+</b-card>`}}</snippet>
       </div>
     </div>
   </div>
