@@ -24,7 +24,7 @@
 
   // Card shadow
   &-shadow {
-    box-shadow: $shadow-default;
+    box-shadow: var(--shadow-default);
   }
 
   // Overlay gradients
@@ -219,12 +219,12 @@ a.card {
   &.card-rises {
     &:hover {
       transform: translateY(-2%);
-      box-shadow: $shadow-raised;
+      box-shadow: var(--shadow-raised);
     }
 
     &:active {
       transform: translateY(1%);
-      box-shadow: $shadow-default;
+      box-shadow: var(--shadow-default);
     }
   }
 }

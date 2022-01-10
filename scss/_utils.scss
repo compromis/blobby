@@ -40,13 +40,13 @@
 
 // Shadows
 .shadow {
-  box-shadow: $shadow-default;
+  box-shadow: var(--shadow-default);
 
   &-rises {
     transition: 0.25s ease;
 
     &:hover {
-      box-shadow: $shadow-raised;
+      box-shadow: var(--shadow-raised);
       translate: translateY(-0.5rem);
     }
 

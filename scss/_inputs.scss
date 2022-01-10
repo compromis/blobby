@@ -146,7 +146,7 @@
 
     &:hover:not(.disabled) {
       transform: translateY(-5%);
-      box-shadow: $shadow-raised;
+      box-shadow: var(--shadow-raised);
     }
 
     &:active:not(.disabled) {
