@@ -119,6 +119,12 @@ $shadow-default: 0 0.8rem 1.7rem -0.3rem rgba($gray-900, 0.15),
 $shadow-raised: 0 1.25rem 2.1rem -0.3rem rgba($gray-900, 0.15),
   0 0.9rem 1.4rem -0.5rem rgba($gray-900, 0.2),
   0 -0.75rem 1.4rem -0.4rem rgba($gray-900, 0.015) !default;
+$shadow-default-dark: 0 0.8rem 1.7rem -0.3rem rgba(#000, 0.1),
+  0 0.5rem 1rem -0.5rem rgba(#000, 0.15),
+  0 -0.4rem 1rem -0.4rem rgba(#000, 0.01) !default;
+$shadow-raised-dark: 0 1.25rem 2.1rem -0.3rem rgba(#000, 0.1),
+  0 0.9rem 1.4rem -0.5rem rgba(#000, 0.15),
+  0 -0.75rem 1.4rem -0.4rem rgba(#000, 0.01) !default;
 $box-shadow: $shadow-default;
 
 // Border radii
@@ -179,6 +185,8 @@ $css-vars: (
   'tiktok': $tiktok,
   'twitch': $twitch,
   'whatsapp': $whatsapp,
+  'shadow-default': $shadow-default,
+  'shadow-raised': $shadow-raised,
 );
 
 $css-vars-dark: (
@@ -200,6 +208,8 @@ $css-vars-dark: (
   'text-muted': $gray-300,
   'link-color': $link-color,
   'link-color-hover': $link-color-hover,
+  'shadow-default': $shadow-default-dark,
+  'shadow-raised': $shadow-raised-dark,
 );
 
 $backgrounds: (

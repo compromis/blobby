@@ -140,11 +140,11 @@
   // Shadow
   &-has-shadow {
     &.button-solid {
-      box-shadow: $shadow-default;
+      box-shadow: var(--shadow-default);
     }
 
     &:hover:not(:disabled) {
-      box-shadow: $shadow-raised;
+      box-shadow: var(--shadow-raised);
       transform: translateY(-4%);
     }
   }

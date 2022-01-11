@@ -172,7 +172,7 @@ $nav-y-padding: 0.85rem;
     padding: 1rem;
     backdrop-filter: blur(0) saturate(0);
     z-index: 11000;
-    box-shadow: $shadow-default;
+    box-shadow: var(--shadow-default);
     border-radius: 0.5rem;
     flex-direction: column;
     opacity: 0;
