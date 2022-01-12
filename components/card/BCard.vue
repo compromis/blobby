@@ -90,22 +90,25 @@ export default {
         shadow: {
           base: 'card-shadow',
           variants: {
-            default: 'bg-white',
-            inverted: 'bg-dark'
+            default: 'bg-color',
+            white: 'bg-white',
+            black: 'bg-black'
           }
         },
         solid: {
-          base: 'bg-black',
+          base: '',
           variants: {
-            default: 'bg-white',
-            inverted: 'bg-dark'
+            default: 'bg-color',
+            white: 'bg-white',
+            black: 'bg-black'
           }
         },
         outline: {
           base: 'border',
           variants: {
             default: 'text-muted border-outline',
-            inverted: 'text-white border-white'
+            white: 'text-muted border-outline',
+            black: 'text-white border-white'
           }
         },
         gradient: {
