@@ -65,7 +65,7 @@ $gradient-secondary: linear-gradient(
   $gradient-secondary-start,
   $gradient-secondary-end
 ) !default;
-$gradient-feminista: linear-gradient(
+$gradient-feminism: linear-gradient(
   var(--gradient-orientation, 45deg),
   $gradient-feminism-start,
   $gradient-feminism-end
@@ -147,6 +147,8 @@ $css-vars: (
   'gradient-primary-end': $gradient-primary-end,
   'gradient-secondary-start': $gradient-secondary-start,
   'gradient-secondary-end': $gradient-secondary-end,
+  'gradient-feminism-start': $gradient-feminism-start,
+  'gradient-feminism-end': $gradient-feminism-end,
   'black': $gray-900,
   'white': #fff,
   'gray-50': $gray-50,
@@ -159,6 +161,7 @@ $css-vars: (
   'gray-700': $gray-700,
   'gray-800': $gray-800,
   'gray-900': $gray-900,
+  'gray-1000': $gray-1000,
   'body-bg': $body-bg,
   'text-color': $text-color,
   'text-muted': $text-muted,
