@@ -9,7 +9,7 @@
 // Text sizes
 @each $name, $size in $text-sizes {
   .text-#{$name} {
-    font-size: var(--#{$name}, #{$size});
+    font-size: var(--#{$name}, #{$size}) !important;
   }
 }
 

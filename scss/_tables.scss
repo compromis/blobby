@@ -1,5 +1,6 @@
 .table {
   width: 100%;
+  line-height: 1.25;
 
   td {
     padding: var(--card-padding, 0.75rem 1rem);
@@ -8,7 +9,7 @@
 
   th {
     border-bottom: 1px solid var(--gray-300);
-    padding: calc(var(--card-padding, 0.75rem) * 1.5) var(--card-padding, 1rem);
+    padding: var(--card-padding, 1rem);
     background: var(--gray-50);
     vertical-align: bottom;
   }
