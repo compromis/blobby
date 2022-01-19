@@ -310,7 +310,8 @@ $nav-y-padding: 0.85rem;
       position: relative;
 
       .search-field {
-        --input-padding: 0.5rem 0.75rem 0.5rem 2rem;
+        --input-padding-x: 2rem;
+        --input-padding-y: 0.5rem;
         width: 100%;
       }
 

@@ -12,7 +12,7 @@
         'input-has-value': hasValue || labelOnTop
       }
     ]">
-    <label :for="name" :class="['input-label', 'text-sm', { 'visually-hidden': noLabel }]">
+    <label :for="name" :class="['input-label lh-1', { 'text-sm': variant !== 'float', 'visually-hidden': noLabel }]">
       {{ label }}
     </label>
     <component :is="inputType"
@@ -27,9 +27,7 @@
       @focus="focused = true"
       @blur="focused = false"
     />
-    <div v-if="hasErrors" :id="name + 'Errors'" class="field-errors mt-1 text-sm">
-      {{ error }}
-    </div>
+    <div v-if="hasErrors" :id="name + 'Errors'" class="field-errors mt-1 text-sm" v-html="error" />
     <slot></slot>
   </div>
 </template>

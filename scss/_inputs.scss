@@ -107,12 +107,18 @@
         position: absolute;
         bottom: .35rem;
         left: 1.25rem;
+        right: 1.25rem;
         background: $red;
         color: $white;
         border-radius: .25rem;
         padding: .2rem .3rem;
         margin-left: -.3rem;
         line-height: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        z-index: 10;
       }
     }
   }

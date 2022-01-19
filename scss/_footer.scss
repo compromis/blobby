@@ -1,7 +1,57 @@
 .footer {
-  margin-top: 2rem;
+  --footer-color: currentColor;
+  margin: 2rem 0;
 
-  svg {
-    height: 2rem;
+  &-logo {
+    svg {
+      height: 2rem;
+    }
+  }
+
+  a, a:hover {
+    color: var(--footer-color);
+  }
+
+  &-muted {
+    --footer-color: var(--text-muted);
+
+    a:hover {
+      color: var(--text-color);
+    }
+  }
+
+  &-text {
+    color: var(--footer-color);
+
+    .svg-inline--fa {
+      height: 1em;
+      width: 1em;
+      margin-right: .25em;
+
+      &:not(:first-child) {
+        margin-left: 1em;
+      }
+    }
+
+    address {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  &-social {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: .5rem;
+    }
+
+    svg {
+      height: 1.5em;
+      width: 1.5em;
+    }
   }
 }

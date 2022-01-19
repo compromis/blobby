@@ -9,6 +9,7 @@ import BadgeDocs from './sections/BadgeDocs.vue'
 import BNav from '../components/nav/BNav.vue'
 import BNavItem from '../components/nav/BNavItem.vue'
 import CloseIcon from '../components/icons/CloseIcon.vue'
+import BFooter from '../components/footer/BFooter.vue'
 </script>
 
 <template>
@@ -56,6 +57,7 @@ import CloseIcon from '../components/icons/CloseIcon.vue'
         <tab-docs />
         <badge-docs />
       </section>
+      <b-footer />
     </main>
   </div>
 </template>
