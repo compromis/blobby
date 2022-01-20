@@ -1,5 +1,5 @@
 <template>
-  <div :class="['logo-wrapper', { [`collapsible-${collapsible}`]: !!collapsible }]">
+  <div :class="['logo-wrapper', { [`collapsible-${collapseAt}`]: !!collapseAt }]">
     <svg
       version="1.1"
       x="0px"

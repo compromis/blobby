@@ -72,7 +72,7 @@
           </b-pill>
         </b-pill-list>
       </div>
-      <div class="col-xl-6">
+      <div class="col-xl-6 mt-3 mt-md-0">
         <h3>Compromís al teu municipi</h3>
         <b-nav-locals />
       </div>

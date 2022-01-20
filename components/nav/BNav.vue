@@ -37,7 +37,7 @@
       </div>
       <transition name="slide">
         <div v-if="expanded" id="nav-drawer" :aria-title="menuTitle" class="nav-drawer">
-          <ul class="nav-menu-mobile">
+          <ul v-if="$slots.default" class="nav-menu-mobile">
             <slot></slot>
           </ul>
           <b-nav-network />
