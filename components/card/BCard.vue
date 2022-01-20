@@ -38,8 +38,8 @@ export default {
     },
     variant: {
       type: String,
-      default: 'default',
-      validator: (value) => ['default', 'inverted', 'primary', 'secondary'].indexOf(value) !== -1
+      default: 'white',
+      validator: (value) => ['white', 'black', 'primary', 'secondary'].indexOf(value) !== -1
     },
     size: {
       type: String,
