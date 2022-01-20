@@ -21,7 +21,7 @@
       :name="name"
       :value="modelValue"
       v-bind="$attrs"
-      :class="['input', { 'w-100': block, 'focus-dark' : focusDark && variant === 'float' }]"
+      :class="['input', { 'w-100': block, 'focus-dark': focusDark && variant === 'float', 'input-focus-dark': focusDark && variant !== 'float' }]"
       :aria-describedby="error ? name + 'Errors' : null"
       @input="$emit('update:modelValue', $event.target.value)"
       @focus="focused = true"
