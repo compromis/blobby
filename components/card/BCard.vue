@@ -10,7 +10,7 @@
         'card-overlay-gradient': !!image,
         'overflow-hidden': overflowHidden,
         'card-rises': rises,
-        'card-focus-dark': focusDark
+        'focus-dark': focusDark
       }
     ]"
     :to="to || null"

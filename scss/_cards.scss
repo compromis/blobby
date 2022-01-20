@@ -228,7 +228,3 @@ a.card {
     }
   }
 }
-
-.focus-dark:focus {
-  @include focus-shadow($black);
-}
