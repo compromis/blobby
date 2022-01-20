@@ -9,7 +9,8 @@
       {
         'card-overlay-gradient': !!image,
         'overflow-hidden': overflowHidden,
-        'card-rises': rises
+        'card-rises': rises,
+        'card-focus-dark': focusDark
       }
     ]"
     :to="to || null"
@@ -81,6 +82,10 @@ export default {
     contentClass: {
       type: [Array, String],
       default: () => []
+    },
+    focusDark: {
+      type: Boolean,
+      default: false
     }
   },
 
