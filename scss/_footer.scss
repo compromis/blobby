@@ -20,17 +20,20 @@
     }
   }
 
+  &-light {
+    --footer-color: #{$white};
+
+    a:hover {
+      opacity: .75;
+    }
+  }
+
   &-text {
     color: var(--footer-color);
 
     .svg-inline--fa {
       height: 1em;
       width: 1em;
-      margin-right: .25em;
-
-      &:not(:first-child) {
-        margin-left: 1em;
-      }
     }
 
     address {
@@ -46,7 +49,7 @@
     padding: 0;
 
     li {
-      margin-right: .5rem;
+      margin-right: 1rem;
     }
 
     svg {

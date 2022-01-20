@@ -1,6 +1,6 @@
 <template>
   <footer :class="['footer', `footer-${variant}`]">
-    <a href="https://compromis.net" target="_blank" rel="noopener" class="footer-logo d-block link-muted-to-black mb-3">
+    <a href="https://compromis.net" target="_blank" rel="noopener" class="footer-logo d-block mb-3">
       <compromis-logo mono />
       <span class="visually-hidden">Compromís</span>
     </a>
@@ -8,14 +8,20 @@
       <strong>{{ campaign }}</strong> és una campanya de <strong><a href="https://compromis.net" target="_blank" rel="noopener" class="link-muted-to-black">Compromís</a></strong>
     </p>
     <p class="footer-text">
-      <email-icon />
-      <a href="mailto:info@compromis.net">info@compromis.net</a>
-      <phone-icon />
-      <a href="tel:+34963826606">96 382 66 06</a>
-      <map-marker-icon />
-      <a href="https://compromis.net/info/contacta">
-        <address>Plaça del Pilar, 1 - 46001 València</address>
-      </a>
+      <span class="d-inline-flex align-items-center me-3">
+        <email-icon class="me-1" />
+        <a href="mailto:info@compromis.net">info@compromis.net</a>
+      </span>
+      <span class="d-inline-flex align-items-center me-3">
+        <phone-icon class="me-1" />
+        <a href="tel:+34963826606">96 382 66 06</a>
+      </span>
+      <span class="d-flex d-md-inline-flex align-items-center">
+        <map-marker-icon class="me-1" />
+        <a href="https://compromis.net/info/contacta">
+          Plaça del Pilar, 1 - 46001 València
+        </a>
+      </span>
     </p>
     <ul class="footer-social">
       <li class="footer-social-facebook">
