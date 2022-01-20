@@ -10,7 +10,8 @@ const nav = reactive({
 
 const navSlots = reactive({
   logoPrepend: '',
-  logoAppend: ''
+  logoAppend: '',
+  basicNav: ''
 })
 
 const navProps = inlineProps(nav)
@@ -20,14 +21,20 @@ const logoAppendSlot = computed(() => {
   if (navSlots.logoPrepend) {
     templates += `
 
-  <template #logoPrepend>${navSlots.logoPrepend}</template>`
-    }
+  <template #logo-prepend>${navSlots.logoPrepend}</template>`
+  }
 
   if (navSlots.logoAppend) {
     templates += `
 
-  <template #logoAppend>${navSlots.logoAppend}</template>`
-    }
+  <template #logo-append>${navSlots.logoAppend}</template>`
+  }
+
+  if (navSlots.basicNav) {
+    templates += `
+
+  <template #basic-nav>${navSlots.basicNav}</template>`
+  }
 
   return templates
 })
@@ -120,6 +127,16 @@ const logoAppendSlot = computed(() => {
               <td>Text a afegir després del logo</td>
               <td>
                 <b-input v-model="navSlots.logoAppend" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
+              <td>#basic-nav</td>
+              <td>Slot</td>
+              <td></td>
+              <td></td>
+              <td>Contingut de la nav que no despareix en obrir el drawer ni s'amaga en mòbil</td>
+              <td>
+                <b-input v-model="navSlots.basicNav" type="text" size="sm" />
               </td>
             </tr>
           </tbody>

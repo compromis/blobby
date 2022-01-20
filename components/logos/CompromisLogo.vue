@@ -108,7 +108,7 @@ export default {
     mono: Boolean,
     forceWhite: Boolean,
     forceBlack: Boolean,
-    collapsible: {
+    collapseAt: {
       type: String,
       default: null
     }

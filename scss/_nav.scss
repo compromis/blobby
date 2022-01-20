@@ -141,7 +141,7 @@ $nav-y-padding: 0.85rem;
 
     &-mobile {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
       gap: 2rem;
       margin: ($nav-y-padding * 3) $nav-x-padding;
       padding: 0;

@@ -8,7 +8,7 @@
               <slot name="logo-prepend"></slot>
             </div>
             <a href="https://compromis.net" class="nav-logo-compromis">
-              <compromis-logo />
+              <compromis-logo :collapse-at="logoCollapseAt || collapseAt" />
               <span class="visually-hidden">
                 Compromís
               </span>
@@ -24,6 +24,8 @@
             <slot></slot>
           </ul>
         </transition>
+
+        <slot name="basic-nav"></slot>
 
         <div class="nav-toggle">
           <button id="nav-toggler" :aria-expanded="expanded ? 'true' : 'false'" aria-controls="nav-drawer" @click="toggleDrawer">
@@ -67,6 +69,10 @@
       collapseAt: {
         type: String,
         default: 'lg'
+      },
+      logoCollapseAt: {
+        type: String,
+        default: null
       },
       menuTitle: {
         type: String,
