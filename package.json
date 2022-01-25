@@ -1,6 +1,6 @@
 {
   "name": "@compromis/blobby",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Vue component library sans Sass framework for Compromís websites",
   "files": [
     "dist",

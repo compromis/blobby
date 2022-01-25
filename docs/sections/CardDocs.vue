@@ -5,17 +5,17 @@ import BDropdown from '../../components/dropdown/BDropdown.vue'
 import BButton from '../../components/button/BButton.vue'
 
 const card = reactive({
-  type: 'shadow',
   variant: 'default',
   size: 'md',
-  glowy: true,
+  shadow: true,
   padded: false,
   overflowHidden: false,
   rises: false,
   image: 'https://source.unsplash.com/random',
   to: '',
   href: '',
-  as: ''
+  as: '',
+  color: ''
 })
 
 const cardSection = reactive({
@@ -65,21 +65,6 @@ const cardListProps = inlineProps(cardList)
           </thead>
           <tbody>
             <tr>
-              <td>type</td>
-              <td>String</td>
-              <td><code>shadow</code></td>
-              <td><code>shadow</code>, <code>solid</code>, <code>outline</code>, <code>gradient</code></td>
-              <td>Tipus de targeta</td>
-              <td>
-                <b-select v-model="card.type" size="sm">
-                  <option>shadow</option>
-                  <option>solid</option>
-                  <option>outline</option>
-                  <option>gradient</option>
-                </b-select>
-              </td>
-            </tr>
-            <tr>
               <td>variant</td>
               <td>String</td>
               <td><code>default</code></td>
@@ -88,9 +73,9 @@ const cardListProps = inlineProps(cardList)
               <td>
                 <b-select v-model="card.variant" size="sm">
                   <option>default</option>
-                  <option>inverted</option>
-                  <option>primary</option>
-                  <option>secondary</option>
+                  <option>gradient</option>
+                  <option>outline</option>
+                  <option>custom-color</option>
                 </b-select>
               </td>
             </tr>
@@ -110,13 +95,13 @@ const cardListProps = inlineProps(cardList)
               </td>
             </tr>
             <tr>
-              <td>glowy</td>
+              <td>shadow</td>
               <td>Bool</td>
               <td><code>false</code></td>
               <td></td>
-              <td>Targeta degradat glowy <b-badge variant="supermuted" size="sm">Gradient-only</b-badge></td>
+              <td>la targeta té shadow/glow</td>
               <td>
-                <input v-model="card.glowy" type="checkbox">
+                <input v-model="card.shadow" type="checkbox">
               </td>
             </tr>
             <tr>
@@ -147,6 +132,16 @@ const cardListProps = inlineProps(cardList)
               <td>Imatge de fons <b-badge variant="supermuted" size="sm">Gradient</b-badge> <b-badge variant="supermuted" size="sm">Solid</b-badge></td>
               <td>
                 <b-input v-model="card.image" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>String</td>
+              <td></td>
+              <td></td>
+              <td>Color</td>
+              <td>
+                <b-input v-model="card.color" type="text" size="sm" />
               </td>
             </tr>
             <tr>
@@ -353,7 +348,7 @@ const cardListProps = inlineProps(cardList)
           </b-card-list>
         </b-card>
 
-        <snippet :properties="[card, cardSection, cardList]">{{`<b-card${cardProps}>
+        <snippet :properties="[card, cardSection, cardList]">{{`<bb-card${cardProps}>
   <b-card-section${cardSectionProps}>
     <h2>Title</h2>
   </b-card-section>

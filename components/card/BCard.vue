@@ -3,27 +3,33 @@
     :is="tag"
     :class="[
       'card',
-      ...typeClasses,
+      variantClass,
       roundedClass,
       paddingClass,
+      gradientClass,
       {
-        'card-overlay-gradient': !!image,
+        'shadow': shadow && variant === 'default',
+        'card-overlay-gradient': isGlowable && (image || shadow),
         'overflow-hidden': overflowHidden,
         'card-rises': rises,
-        'focus-dark': focusDark
+        'focus-dark': focusDark,
+        'has-image': !!image
       }
     ]"
     :to="to || null"
-    :href="href || to || null">
-    <div :class="['card-content', { 'overlay-content': !!image }, ...computedContentClass]">
+    :href="href || to || null"
+    :style="customColor"
+    >
+    <div :class="['card-content', { 'overlay-content': image || shadow }, ...computedContentClass]">
       <slot />
     </div>
-    <div v-if="image && ['gradient', 'solid'].includes(type)" class="overlay-background">
-      <img :src="image" alt="">
+    <div v-if="isGlowable" class="overlay-background">
+      <img v-if="image" :src="image" alt="">
     </div>
-    <div v-if="type === 'gradient' && glowy" class="glowy-ghost">
+    <div v-if="shadow && isGlowable" class="glowy-ghost">
       <img v-if="image" :src="image" alt="" class="glowy-image">
     </div>
+
   </component>
 </template>
 
@@ -32,24 +38,23 @@ export default {
   name: 'BCard',
 
   props: {
-    type: {
-      type: String,
-      default: 'shadow',
-      validator: (value) => ['shadow', 'solid', 'gradient', 'outline'].indexOf(value) !== -1
-    },
     variant: {
       type: String,
-      default: 'white',
-      validator: (value) => ['white', 'black', 'primary', 'secondary'].indexOf(value) !== -1
+      default: 'default',
+      validator: (value) => ['default', 'gradient', 'outline', 'custom-color'].indexOf(value) !== -1
     },
     size: {
       type: String,
       default: 'md',
       validator: (value) => ['sm', 'md', 'lg'].indexOf(value) !== -1
     },
-    glowy: {
+    shadow: {
       type: Boolean,
       default: true
+    },
+    color: {
+      type: String,
+      default: ''
     },
     image: {
       type: String,
@@ -86,46 +91,19 @@ export default {
     focusDark: {
       type: Boolean,
       default: false
-    }
+    },
   },
 
   computed: {
-    typeClasses () {
-      const types = {
-        shadow: {
-          base: 'card-shadow',
-          variants: {
-            default: 'bg-color',
-            white: 'bg-white',
-            black: 'bg-black'
-          }
-        },
-        solid: {
-          base: '',
-          variants: {
-            default: 'bg-color',
-            white: 'bg-white',
-            black: 'bg-black'
-          }
-        },
-        outline: {
-          base: 'border',
-          variants: {
-            default: 'text-muted border-outline',
-            white: 'text-muted border-outline',
-            black: 'text-white border-white'
-          }
-        },
-        gradient: {
-          base: 'bg-gradient card-glowy text-white',
-          variants: {
-            primary: 'gradient-primary',
-            secondary: 'gradient-secondary'
-          }
-        }
+    variantClass () {
+      const variants = {
+        'default': 'bg-white',
+        'outline': 'border text-muted border-outline',
+        'gradient': 'bg-gradient card-glowy text-white',
+        'custom-color': 'card-custom-color card-glowy',
       }
 
-      return [types[this.type].base, types[this.type].variants[this.variant]]
+      return variants[this.variant]
     },
 
     roundedClass () {
@@ -134,6 +112,10 @@ export default {
 
     paddingClass () {
       return this.padded ? `card-padded card-padded-${this.size}` : `card-padded-${this.size}`
+    },
+
+    isGlowable () {
+      return ['gradient', 'custom-color'].includes(this.variant)
     },
 
     tag () {
@@ -155,6 +137,24 @@ export default {
       }
 
       return this.contentClass
+    },
+
+    gradientClass () {
+      return this.variant === 'gradient' && `gradient-${this.color || 'primary'}`
+    },
+
+    customColor () {
+      const color = !this.color ? 'gray-900' : this.color
+      const customColor = color.startsWith('#') ? color : `var(--${color})`
+
+      switch(this.variant) {
+        case 'custom-color':
+          return `--card-color: ${customColor}`
+        case 'outline':
+          return `--border-color: ${customColor}`
+        default:
+          return ''
+      }
     }
   }
 }
