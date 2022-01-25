@@ -38,6 +38,11 @@
       border: 2px var(--input-border-color, var(--gray-200)) solid;
       border-radius: var(--input-border-radius, #{$border-radius-xs});
 
+      &:disabled {
+        color: var(--gray-600);
+        background: var(--gray-100);
+      }
+
       &:focus {
         border-color: $primary;
         outline: 0;
@@ -58,6 +63,11 @@
       border: 0;
       font-size: 1.25rem;
       padding: 2rem 1.25rem 0.75rem;
+
+      &:disabled {
+        color: var(--text-muted);
+        background: var(--gray-100);
+      }
 
       &:focus {
         outline: 0;
