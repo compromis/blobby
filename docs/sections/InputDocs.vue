@@ -3,6 +3,7 @@ import { ref, reactive } from 'vue'
 import BInputGroup from '../../components/inputs/BInputGroup.vue'
 import BRadio from '../../components/inputs/BRadio.vue'
 import BRadioGroup from '../../components/inputs/BRadioGroup.vue'
+import BCheckbox from '../../components/inputs/BCheckbox.vue'
 
 const input = reactive({
   name: 'name',
@@ -50,6 +51,13 @@ const radioValue = ref('two')
 const radioGroup = reactive({
   title: 'Grup',
   titleHidden: false
+})
+
+const checkbox = reactive({
+  name: 'name',
+  value: true,
+  isSwitch: false,
+  disabled: false
 })
 </script>
 
@@ -573,7 +581,76 @@ const radioGroup = reactive({
         </b-radio-group>
       </div>
     </div>
+  </div>
+
+  <div class="docs-cols">
+    <div class="docs-col-schema">
+      <h3>&lt;b-checkbox&gt;</h3>
+      <b-card type="outline" size="sm" overflow-hidden>
+        <table class="table tint-alternate-rows vertical-divisions">
+          <colgroup>
+            <col width="15%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="225" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>nom</th>
+              <th>tipus</th>
+              <th>defecte</th>
+              <th>valors</th>
+              <th>descripció</th>
+              <th>play</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>name</td>
+              <td>String</td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
+              <td></td>
+              <td>Nom de l'input</td>
+              <td>
+                <b-input v-model="checkbox.name" type="text" size="sm" />
+              </td>
+            </tr>
+            <tr>
+              <td>value</td>
+              <td>String</td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
+              <td></td>
+              <td>Vaue de l'input</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Self-explanatory</td>
+              <td><input v-model="checkbox.disabled" type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>is-switch</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td></td>
+              <td>Switch input</td>
+              <td><input v-model="checkbox.isSwitch" type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
+      </b-card>
     </div>
+    <div class="docs-col-preview">
+      <div class="sticky">
+        <b-checkbox v-bind="checkbox">Text</b-checkbox>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
