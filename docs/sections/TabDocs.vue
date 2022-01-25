@@ -4,7 +4,7 @@ import BTab from '../../components/tab/BTab.vue'
 import BTabList from '../../components/tab/BTabList.vue'
 
 const tabList = reactive({
-  variant: 'default',
+  outline: false,
   focusDark: false,
   size: 'md',
   muted: false
@@ -47,16 +47,13 @@ const selectedTab = ref(1)
           </thead>
           <tbody>
             <tr>
-              <td>variant</td>
-              <td>String</td>
-              <td><code>default</code></td>
-              <td><code>default</code>, <code>outline</code></td>
-              <td>Variant de la pastilla</td>
+              <td>outline</td>
+              <td>Bool</td>
+              <td><code>false</code></td>
+              <td><code>true</code>, <code>false</code></td>
+              <td>Pastilla solid o outline</td>
               <td>
-                <b-select v-model="tabList.variant" size="sm">
-                  <option>default</option>
-                  <option>outline</option>
-                </b-select>
+                <input v-model="tabList.outline" type="checkbox">
               </td>
             </tr>
             <tr>
