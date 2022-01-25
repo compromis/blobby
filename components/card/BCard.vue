@@ -144,7 +144,7 @@ export default {
     },
 
     customColor () {
-      const color = !this.color ? 'gray-900' : this.color
+      const color = !this.color && this.variant === 'custom-color' ? 'gray-900' : this.color
       const customColor = color.startsWith('#') ? color : `var(--${color})`
 
       switch(this.variant) {

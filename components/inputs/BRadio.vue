@@ -13,13 +13,12 @@
     ]">
     <input
       :id="name + value"
+      v-model="selected"
       type="radio"
       :name="name"
       :value="value"
-      :checked="isSelected"
       :disabled="disabled"
       :class="['radio-input', 'form-check-input', { 'visually-hidden': !!card }]"
-      @change="onChange"
     >
     <slot></slot>
   </component>
@@ -63,6 +62,16 @@
     emits: ['update:modelValue'],
 
     computed: {
+      selected: {
+        get () {
+          return this.modelValue
+        },
+
+        set (value) {
+          this.$emit('update:modelValue', value)
+        }
+      },
+
       isSelected () {
         return this.modelValue === this.value
       },
@@ -86,12 +95,6 @@
           padded: true,
           ...cardProps
         }
-      }
-    },
-  
-    methods: {
-      onChange (event) {
-        this.$emit('update:modelValue', event.target.value)
       }
     }
   }
