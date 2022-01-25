@@ -1,6 +1,6 @@
 <template>
   <component :is="wrapper" class="badge-wrapper">
-    <component :is="tag" :to="to" :href="href || to" :class="['pill', `pill-${variant}`, `pill-${size}`, {'pill-focus-dark' : focusDark}]">
+    <component :is="tag" ref="link" :to="to" :href="href || to" :class="['pill', `pill-${variant}`, `pill-${size}`, {'pill-focus-dark' : focusDark}]">
       <slot />
     </component>
   </component>

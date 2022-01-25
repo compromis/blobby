@@ -23,17 +23,21 @@
       </b-input>
       <input type="submit" name="municipality_filter" class="search-button visually-hidden-focusable" value="Filtra" />
     </form>
-    <b-pill-list v-if="filteredResults.length > 0" class="nav-network-list mt-2">
+    <b-pill-list v-if="filteredResults.length > 0" class="nav-network-list nav-local-list mt-2">
       <b-pill v-if="territorialUrl" variant="to-primary" :href="territorialUrl">
         Web comarcal
       </b-pill>
       <template v-for="website in filteredResults">
-        <b-pill v-if="website.hasOwnProperty('territori_id')" :key="website.id" variant="to-primary" :href="website.url ? website.url : `https://compromis.net/info/local/#/${website.ref}`">
-          {{ website.name }}
-        </b-pill>
-        <b-pill v-else :key="website.id" variant="to-primary" href="#" @click.prevent="setTerritory(website)">
+        <template v-if="website.hasOwnProperty('territori_id')">
+          <b-pill :key="website.id" variant="to-primary" :href="website.url ? website.url : `https://compromis.net/info/local/#/${website.ref}`">
             {{ website.name }}
-        </b-pill>
+          </b-pill>
+        </template>
+        <template v-else>
+          <b-pill :key="website.id" variant="to-primary" href="#" @click.prevent="setTerritory(website)">
+              {{ website.name }}
+          </b-pill>
+        </template>
       </template>
     </b-pill-list>
     <div v-else-if="loading" class="mt-2 text-muted">
@@ -110,6 +114,10 @@ export default {
       this.territorialText = website.name;
       this.territorialUrl = website.url;
       this.filteredResults = this.locals.filter(local => local.territori_id == website.id);
+      this.$nextTick(() => {
+        const firstLink = document.querySelector('.nav-local-list a:first-child');
+        firstLink.focus()
+      })
     },
   },
 }

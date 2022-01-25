@@ -140,7 +140,7 @@ export default {
     },
 
     gradientClass () {
-      return this.variant === 'gradient' && `gradient-${this.color || 'primary'}`
+      return this.variant === 'gradient' && `gradient-${this.color || 'primary'}`
     },
 
     customColor () {
