@@ -57,6 +57,8 @@ const buttonProps = inlineProps(button)
                 <b-select v-model="button.variant" size="sm">
                   <option>default</option>
                   <option>inverted</option>
+                  <option>white</option>
+                  <option>black</option>
                   <option>muted</option>
                   <option>supermuted</option>
                   <option>primary</option>

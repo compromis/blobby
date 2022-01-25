@@ -19,6 +19,16 @@
     color: var(--white);
   }
 
+  &-white {
+    --button-color: #{$white};
+    color: $black;
+  }
+
+  &-black {
+    --button-color: #{$black};
+    color: $white;
+  }
+
   &-primary {
     --button-color: #{$gradient};
     color: $white;
@@ -128,6 +138,14 @@
 
     &.button-inverted:hover:not(:disabled) {
       color: var(--white);
+    }
+
+    &.button-white:hover:not(:disabled) {
+      color: $black;
+    }
+
+    &.button-black:hover:not(:disabled) {
+      color: $white;
     }
 
     &.button-supermuted:hover:not(:disabled) {
