@@ -10,7 +10,7 @@
       `button-${size}`,
       `button-${type}`,
       {
-        'button-has-shadow' : hasShadow,
+        'button-has-shadow' : shadow,
         'focus-dark' : focusDark,
         'w-100 d-block': block
       }
@@ -47,7 +47,7 @@
         type: Boolean,
         default: false
       },
-      hasShadow: {
+      shadow: {
         type: Boolean,
         default: false,
       },
