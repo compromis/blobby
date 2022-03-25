@@ -101,6 +101,14 @@
   }
 }
 
+.link-white {
+  color: $white !important;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
 .link-underlined {
   text-decoration: underline;
 }

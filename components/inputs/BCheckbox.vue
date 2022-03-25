@@ -1,5 +1,5 @@
 <template>
-  <div :class="['form-check', isSwitch && 'form-switch']">
+  <div :class="['form-check', isSwitch && 'form-switch', dark && 'checkbox-dark']">
     <input
       :id="'checkbox' + name"
       v-model="checked"
@@ -9,6 +9,7 @@
       :value="value"
       :checked="checked"
       :disabled="disabled"
+      :required="required"
     >
     <label :for="'checkbox' + name" class="form-check-label">
       <slot />
@@ -40,6 +41,16 @@ export default {
     },
 
     isSwitch: {
+      type: Boolean,
+      default: false
+    },
+
+    dark: {
+      type: Boolean,
+      default: false
+    },
+
+    required: {
       type: Boolean,
       default: false
     }
