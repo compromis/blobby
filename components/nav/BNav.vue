@@ -46,7 +46,7 @@
         </transition>
       </div>
     </nav>
-    <div class="nav-padding" />
+    <div v-if="!noSpacer" class="nav-padding" />
     <transition name="fade">
       <div v-if="expanded" class="nav-backdrop" @click="expanded = false" />
     </transition>
@@ -81,6 +81,10 @@
         default: 'Menú principal'
       },
       fullWidth: {
+        type: Boolean,
+        default: false
+      },
+      noSpacer: {
         type: Boolean,
         default: false
       }
