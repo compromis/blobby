@@ -21,12 +21,14 @@
           </slot>
 
           <transition name="fade">
-            <ul v-if="!expanded" :aria-title="menuTitle" :class="['nav-menu', 'nav-menu-abridged', 'd-none', `d-${collapseAt}-flex`]">
+            <ul v-if="!expanded && $slots.default" :aria-title="menuTitle" :class="['nav-menu', 'nav-menu-abridged', 'd-none', `d-${collapseAt}-flex`]">
               <slot></slot>
             </ul>
           </transition>
 
-          <slot name="basic-nav"></slot>
+          <ul v-if="$slots.basicNav" :aria-title="basicMenuTitle" class="nav-menu basic-nav">
+            <slot name="basic-nav"></slot>
+          </ul>
 
           <div class="nav-toggle">
             <button id="nav-toggler" :aria-expanded="expanded ? 'true' : 'false'" aria-controls="nav-drawer" @click="toggleDrawer">
@@ -79,6 +81,10 @@
       menuTitle: {
         type: String,
         default: 'Menú principal'
+      },
+      basicMenuTitle: {
+        type: String,
+        default: 'Menú'
       },
       fullWidth: {
         type: Boolean,
