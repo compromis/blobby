@@ -1,17 +1,16 @@
 <template>
   <div :class="['form-check', isSwitch && 'form-switch', dark && 'checkbox-dark']">
     <input
-      :id="'checkbox' + name"
+      :id="'checkbox' + name + value"
       v-model="checked"
       class="form-check-input"
       type="checkbox"
       :role="isSwitch ? 'switch' : null"
       :value="value"
-      :checked="checked"
       :disabled="disabled"
       :required="required"
     >
-    <label :for="'checkbox' + name" class="form-check-label">
+    <label :for="'checkbox' + name + value" class="form-check-label">
       <slot />
     </label>
   </div>

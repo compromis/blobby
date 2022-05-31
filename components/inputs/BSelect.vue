@@ -13,7 +13,7 @@
         'input-has-value': hasValue || labelOnTop
       }
     ]">
-    <label :for="name" :class="['input-label', 'text-sm', { 'visually-hidden': noLabel }]">
+    <label :for="name" :class="['input-label lh-1', { 'text-sm': variant !== 'float', 'visually-hidden': noLabel }]">
       {{ label }}
     </label>
     <div class="select-with-chevron">
@@ -50,7 +50,7 @@
     props: {
       modelValue: {
         type: String,
-        required: true
+        default: null
       },
       name: {
         type: String,
