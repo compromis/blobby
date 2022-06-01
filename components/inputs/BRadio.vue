@@ -5,6 +5,7 @@
     :class="[
       'radio-field',
       'form-check',
+      'radio-' + variant,
       {
         'selected': isSelected,
         'disabled': disabled,
@@ -44,6 +45,10 @@
       modelValue: {
         type: String,
         required: true
+      },
+      variant: {
+        type: String,
+        default: 'default'
       },
       disabled: {
         type: Boolean,

@@ -43,7 +43,8 @@ const radio = reactive({
   name: 'number',
   card: true,
   disabled: false,
-  focusDark: false
+  focusDark: false,
+  variant: 'default'
 })
 
 const radioValue = ref('two')
@@ -57,7 +58,8 @@ const checkbox = reactive({
   name: 'name',
   value: true,
   isSwitch: false,
-  disabled: false
+  disabled: false,
+  variant: 'default'
 })
 </script>
 
@@ -497,6 +499,21 @@ const checkbox = reactive({
               <td></td>
             </tr>
             <tr>
+              <td>variant</td>
+              <td>String</td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
+              <td></td>
+              <td>Vaue de l'input</td>
+              <td>
+                <b-select v-model="radio.variant" size="sm">
+                  <option>default</option>
+                  <option>inverted</option>
+                  <option>black</option>
+                  <option>white</option>
+                </b-select>
+              </td>
+            </tr>
+            <tr>
               <td>disabled</td>
               <td>Bool</td>
               <td><code>false</code></td>
@@ -626,6 +643,21 @@ const checkbox = reactive({
               <td></td>
             </tr>
             <tr>
+              <td>variant</td>
+              <td>String</td>
+              <td><b-badge variant="supermuted" size="sm">Required</b-badge></td>
+              <td></td>
+              <td>Vaue de l'input</td>
+              <td>
+                <b-select v-model="checkbox.variant" size="sm">
+                  <option>default</option>
+                  <option>inverted</option>
+                  <option>black</option>
+                  <option>white</option>
+                </b-select>
+              </td>
+            </tr>
+            <tr>
               <td>disabled</td>
               <td>Bool</td>
               <td><code>false</code></td>
@@ -647,7 +679,9 @@ const checkbox = reactive({
     </div>
     <div class="docs-col-preview">
       <div class="sticky">
-        <b-checkbox v-bind="checkbox">Text</b-checkbox>
+        <b-checkbox v-bind="checkbox">
+          Text
+        </b-checkbox>
       </div>
     </div>
   </div>

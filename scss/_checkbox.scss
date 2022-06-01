@@ -1,0 +1,122 @@
+// Checkbox
+.form-check {
+  &.form-switch {
+    padding-left: 0;
+
+    .form-check-input {
+      margin-left: 0;
+      float: none;
+    }
+
+    .form-check-label {
+      &.prepend {
+        margin-right: .5rem;
+      }
+
+      &.append {
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+
+// Checkbox variants
+.dark .form-check.checkbox-default {
+  .form-check-input:not(:checked) {
+    background: transparent;
+    border-color: $white;
+  }
+}
+
+.form-check.checkbox-black,
+.form-check.checkbox-inverted {
+  .form-check-input {
+    border-color: $gray-900;
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba($gray-900, 0.25);
+    }
+
+    &:checked {
+      background-color: $gray-900;
+    }
+  }
+}
+
+.form-check.checkbox-white,
+.dark .form-check.checkbox-inverted {
+  .form-check-input {
+    border-color: $gray-50;
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba($gray-50, 0.25);
+    }
+
+    &:checked {
+      background-color: $gray-50;
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$black}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>"));
+    }
+  }
+}
+
+
+
+// Switch variants
+.form-switch.checkbox-black,
+.form-switch.checkbox-inverted {
+  .form-check-input {
+    border-color: $black;
+    background-color: transparent;
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$black}'/></svg>"));
+
+    &:focus {
+      border-color: rgba($gray-900, 0.75);
+      box-shadow: 0 0 0 0.25rem rgba($gray-900, 0.25);
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$black}'/></svg>"));
+    }
+
+    &:checked {
+      background-color: $gray-900;
+      border-color: $gray-900;
+
+      &:focus {
+        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>"));
+      }
+    }
+  }
+}
+
+.form-switch.checkbox-white,
+.dark .form-switch.checkbox-inverted {
+  .form-check-input {
+    border-color: $white;
+    background-color: transparent;
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>"));
+
+    &:focus {
+      border-color: rgba($gray-50, 0.75);
+      box-shadow: 0 0 0 0.25rem rgba($gray-50, 0.25);
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>"));
+    }
+
+    &:checked {
+      background-color: $gray-50;
+      border-color: $gray-50;
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$black}'/></svg>"));
+
+      &:focus {
+        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$black}'/></svg>"));
+      }
+    }
+  }
+}
+
+.dark .form-switch.checkbox-default {
+  .form-check-input:not(:checked) {
+    background-color: transparent;
+    border-color: $white;
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>"));
+  }
+}

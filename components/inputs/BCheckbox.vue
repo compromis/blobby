@@ -1,5 +1,8 @@
 <template>
-  <div :class="['form-check', isSwitch && 'form-switch', dark && 'checkbox-dark']">
+  <div :class="['form-check', isSwitch && 'form-switch',`checkbox-${variant}`]">
+    <label v-if="$slots.prepend" :for="'checkbox' + name + value" class="form-check-label prepend">
+      <slot name="prepend" />
+    </label>
     <input
       :id="'checkbox' + name + value"
       v-model="checked"
@@ -10,7 +13,7 @@
       :disabled="disabled"
       :required="required"
     >
-    <label :for="'checkbox' + name + value" class="form-check-label">
+    <label v-if="$slots.default" :for="'checkbox' + name + value" class="form-check-label append">
       <slot />
     </label>
   </div>
@@ -34,17 +37,17 @@ export default {
       default: 'true'
     },
 
+    variant: {
+      type: String,
+      default: 'default'
+    },
+
     disabled: {
       type: Boolean,
       default: false
     },
 
     isSwitch: {
-      type: Boolean,
-      default: false
-    },
-
-    dark: {
       type: Boolean,
       default: false
     },
