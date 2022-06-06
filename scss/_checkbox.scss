@@ -23,7 +23,6 @@
 // Checkbox variants
 .dark .form-check.checkbox-default {
   .form-check-input:not(:checked) {
-    background: transparent;
     border-color: $white;
   }
 }
