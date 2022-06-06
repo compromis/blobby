@@ -98,5 +98,9 @@
 
   &-focus-dark .tab:focus {
     @include focus-shadow($black);
+
+    @at-root .dark .tab-list-focus-dark .tab:focus {
+      @include focus-shadow(darken($gray-1000, 15%));
+    }
   }
 }

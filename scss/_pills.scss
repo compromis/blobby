@@ -39,6 +39,10 @@ a.pill {
     @include focus-shadow($black);
   }
 
+  @at-root .dark a.pill-focus-dark:focus {
+    @include focus-shadow(darken($gray-1000, 15%));
+  }
+
   &-to-primary {
     &:hover {
       background: $gradient;

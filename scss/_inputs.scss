@@ -53,6 +53,10 @@
         border-color: $gray-700;
         @include focus-shadow($black);
       }
+
+      @at-root .dark .input-focus-dark:focus {
+        @include focus-shadow(darken($gray-1000, 15%));
+      }
     }
   }
 

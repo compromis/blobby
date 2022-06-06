@@ -246,3 +246,11 @@
 .focus-dark-within:focus-within {
   @include focus-shadow($black);
 }
+
+@at-root .dark .focus-dark:focus {
+  @include focus-shadow(darken($gray-1000, 15%));
+}
+
+@at-root .dark .focus-dark-within:focus-within {
+  @include focus-shadow(darken($gray-1000, 15%));
+}
