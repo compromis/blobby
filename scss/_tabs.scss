@@ -73,11 +73,18 @@
   &-muted .tab {
     &.selected,
     &.nuxt-link-exact-active {
-      background: var(--gray-600);
+      background: var(--gray-400);
+      color: var(--gray-50);
 
       &:hover {
-        background: var(--gray-600);
+        background: var(--gray-400);
+        color: var(--gray-50);
       }
+    }
+
+    &:hover {
+      background: var(--gray-300);
+      color: var(--gray-50);
     }
   }
 
