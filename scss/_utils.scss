@@ -41,7 +41,7 @@
 
 // Shadows
 .shadow {
-  box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-default) !important;
 
   &-rises {
     transition: 0.25s ease;
