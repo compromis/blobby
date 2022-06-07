@@ -222,8 +222,8 @@ $backgrounds: (
     'text': var(--text-color),
   ),
   'white': (
-    'bg': var(--white),
-    'text': var(--text-color),
+    'bg': $white,
+    'text': $black,
   ),
   'black': (
     'bg': $black,
