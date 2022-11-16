@@ -26,7 +26,7 @@
             </ul>
           </transition>
 
-          <ul v-if="$slots.basicNav" :aria-title="basicMenuTitle" class="nav-menu basic-nav">
+          <ul v-if="$slots['basic-nav']" :aria-title="basicMenuTitle" class="nav-menu basic-nav">
             <slot name="basic-nav"></slot>
           </ul>
 
