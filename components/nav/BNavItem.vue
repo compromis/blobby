@@ -39,7 +39,7 @@
 
     computed: {
       tag () {
-        return this.to ? 'nuxt-link' : 'a'
+        return this.to ? resolveComponent('NuxtLink') : 'a'
       }
     }
   }

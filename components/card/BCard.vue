@@ -120,7 +120,7 @@ export default {
 
     tag () {
       if (this.to) {
-        return 'nuxt-link'
+        return resolveComponent('NuxtLink')
       }
       if (this.href) {
         return 'a'
